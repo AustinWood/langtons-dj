@@ -25,9 +25,7 @@ In addition, the project will include:
 
 ## Wireframes
 
-[See mockup here.][wireframe]
-
-[wireframe]:./docs/wireframe.jpg
+![wireframe](https://github.com/AustinWood/langtons-dj/blob/master/docs/wireframe.jpg)
 
 ## Architecture and Technologies
 
