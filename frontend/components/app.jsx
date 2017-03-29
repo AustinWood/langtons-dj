@@ -1,6 +1,6 @@
 import React from 'react';
 import Canvas from './canvas.jsx';
-import {Layer, Rect, Stage, Group} from 'react-konva';
+import { Layer, Stage } from 'react-konva';
 
 const App = () => (
   <Stage width={700} height={700}>

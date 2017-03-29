@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Layer, Rect, Stage, Group} from 'react-konva';
+import { Rect } from 'react-konva';
 
 class Canvas extends React.Component {
   constructor(props) {
@@ -18,15 +18,6 @@ class Canvas extends React.Component {
       color: Konva.Util.getRandomColor()
     });
   }
-
-  // componentDidMount() {
-  //     this.updateCanvas();
-  // }
-
-  // updateCanvas() {
-  //   const ctx = this.refs.canvas.getContext('2d');
-  //   ctx.fillRect(0,0, 100, 100);
-  // }
 
   render() {
     return (
