@@ -22,7 +22,7 @@ class Cell extends React.Component {
   render() {
     return (
       <Rect
-        x={this.props.x} y={this.props.y} width={20} height={36}
+        x={this.props.x} y={this.props.y} width={35} height={35}
         fill={this.state.color}
         onClick={this.handleClick} />
     );

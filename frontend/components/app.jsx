@@ -1,8 +1,8 @@
 import React from 'react';
-import Canvas from './canvas.jsx';
+import CanvasContainer from './canvas_container.jsx';
 
 const App = () => (
-  <Canvas />
+  <CanvasContainer />
 );
 
 export default App;

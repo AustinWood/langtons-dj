@@ -1,8 +1,8 @@
 ####################
 ### NOW
 
-grid background color
 fill grid with gray circles
+set width/height programmatically
 click to toggle ant
 store ant in state
 render ant on top of cell color

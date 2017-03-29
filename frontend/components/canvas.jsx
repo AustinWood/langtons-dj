@@ -3,14 +3,15 @@ import Cell from './cell.jsx';
 import Board from './board.jsx';
 import { Layer, Stage } from 'react-konva';
 
-const cells = () => (
-  [10, 30, 50, 200].map(pos => (
-    <Cell x={pos} y={pos} />
-  ))
-);
+const cells = () => {
 
+  return (
+    [10, 30, 50, 200].map(pos => (
+      <Cell x={pos} y={pos} />
+    ))
+  );
+};
 
-// <Cell x={150} y={190} />
 const Canvas = () => (
   <Stage width={700} height={700}>
     <Layer>
