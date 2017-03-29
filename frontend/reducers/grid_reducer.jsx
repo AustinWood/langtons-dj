@@ -1,12 +1,27 @@
 import merge from 'lodash/merge';
+import { Rect } from 'react-konva';
+
+const gridSize = 20;
 
 const _grid = Object.freeze({
-  cells: [
-    [{x: 0, y: 0, color: 'green'}, {x: 1, y: 0, color: 'red'}],
-    [{x: 3, y: 4, color: 'blue'}]
-  ],
+
+  cells: (function() {
+    let output = [];
+    for (var i = 0; i < gridSize; i++) {
+      let row = [];
+      for (var j = 0; j < gridSize; j++) {
+        row.push({x: j, y: i, color: Konva.Util.getRandomColor()});
+      }
+      output.push(row);
+    }
+    console.log([output]);
+    return output;
+  }()),
+
   cellSize: 35
 });
+
+
 
 const GridReducer = (state = _grid, action) => {
   Object.freeze(state);
