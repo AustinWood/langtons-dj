@@ -18,7 +18,10 @@ class Cell extends React.Component {
   render() {
     return (
       <Rect
-        x={this.props.x * 35} y={this.props.y * 35} width={35} height={35}
+        x={this.props.x * this.props.cellSize}
+        y={this.props.y * this.props.cellSize}
+        width={this.props.cellSize}
+        height={this.props.cellSize}
         fill={this.props.color}
         onClick={this.handleClick} />
     );
