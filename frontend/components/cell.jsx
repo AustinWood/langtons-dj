@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Rect } from 'react-konva';
 
-class Canvas extends React.Component {
+class Cell extends React.Component {
   constructor(props) {
     super(props);
 
@@ -22,11 +22,11 @@ class Canvas extends React.Component {
   render() {
     return (
       <Rect
-        x={10} y={10} width={50} height={50}
+        x={this.props.x} y={this.props.y} width={20} height={36}
         fill={this.state.color}
         onClick={this.handleClick} />
     );
   }
 }
 
-export default Canvas;
+export default Cell;

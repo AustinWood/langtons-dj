@@ -1,11 +1,12 @@
 import React from 'react';
-import Canvas from './canvas.jsx';
+import Cell from './cell.jsx';
 import { Layer, Stage } from 'react-konva';
 
 const App = () => (
   <Stage width={700} height={700}>
     <Layer>
-      <Canvas />
+      <Cell x={10} y={10} />
+      <Cell x={150} y={190} />
     </Layer>
   </Stage>
 );
