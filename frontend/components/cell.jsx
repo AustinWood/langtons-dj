@@ -6,14 +6,14 @@ class Cell extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    this.setState({
-      color: Konva.Util.getRandomColor()
-    });
-  }
+  // handleClick() {
+  //   this.setState({
+  //     color: Konva.Util.getRandomColor()
+  //   });
+  // }
 
   render() {
     return (

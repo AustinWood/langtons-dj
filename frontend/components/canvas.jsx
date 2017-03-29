@@ -1,5 +1,5 @@
 import React from 'react';
-import Cell from './cell.jsx';
+import CellContainer from './cell_container.jsx';
 import Board from './board.jsx';
 import { Layer, Stage } from 'react-konva';
 
@@ -14,7 +14,7 @@ class Canvas extends React.Component {
     console.log(flattenedArr);
     return (
       flattenedArr.map(cell => (
-        <Cell x={cell.x} y={cell.y} color={cell.color} />
+        <CellContainer x={cell.x} y={cell.y} color={cell.color} />
       ))
     );
   }
