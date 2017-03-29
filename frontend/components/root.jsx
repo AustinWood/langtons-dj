@@ -6,8 +6,7 @@ const Root = ({ store }) => {
 
   return (
     <Provider store={ store }>
-      <h1>привет,чувак</h1>
-      <canvas id="demoCanvas" width="500" height="300"></canvas>
+      <App />
     </Provider>
   );
 };
