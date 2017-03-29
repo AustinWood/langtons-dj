@@ -1,10 +1,13 @@
 import React from 'react';
+import Canvas from './canvas.jsx';
+import {Layer, Rect, Stage, Group} from 'react-konva';
 
 const App = () => (
-  <div className="app">
-    <h1>привет)</h1>
-    <canvas id="canvas" width="500" height="500"></canvas>
-  </div>
+  <Stage width={700} height={700}>
+    <Layer>
+      <Canvas />
+    </Layer>
+  </Stage>
 );
 
 export default App;
