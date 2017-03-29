@@ -8,11 +8,13 @@ class Canvas extends React.Component {
     super(props);
   }
 
-  cells(cellsArr) {
-    console.log(cellsArr);
+  cells(cellArr) {
+    console.log(cellArr);
+    const flattenedArr = [].concat.apply([], cellArr);
+    console.log(flattenedArr);
     return (
-      [10, 30, 50, 200].map(pos => (
-        <Cell x={pos} y={pos} />
+      flattenedArr.map(cell => (
+        <Cell x={cell.x} y={cell.y} />
       ))
     );
   }

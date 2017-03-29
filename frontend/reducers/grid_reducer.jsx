@@ -1,7 +1,10 @@
 import merge from 'lodash/merge';
 
 const _grid = Object.freeze({
-  cells: [[[0, 0, 'green'], [1, 0, 'red']], [[3, 4, 'blue']]],
+  cells: [
+    [{x: 0, y: 0, color: 'green'}, {x: 1, y: 0, color: 'red'}],
+    [{x: 3, y: 4, color: 'blue'}]
+  ],
   cellSize: 35
 });
 
