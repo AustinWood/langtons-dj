@@ -6,10 +6,6 @@ class Cell extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      color: 'green'
-    };
-
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -23,7 +19,7 @@ class Cell extends React.Component {
     return (
       <Rect
         x={this.props.x * 35} y={this.props.y * 35} width={35} height={35}
-        fill={this.state.color}
+        fill={this.props.color}
         onClick={this.handleClick} />
     );
   }

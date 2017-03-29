@@ -14,7 +14,7 @@ class Canvas extends React.Component {
     console.log(flattenedArr);
     return (
       flattenedArr.map(cell => (
-        <Cell x={cell.x} y={cell.y} />
+        <Cell x={cell.x} y={cell.y} color={cell.color} />
       ))
     );
   }
