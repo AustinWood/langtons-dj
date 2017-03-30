@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
-import Canvas from './canvas';
+import Ant from './ant';
 
 const mapStateToProps = state => ({
-  cells: state.grid.cells,
-  ants: state.ants
+  cellSize: state.grid.cellSize,
+  color: 'red'
 });
 
 const mapDispatchToProps = dispatch => ({
-  // none
+  //
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Canvas);
+)(Ant);

@@ -25,10 +25,10 @@ const GridReducer = (state = _grid, action) => {
   Object.freeze(state);
   let newState = {};
   switch(action.type) {
-    case TOGGLE_ANT:
-      newState = merge({}, state);
-      newState.cells[action.y][action.x].color = "red";
-      return newState;
+    // case TOGGLE_ANT:
+    //   newState = merge({}, state);
+    //   newState.cells[action.y][action.x].color = "red";
+    //   return newState;
     default:
       return state;
   }

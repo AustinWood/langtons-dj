@@ -1,6 +1,7 @@
 import React from 'react';
-import CellContainer from './cell_container.jsx';
 import Board from './board.jsx';
+import CellContainer from './cell_container.jsx';
+import AntContainer from './ant_container.jsx';
 import { Layer, Stage } from 'react-konva';
 
 class Canvas extends React.Component {
@@ -8,10 +9,9 @@ class Canvas extends React.Component {
     super(props);
   }
 
-  cells(cellArr) {
-    console.log(cellArr);
+  cells() {
+    const cellArr = this.props.cells;
     const flattenedArr = [].concat.apply([], cellArr);
-    console.log(flattenedArr);
     return (
       flattenedArr.map(cell => (
         <CellContainer x={cell.x} y={cell.y} color={cell.color} />
@@ -19,12 +19,25 @@ class Canvas extends React.Component {
     );
   }
 
+  ants() {
+    const ants = this.props.ants;
+    let antComponents = [];
+    for (var key in ants) {
+      if (ants.hasOwnProperty(key)) {
+        const ant = ants[key];
+        antComponents.push(<AntContainer x={ant.x} y={ant.y} />);
+      }
+    }
+    return antComponents;
+  }
+
   render() {
     return (
       <Stage width={700} height={700}>
         <Layer>
           <Board width={700} height={700} />
-          {this.cells(this.props.cells)}
+          {this.cells()}
+          {this.ants()}
         </Layer>
       </Stage>
     );

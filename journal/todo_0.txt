@@ -1,7 +1,6 @@
 ####################
 ### NOW
 
-toggle ants in state
 render from state.ants
 render ant as image of ant
 remove grid_reducer toggle action
