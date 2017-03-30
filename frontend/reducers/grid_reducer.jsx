@@ -45,6 +45,9 @@ const GridReducer = (state = _grid, action) => {
       newState = merge({}, state);
       for (var key in newState.ants) {
         if (newState.ants.hasOwnProperty(key)) {
+          // change cell state
+          newState.cells[newState.ants[key].y][newState.ants[key].x] = 1;
+          // move ant
           newState.ants[key].x += 1;
         }
       }
