@@ -42,28 +42,7 @@ const GridReducer = (state = _grid, action) => {
         return merge({}, state, newState);
       }
     case INCREMENT_STEP:
-      newState = merge({}, state);
-      for (var key in newState.ants) {
-        if (newState.ants.hasOwnProperty(key)) {
-          // change cell state
-          switch (newState.cells[newState.ants[key].y][newState.ants[key].x].state) {
-            case 1:
-              console.log("HIT THE CASE!");
-              newState.cells[newState.ants[key].y][newState.ants[key].x].state = 0;
-              break;
-            default:
-              newState.cells[newState.ants[key].y][newState.ants[key].x].state = 1;
-              break;
-          }
-          // move ant
-          if (newState.ants[key].x < 19) {
-            newState.ants[key].x += 1;
-          } else {
-            newState.ants[key].x = 0;
-          }
-        }
-      }
-      return merge({}, state, newState);
+      return merge({}, state, {cells: action.cells}, {ants: action.ants});
     default:
       return state;
   }

@@ -3,11 +3,14 @@ import Controls from './controls';
 import { incrementStep } from '../actions/actions';
 
 const mapStateToProps = state => ({
-  stepCount: state.controls.stepCount
+  stepCount: state.controls.stepCount,
+  cells: state.grid.cells,
+  ants: state.grid.ants,
+  rules: state.rules
 });
 
 const mapDispatchToProps = dispatch => ({
-  incrementStep: () => dispatch(incrementStep())
+  incrementStep: (cells, ants) => dispatch(incrementStep(cells, ants))
 });
 
 export default connect(
