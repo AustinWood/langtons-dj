@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Rect } from 'react-konva';
 import { Circle } from 'react-konva';
-import { toggleAnt } from '../actions/actions';
 
 class Cell extends React.Component {
   constructor(props) {
@@ -12,7 +11,8 @@ class Cell extends React.Component {
   }
 
   handleClick() {
-    toggleAnt(this.props.x, this.props.y);
+    console.log("clicked!");
+    this.props.toggleAnt(this.props.x, this.props.y);
   }
 
   render() {
