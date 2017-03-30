@@ -4,13 +4,14 @@ import { TOGGLE_ANT } from '../actions/actions';
 
 const gridSize = 20;
 
+// color: Konva.Util.getRandomColor()
 const _grid = Object.freeze({
   cells: (function() {
     let output = [];
     for (var i = 0; i < gridSize; i++) {
       let row = [];
       for (var j = 0; j < gridSize; j++) {
-        row.push({x: j, y: i, color: Konva.Util.getRandomColor()});
+        row.push({x: j, y: i, color: '#282c34'});
       }
       output.push(row);
     }
