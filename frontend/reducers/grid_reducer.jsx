@@ -11,7 +11,7 @@ const _grid = Object.freeze({
     for (var i = 0; i < gridSize; i++) {
       let row = [];
       for (var j = 0; j < gridSize; j++) {
-        row.push({x: j, y: i, color: '#282c34'});
+        row.push({x: j, y: i, state: null});
       }
       output.push(row);
     }
