@@ -1,14 +1,14 @@
 import merge from 'lodash/merge';
 import { TOGGLE_ANT } from '../actions/actions';
 
-const generateId = () => {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for (let i = 0; i < 5; i++) {
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    return text;
-};
+// const generateId = () => {
+//     var text = "";
+//     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+//     for (let i = 0; i < 5; i++) {
+//       text += possible.charAt(Math.floor(Math.random() * possible.length));
+//     }
+//     return text;
+// };
 
 // const _ants = Object.freeze({
 //   ants: []
@@ -20,7 +20,7 @@ const AntReducer = (state = _ants, action) => {
   let newState = {};
   switch(action.type) {
     case TOGGLE_ANT:
-      const id = generateId();
+      const id = `x${action.x}y${action.y}`;
       newState[id] = {
         antId: id,
         x_0: action.x, y_0: action.y, dir_0: 'r',

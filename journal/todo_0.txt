@@ -1,10 +1,12 @@
 ####################
 ### NOW
 
-click to toggle ant, save in state and render red
+toggle ants in state
+render from state.ants
+render ant as image of ant
+remove grid_reducer toggle action
 
 canvas size saves to store, calculate grid size programmatically
-render ant as image of ant
 
 ####################
 ### LATER
