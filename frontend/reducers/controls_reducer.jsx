@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import { INCREMENT_STEP } from '../actions/actions';
 
 const _controls = Object.freeze({
-  step: 0
+  stepCount: 0
 });
 
 const GridReducer = (state = _controls, action) => {
@@ -11,8 +11,8 @@ const GridReducer = (state = _controls, action) => {
   switch(action.type) {
     case INCREMENT_STEP:
       newState = merge({}, state);
-      newState.step += 1;
-      console.log(newState.step);
+      newState.stepCount += 1;
+      console.log(newState.stepCount);
       return newState;
     default:
       return state;

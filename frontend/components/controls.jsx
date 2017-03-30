@@ -4,16 +4,23 @@ import ReactDOM from 'react-dom';
 class Controls extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = { intervalHandler: null };
     this.update = this.update.bind(this);
   }
 
+  componentDidMount() {
+    const newHandler = window.setInterval(this.update, 1000);
+    this.setState({ intervalHandler: newHandler });
+    // this.update();
+  }
+
   componentDidUpdate(prevProps, prevState) {
-    this.update();
+    // this.update();
   }
 
   update() {
-    console.log("update!");
+    console.log("update() from controls.jsx");
+    this.props.incrementStep();
   }
 
   render() {
@@ -22,11 +29,3 @@ class Controls extends React.Component {
 }
 
 export default Controls;
-
-// <Rect
-//   x={this.props.x * this.props.cellSize}
-//   y={this.props.y * this.props.cellSize}
-//   width={this.props.cellSize}
-//   height={this.props.cellSize}
-//   fill={this.props.color}
-//   onClick={this.handleClick} />

@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import Controls from './controls';
+import { incrementStep } from '../actions/actions';
 
 const mapStateToProps = state => ({
-  // cellSize: state.grid.cellSize
+  stepCount: state.controls.stepCount
 });
 
 const mapDispatchToProps = dispatch => ({
-  // toggleAnt: (x, y) => dispatch(toggleAnt(x, y))
+  incrementStep: () => dispatch(incrementStep())
 });
 
 export default connect(
