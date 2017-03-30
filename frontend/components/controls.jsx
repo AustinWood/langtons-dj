@@ -26,12 +26,20 @@ class Controls extends React.Component {
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
 
+        const currentCellState = cells[ants[key].y][ants[key].x].state || 0;
+
         // rotate ant
-        // const currentCellState = newState.cells[newState.ants[key].y][newState.ants[key].x].state;
-        // const rotateRight =
+        const rotateRight = rules[currentCellState].rotateRight;
+        const mapRightRotate = {r: 'd', d: 'l', l: 'u', u: 'r'};
+        const mapLeftRotate = {r: 'u', u: 'l', l: 'd', d: 'r'};
+        if (rotateRight) {
+          ants[key].dir = mapRightRotate[ants[key].dir];
+        } else {
+          ants[key].dir = mapLeftRotate[ants[key].dir];
+        }
 
         // change cell state
-        switch (cells[ants[key].y][ants[key].x].state) {
+        switch (currentCellState) {
           case 1:
             console.log("HIT THE CASE!");
             cells[ants[key].y][ants[key].x].state = 0;
