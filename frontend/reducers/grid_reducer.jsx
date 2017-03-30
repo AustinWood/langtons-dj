@@ -31,7 +31,7 @@ const GridReducer = (state = _grid, action) => {
       if (state.ants[id]) {
         newState = merge({}, state);
         delete newState.ants[id];
-        return newState;
+        return merge({}, state, newState);
       } else {
         newState.ants[id] = {
           antId: id,
@@ -46,12 +46,24 @@ const GridReducer = (state = _grid, action) => {
       for (var key in newState.ants) {
         if (newState.ants.hasOwnProperty(key)) {
           // change cell state
-          newState.cells[newState.ants[key].y][newState.ants[key].x] = 1;
+          switch (newState.cells[newState.ants[key].y][newState.ants[key].x].state) {
+            case 1:
+              console.log("HIT THE CASE!");
+              newState.cells[newState.ants[key].y][newState.ants[key].x].state = 0;
+              break;
+            default:
+              newState.cells[newState.ants[key].y][newState.ants[key].x].state = 1;
+              break;
+          }
           // move ant
-          newState.ants[key].x += 1;
+          if (newState.ants[key].x < 19) {
+            newState.ants[key].x += 1;
+          } else {
+            newState.ants[key].x = 0;
+          }
         }
       }
-      return newState;
+      return merge({}, state, newState);
     default:
       return state;
   }
