@@ -2,7 +2,6 @@
 ### NOW
 
 click to toggle ant, save in state and render red
-circles start off gray
 
 canvas size saves to store, calculate grid size programmatically
 render ant as image of ant
