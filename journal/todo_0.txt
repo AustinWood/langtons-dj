@@ -1,11 +1,7 @@
 ####################
 ### NOW
 
-save timeout length and step count to state
-set timeout to console.log
-change ant position on timeout and render
-
-save game rules to state
+change cell color to cell state: Int
 on timeout ant changes cell color according to rules
 ant pivots according to rules
 and moves in direction it's facing

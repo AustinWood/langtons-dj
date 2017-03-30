@@ -19,7 +19,6 @@ class Controls extends React.Component {
   }
 
   update() {
-    console.log("update() from controls.jsx");
     this.props.incrementStep();
   }
 

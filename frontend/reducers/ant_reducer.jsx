@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { TOGGLE_ANT } from '../actions/actions';
+import { TOGGLE_ANT, INCREMENT_STEP } from '../actions/actions';
 
 // const generateId = () => {
 //     var text = "";
@@ -22,13 +22,8 @@ const AntReducer = (state = _ants, action) => {
     case TOGGLE_ANT:
       const id = `x${action.x}y${action.y}`;
       if (state[id]) {
-        console.log(`BEFORE:`);
-        console.log(state);
         newState = merge({}, state);
-        console.log(newState.id);
         delete newState[id];
-        console.log(`AFTER:`);
-        console.log(newState);
         return newState;
       } else {
         newState[id] = {
@@ -39,6 +34,14 @@ const AntReducer = (state = _ants, action) => {
         };
         return merge({}, state, newState);
       }
+    case INCREMENT_STEP:
+      newState = merge({}, state);
+      for (var key in newState) {
+        if (newState.hasOwnProperty(key)) {
+          newState[key].x += 1;
+        }
+      }
+      return newState;
     default:
       return state;
   }
