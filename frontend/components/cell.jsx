@@ -2,20 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Rect } from 'react-konva';
 import { Circle } from 'react-konva';
+import { toggleAnt } from '../actions/actions';
 
 class Cell extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  // handleClick() {
-  //   this.setState({
-  //     color: Konva.Util.getRandomColor()
-  //   });
-  // }
-  // onClick={this.handleClick} // add to component props
+  handleClick() {
+    toggleAnt(this.props.x, this.props.y);
+  }
 
   render() {
     return (
@@ -23,7 +21,8 @@ class Cell extends React.Component {
         x={this.props.x * this.props.cellSize + this.props.cellSize / 2}
         y={this.props.y * this.props.cellSize + this.props.cellSize / 2}
         radius={this.props.cellSize * 0.45}
-        fill={this.props.color} />
+        fill={this.props.color}
+        onClick={this.handleClick} />
     );
   }
 }
