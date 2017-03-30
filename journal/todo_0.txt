@@ -1,15 +1,14 @@
 ####################
 ### NOW
 
-render from state.ants
 render ant as image of ant
-remove grid_reducer toggle action
 
 canvas size saves to store, calculate grid size programmatically
 
 ####################
 ### LATER
 
+can only toggle if clicking outside ant but inside cell
 color palette
 nav_bar
 sidebar controls
