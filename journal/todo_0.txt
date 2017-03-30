@@ -12,3 +12,4 @@ render ant as image of ant
 color palette
 nav_bar
 sidebar controls
+.gitignore bundle
