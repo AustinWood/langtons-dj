@@ -9,8 +9,6 @@ class Ant extends React.Component {
   }
 
   render() {
-    console.log("rendering ant");
-    console.log(this.props);
     return (
       <Circle
         x={this.props.x * this.props.cellSize + this.props.cellSize / 2}

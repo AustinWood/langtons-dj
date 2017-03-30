@@ -9,7 +9,7 @@ class Controls extends React.Component {
   }
 
   componentDidMount() {
-    const newHandler = window.setInterval(this.update, 1000);
+    const newHandler = window.setInterval(this.update, 200);
     this.setState({ intervalHandler: newHandler });
     // this.update();
   }
@@ -19,13 +19,12 @@ class Controls extends React.Component {
   }
 
   update() {
-    console.log(this.props);
     let cells = this.props.cells;
     let ants = this.props.ants;
     let rules = this.props.rules;
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
-
+        // TODO: store copies of cell and ant, then put them back in their respective arrays after mutations
         const currentCellState = cells[ants[key].y][ants[key].x].state || 0;
 
         // rotate ant
@@ -41,7 +40,6 @@ class Controls extends React.Component {
         // change cell state
         switch (currentCellState) {
           case 1:
-            console.log("HIT THE CASE!");
             cells[ants[key].y][ants[key].x].state = 0;
             break;
           default:
@@ -50,15 +48,41 @@ class Controls extends React.Component {
         }
 
         // move ant
-        if (ants[key].x < 19) {
-          ants[key].x += 1;
-        } else {
-          ants[key].x = 0;
+        switch (ants[key].dir) {
+          case 'r':
+            if (ants[key].x < 19) {
+              ants[key].x += 1;
+            } else {
+              ants[key].x = 0;
+            }
+            break;
+          case 'd':
+            if (ants[key].y < 19) {
+              ants[key].y += 1;
+            } else {
+              ants[key].y = 0;
+            }
+            break;
+          case 'l':
+            if (ants[key].x > 0) {
+              ants[key].x -= 1;
+            } else {
+              ants[key].x = 19;
+            }
+            break;
+          case 'u':
+            if (ants[key].y > 0) {
+              ants[key].y -= 1;
+            } else {
+              ants[key].y = 19;
+            }
+            break;
+          default:
+            console.log('unrecogized ant direction in state');
         }
-
       }
     }
-    // calculate cell states and ant positions and pass in here
+    
     this.props.incrementStep(cells, ants);
   }
 
