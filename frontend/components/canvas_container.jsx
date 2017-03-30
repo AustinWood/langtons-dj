@@ -3,7 +3,7 @@ import Canvas from './canvas';
 
 const mapStateToProps = state => ({
   cells: state.grid.cells,
-  ants: state.ants
+  ants: state.grid.ants
 });
 
 const mapDispatchToProps = dispatch => ({

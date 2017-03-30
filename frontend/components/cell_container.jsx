@@ -3,7 +3,6 @@ import Cell from './cell';
 import { toggleAnt } from '../actions/actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
   const cellState = ownProps.state;
   const color = (cellState ? state.rules[cellState].color : '#282c34');
   return ({

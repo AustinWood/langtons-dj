@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { TOGGLE_ANT } from '../actions/actions';
+import { TOGGLE_ANT, INCREMENT_STEP } from '../actions/actions';
 
 const gridSize = 20;
 
@@ -18,17 +18,37 @@ const _grid = Object.freeze({
     console.log([output]);
     return output;
   }()),
-  cellSize: 35
+  cellSize: 35,
+  ants: {}
 });
 
 const GridReducer = (state = _grid, action) => {
   Object.freeze(state);
-  let newState = {};
+  let newState = {ants: {}};
   switch(action.type) {
-    // case TOGGLE_ANT:
-    //   newState = merge({}, state);
-    //   newState.cells[action.y][action.x].color = "red";
-    //   return newState;
+    case TOGGLE_ANT:
+      const id = `x${action.x}y${action.y}`;
+      if (state.ants[id]) {
+        newState = merge({}, state);
+        delete newState.ants[id];
+        return newState;
+      } else {
+        newState.ants[id] = {
+          antId: id,
+          x_0: action.x, y_0: action.y, dir_0: 'r',
+          x: action.x, y: action.y, dir: 'r',
+          musical_attrs: null
+        };
+        return merge({}, state, newState);
+      }
+    case INCREMENT_STEP:
+      newState = merge({}, state);
+      for (var key in newState.ants) {
+        if (newState.ants.hasOwnProperty(key)) {
+          newState.ants[key].x += 1;
+        }
+      }
+      return newState;
     default:
       return state;
   }

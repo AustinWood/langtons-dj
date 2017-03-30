@@ -1,7 +1,7 @@
 ####################
 ### NOW
 
-change cell color to cell state: Int
+
 on timeout ant changes cell color according to rules
 ant pivots according to rules
 and moves in direction it's facing
@@ -11,6 +11,7 @@ add play/pause/reset buttons
 ####################
 ### LATER
 
+make grid a torus
 canvas size saves to store, calculate grid size programmatically
 render ant as image of ant
 can only toggle if clicking outside ant but inside cell
