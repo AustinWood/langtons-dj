@@ -9,7 +9,7 @@ class Controls extends React.Component {
   }
 
   componentDidMount() {
-    const newHandler = window.setInterval(this.update, 200);
+    const newHandler = window.setInterval(this.update, 10);
     this.setState({ intervalHandler: newHandler });
     // this.update();
   }

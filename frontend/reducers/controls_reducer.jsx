@@ -12,7 +12,6 @@ const GridReducer = (state = _controls, action) => {
     case INCREMENT_STEP:
       newState = merge({}, state);
       newState.stepCount += 1;
-      console.log(newState.stepCount);
       return newState;
     default:
       return state;

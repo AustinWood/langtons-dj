@@ -11,7 +11,6 @@ class Cell extends React.Component {
   }
 
   handleClick() {
-    console.log("clicked!");
     this.props.toggleAnt(this.props.x, this.props.y);
   }
 
@@ -28,11 +27,3 @@ class Cell extends React.Component {
 }
 
 export default Cell;
-
-// <Rect
-//   x={this.props.x * this.props.cellSize}
-//   y={this.props.y * this.props.cellSize}
-//   width={this.props.cellSize}
-//   height={this.props.cellSize}
-//   fill={this.props.color}
-//   onClick={this.handleClick} />

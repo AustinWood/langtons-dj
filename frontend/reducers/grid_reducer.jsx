@@ -15,7 +15,6 @@ const _grid = Object.freeze({
       }
       output.push(row);
     }
-    console.log([output]);
     return output;
   }()),
   cellSize: 35,

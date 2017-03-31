@@ -1,21 +1,18 @@
 ####################
 ### NOW
 
-
-on timeout ant changes cell color according to rules
-ant pivots according to rules
-and moves in direction it's facing
+color palette
 
 add play/pause/reset buttons
+why does rules[0] colorize to null color?
+don't hardcode cellState switches (controls.jsx line 43)
 
 ####################
 ### LATER
 
-make grid a torus
 canvas size saves to store, calculate grid size programmatically
 render ant as image of ant
 can only toggle if clicking outside ant but inside cell
-color palette
 nav_bar
 sidebar controls
 .gitignore bundle
