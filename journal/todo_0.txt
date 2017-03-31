@@ -3,7 +3,9 @@
 
 animate color transitions
 add speed control
+color transition should be fraction of step interval
 add cell size control
+render ant outline on cell hover
 
 ####################
 ### LAYOUT
