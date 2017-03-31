@@ -1,7 +1,16 @@
 ####################
 ### NOW
 
-fix iterator key warning
+animate color transitions
+add speed control
+add cell size control
+
+####################
+### LAYOUT
+
+flex course
+add navbar component
+style sidebar controls
 
 ####################
 ### LATER
@@ -9,9 +18,4 @@ fix iterator key warning
 canvas size saves to store, calculate grid size programmatically
 render ant as image of ant
 can only toggle if clicking outside ant but inside cell
-nav_bar
-sidebar controls
-.gitignore bundle
-
-####################
-### IMAGE LINKS
+.gitignore bundle?
