@@ -2,7 +2,7 @@ import React from 'react';
 import Board from './board.jsx';
 import CellContainer from './cell_container.jsx';
 import AntContainer from './ant_container.jsx';
-import { Layer, Stage } from 'react-konva';
+import { Layer, Stage, Circle } from 'react-konva';
 
 class Canvas extends React.Component {
   constructor(props) {
@@ -31,6 +31,30 @@ class Canvas extends React.Component {
     return antComponents;
   }
 
+  hover() {
+    console.log("in HOVER");
+    if (this.props.hover.x !== null && this.props.hover.y !== null) {
+      console.log("return somethin");
+      return (
+        <Circle
+          ref='cell'
+          x={20}
+          y={20}
+          fill="pink"
+          radius={60} />
+      );
+      // return (
+      //   <Circle
+      //     ref='cell'
+      //     x={this.props.hover.x * this.props.cellSize + this.props.cellSize / 2}
+      //     y={this.props.hover.y * this.props.cellSize + this.props.cellSize / 2}
+      //     fill="pink"
+      //     radius={this.props.cellSize * 0.45} />
+      // );
+    }
+    return null;
+  }
+
   render() {
     return (
       <Stage width={700} height={700}>
@@ -38,6 +62,7 @@ class Canvas extends React.Component {
           <Board width={700} height={700} />
           {this.cells()}
           {this.ants()}
+          {this.hover()}
         </Layer>
       </Stage>
     );

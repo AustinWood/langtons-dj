@@ -16,8 +16,9 @@ style sidebar controls
 ####################
 ### LATER
 
-animate white dot ants with zoom in/out
+animate ants on reset
 canvas size saves to store, calculate grid size programmatically
 render ant as image of ant
 can only toggle if clicking outside ant but inside cell
 .gitignore bundle?
+movement and sounds reversible

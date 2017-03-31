@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Cell from './cell';
-import { toggleAnt } from '../actions/actions';
+import { toggleAnt, hover } from '../actions/actions';
 
 const mapStateToProps = (state, ownProps) => {
   const cellState = state.grid.cells[ownProps.y][ownProps.x].state;
@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  toggleAnt: (x, y) => dispatch(toggleAnt(x, y))
+  toggleAnt: (x, y) => dispatch(toggleAnt(x, y)),
+  hover: (x, y) => dispatch(hover(x, y))
 });
 
 export default connect(

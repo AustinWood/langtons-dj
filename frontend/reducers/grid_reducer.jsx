@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { TOGGLE_ANT, INCREMENT_STEP, RESET } from '../actions/actions';
+import { TOGGLE_ANT, INCREMENT_STEP, RESET, HOVER } from '../actions/actions';
 
 const gridSize = 20;
 
@@ -15,21 +15,25 @@ const _grid = Object.freeze({
     }
     return output;
   }()),
-  cellSize: 35
+  cellSize: 35,
+  hover: { x: null, y: null }
 });
 
 const GridReducer = (state = _grid, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
   switch(action.type) {
     case INCREMENT_STEP:
       return merge({}, state, {cells: action.cells});
     case RESET:
-      let newState = merge({}, state);
       for (let i = 0; i < newState.cells.length; i++) {
         for (let j = 0; j < newState.cells[i].length; j++) {
           newState.cells[i][j].state = null;
         }
       }
+      return newState;
+    case HOVER:
+      newState.hover = { x: action.x, y: action.y };
       return newState;
     default:
       return state;
