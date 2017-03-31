@@ -25,7 +25,7 @@ class Canvas extends React.Component {
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
         const ant = ants[key];
-        antComponents.push(<AntContainer x={ant.x} y={ant.y} key={`x${ant.x}y${ant.y}`} />);
+        antComponents.push(<AntContainer x={ant.x} y={ant.y} key={`x${ant.x_0}y${ant.y_0}`} />);
       }
     }
     return antComponents;
