@@ -2,6 +2,7 @@
 ### NOW
 
 add play/pause/reset buttons
+fix iterator key warning
 
 ####################
 ### LATER
@@ -12,3 +13,14 @@ can only toggle if clicking outside ant but inside cell
 nav_bar
 sidebar controls
 .gitignore bundle
+
+####################
+### IMAGE LINKS
+
+http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png
+http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png
+http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_hg6fyp.png
+
+http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_filled_e1onta.png
+http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_filled_z6i2bd.png
+http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_filled_ikqt0t.png
