@@ -3,7 +3,7 @@ import CanvasContainer from './canvas_container.jsx';
 import ControlsContainer from './controls_container.jsx';
 
 const App = () => (
-  <div>
+  <div id="app">
     <CanvasContainer />
     <ControlsContainer />
   </div>
