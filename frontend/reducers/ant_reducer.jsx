@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { TOGGLE_ANT, INCREMENT_STEP } from '../actions/actions';
+import { TOGGLE_ANT, INCREMENT_STEP, RESET } from '../actions/actions';
 
 const _ants = {};
 
@@ -24,6 +24,18 @@ const AntReducer = (state = _ants, action) => {
       }
     case INCREMENT_STEP:
       return merge({}, state, action.ants);
+    case RESET:
+      newState = merge({}, state);
+      for (var key in newState) {
+        if (newState.hasOwnProperty(key)) {
+          let ant = newState[key];
+          ant.x = ant.x_0;
+          ant.y = ant.y_0;
+          ant.dir = ant.dir_0;
+          newState[key] = ant;
+        }
+      }
+      return newState;
     default:
       return state;
   }
