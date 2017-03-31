@@ -4,7 +4,7 @@ import { toggleAnt } from '../actions/actions';
 
 const mapStateToProps = (state, ownProps) => {
   const cellState = state.grid.cells[ownProps.y][ownProps.x].state;
-  const color = (cellState ? state.rules[cellState].color : '#282c34');
+  const color = (cellState === null ? '#282c34' : state.rules[cellState].color);
   return ({
     color: color,
     cellSize: state.grid.cellSize

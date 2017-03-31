@@ -40,13 +40,10 @@ class Controls extends React.Component {
         }
 
         // change cell state
-        switch (currentCellState) {
-          case 1:
-            cell.state = 0;
-            break;
-          default:
-            cell.state = 1;
-            break;
+        if (currentCellState < 2) {
+          cell.state += 1;
+        } else {
+          cell.state = 0;
         }
 
         // move ant

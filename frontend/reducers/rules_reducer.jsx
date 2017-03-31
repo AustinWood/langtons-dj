@@ -3,11 +3,15 @@ import merge from 'lodash/merge';
 
 const _rules = Object.freeze({
   0: {
-    color: 'yellow', // #282c34
+    color: '#197be0', // #282c34
     rotateRight: true
   },
   1: {
     color: "#7ed43a",
+    rotateRight: false
+  },
+  2: {
+    color: "#fc2a68",
     rotateRight: false
   }
 });
