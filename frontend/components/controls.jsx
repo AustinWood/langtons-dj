@@ -25,64 +25,68 @@ class Controls extends React.Component {
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
         // TODO: store copies of cell and ant, then put them back in their respective arrays after mutations
-        const currentCellState = cells[ants[key].y][ants[key].x].state || 0;
+        let ant = ants[key];
+        let cell = cells[ant.y][ant.x];
+        const currentCellState = cell.state || 0;
 
         // rotate ant
         const rotateRight = rules[currentCellState].rotateRight;
         const mapRightRotate = {r: 'd', d: 'l', l: 'u', u: 'r'};
         const mapLeftRotate = {r: 'u', u: 'l', l: 'd', d: 'r'};
         if (rotateRight) {
-          ants[key].dir = mapRightRotate[ants[key].dir];
+          ant.dir = mapRightRotate[ant.dir];
         } else {
-          ants[key].dir = mapLeftRotate[ants[key].dir];
+          ant.dir = mapLeftRotate[ant.dir];
         }
 
         // change cell state
         switch (currentCellState) {
           case 1:
-            cells[ants[key].y][ants[key].x].state = 0;
+            cell.state = 0;
             break;
           default:
-            cells[ants[key].y][ants[key].x].state = 1;
+            cell.state = 1;
             break;
         }
 
         // move ant
-        switch (ants[key].dir) {
+        switch (ant.dir) {
           case 'r':
-            if (ants[key].x < 19) {
-              ants[key].x += 1;
+            if (ant.x < 19) {
+              ant.x += 1;
             } else {
-              ants[key].x = 0;
+              ant.x = 0;
             }
             break;
           case 'd':
-            if (ants[key].y < 19) {
-              ants[key].y += 1;
+            if (ant.y < 19) {
+              ant.y += 1;
             } else {
-              ants[key].y = 0;
+              ant.y = 0;
             }
             break;
           case 'l':
-            if (ants[key].x > 0) {
-              ants[key].x -= 1;
+            if (ant.x > 0) {
+              ant.x -= 1;
             } else {
-              ants[key].x = 19;
+              ant.x = 19;
             }
             break;
           case 'u':
-            if (ants[key].y > 0) {
-              ants[key].y -= 1;
+            if (ant.y > 0) {
+              ant.y -= 1;
             } else {
-              ants[key].y = 19;
+              ant.y = 19;
             }
             break;
           default:
             console.log('unrecogized ant direction in state');
         }
+        ants[key] = ant;
+        cells[cell.y][cell.x] = cell;
       }
     }
-    
+
     this.props.incrementStep(cells, ants);
   }
 
