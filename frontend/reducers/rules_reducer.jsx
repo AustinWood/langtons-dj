@@ -9,7 +9,7 @@ const _rules = Object.freeze({
   },
   1: {
     color: "#7ed43a",
-    rotateRight: false
+    rotateRight: true
   },
   2: {
     color: "#fc2a68",

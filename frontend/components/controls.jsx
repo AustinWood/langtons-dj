@@ -9,7 +9,7 @@ class Controls extends React.Component {
   }
 
   componentDidMount() {
-    const newHandler = window.setInterval(this.update, 1500);
+    const newHandler = window.setInterval(this.update, 200);
     this.setState({ intervalHandler: newHandler });
   }
 
@@ -38,7 +38,7 @@ class Controls extends React.Component {
         }
 
         // change cell state
-        if (currentCellState < 1) {
+        if (rules.hasOwnProperty(cell.state + 1)) {
           cell.state += 1;
         } else {
           cell.state = 0;
