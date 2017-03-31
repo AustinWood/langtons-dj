@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import merge from 'lodash/merge';
 
 class Controls extends React.Component {
   constructor(props) {
@@ -9,17 +10,34 @@ class Controls extends React.Component {
   }
 
   componentDidMount() {
-    const newHandler = window.setInterval(this.update, 200);
-    this.setState({ intervalHandler: newHandler });
+    this.handleHandler();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    //
+    this.handleHandler();
+  }
+
+  handleHandler() {
+    const handler = this.state.intervalHandler;
+    // console.log(`isPlaying: ${this.props.isPlaying}`);
+    // console.log(`handler: ${handler}`);
+    if (this.props.isPlaying && handler === null) {
+      // console.log("1st case");
+      const newHandler = window.setInterval(this.update, 200);
+      this.setState({ intervalHandler: newHandler });
+    } else if (!this.props.isPlaying && handler) {
+      // console.log("2nd case");
+      window.clearInterval(handler);
+      this.setState({ intervalHandler: null });
+    }
   }
 
   update() {
+    console.log('update()');
     let cells = this.props.cells;
-    let ants = this.props.ants;
+    console.log(this.props.ants);
+    let ants = merge({}, this.props.ants);
+    console.log(ants);
     let rules = this.props.rules;
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
@@ -66,14 +84,28 @@ class Controls extends React.Component {
         cells[cell.y][cell.x] = cell;
       }
     }
-
+    console.log(ants);
     this.props.incrementStep(cells, ants);
   }
 
+  ///////////////
+  ///// Buttons
+
+
+
+  ///////////////
+  ///// Render
   render() {
     return (
-      <div>
-        hello
+      <div id='nav'>
+        <img
+          onClick={this.props.reset}
+          id={'stop'}
+          src={'http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_hg6fyp.png'} />
+        <img
+          onClick={this.props.togglePlay}
+          id={this.props.isPlaying ? 'pause' : 'play'}
+          src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
       </div>
     );
   }

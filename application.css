@@ -2,3 +2,27 @@
   display: flex;
   flex-direction: row;
 }
+
+#nav img {
+  height: 35px;
+  width: 35px;
+  display: inline-block;
+  margin: 0px 15px;
+  padding: 0;
+}
+
+#nav img:hover {
+  cursor: pointer;
+}
+
+#stop:hover {
+  content: url('http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_filled_ikqt0t.png');
+}
+
+#play:hover {
+  content: url('http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_filled_e1onta.png');
+}
+
+#pause:hover {
+  content: url('http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_filled_z6i2bd.png');
+}

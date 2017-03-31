@@ -1,17 +1,25 @@
 import merge from 'lodash/merge';
-import { INCREMENT_STEP } from '../actions/actions';
+import { INCREMENT_STEP, TOGGLE_PLAY, RESET } from '../actions/actions';
 
 const _controls = Object.freeze({
-  stepCount: 0
+  stepCount: 0,
+  isPlaying: false
 });
 
 const GridReducer = (state = _controls, action) => {
   Object.freeze(state);
-  let newState = {};
+  let newState = merge({}, state);
   switch(action.type) {
     case INCREMENT_STEP:
-      newState = merge({}, state);
       newState.stepCount += 1;
+      return newState;
+    case TOGGLE_PLAY:
+      console.log("TOGGLE_PLAY");
+      newState.isPlaying = !newState.isPlaying;
+      return newState;
+    case RESET:
+      console.log("RESET");
+      newState.isPlaying = false;
       return newState;
     default:
       return state;

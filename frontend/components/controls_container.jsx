@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import Controls from './controls';
-import { incrementStep } from '../actions/actions';
+import { incrementStep, togglePlay, reset } from '../actions/actions';
 
 const mapStateToProps = state => ({
   stepCount: state.controls.stepCount,
   cells: state.grid.cells,
   ants: state.ants,
-  rules: state.rules
+  rules: state.rules,
+  isPlaying: state.controls.isPlaying
 });
 
 const mapDispatchToProps = dispatch => ({
-  incrementStep: (cells, ants) => dispatch(incrementStep(cells, ants))
+  incrementStep: (cells, ants) => dispatch(incrementStep(cells, ants)),
+  togglePlay: () => dispatch(togglePlay()),
+  reset: () => dispatch(reset())
 });
 
 export default connect(

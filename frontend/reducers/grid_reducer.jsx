@@ -24,6 +24,7 @@ const GridReducer = (state = _grid, action) => {
   let newState = {ants: {}};
   switch(action.type) {
     case INCREMENT_STEP:
+      console.log(action);
       return merge({}, state, {cells: action.cells});
     default:
       return state;
