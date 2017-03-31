@@ -1,4 +1,0 @@
-####################
-###
-
-animate white dot ants with zoom in/out

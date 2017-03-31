@@ -1,11 +1,10 @@
 ####################
 ### NOW
 
-animate color transitions
+render ant outline on cell hover
 add speed control
 color transition should be fraction of step interval
 add cell size control
-render ant outline on cell hover
 
 ####################
 ### LAYOUT
@@ -17,6 +16,7 @@ style sidebar controls
 ####################
 ### LATER
 
+animate white dot ants with zoom in/out
 canvas size saves to store, calculate grid size programmatically
 render ant as image of ant
 can only toggle if clicking outside ant but inside cell
