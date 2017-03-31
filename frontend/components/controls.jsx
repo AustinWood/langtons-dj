@@ -59,7 +59,7 @@ class Controls extends React.Component {
             ant.y > 0 ? ant.y -= 1 : ant.y = 19;
             break;
           default:
-            console.log('unrecogized ant direction in state');
+            console.log('unrecogized ant direction');
         }
 
         ants[key] = ant;

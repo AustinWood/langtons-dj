@@ -1,26 +1,24 @@
 import merge from 'lodash/merge';
-// import { INCREMENT_STEP } from '../actions/actions';
 
-//gpinkpuryellobluegreenpinkpurpleyellowbluegreen
 const _rules = Object.freeze({
   0: {
-    color: '#197be0', // #282c34
+    color: '#197be0', // blue
     rotateRight: true
   },
   1: {
-    color: "#7ed43a",
+    color: "#7ed43a", // green
     rotateRight: true
   },
   2: {
-    color: "#fc2a68",
+    color: "#fc2a68", // pink
     rotateRight: false
   },
   3: {
-    color: "#8c54e5",
+    color: "#8c54e5", // purple
     rotateRight: true
   },
   4: {
-    color: "#f9cd35",
+    color: "#f9cd35", // yellow
     rotateRight: true
   }
 });

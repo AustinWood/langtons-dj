@@ -5,7 +5,7 @@ import { incrementStep } from '../actions/actions';
 const mapStateToProps = state => ({
   stepCount: state.controls.stepCount,
   cells: state.grid.cells,
-  ants: state.grid.ants,
+  ants: state.ants,
   rules: state.rules
 });
 

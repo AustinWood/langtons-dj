@@ -3,8 +3,6 @@ import { TOGGLE_ANT, INCREMENT_STEP } from '../actions/actions';
 
 const gridSize = 20;
 
-// import { Rect } from 'react-konva';
-// color: Konva.Util.getRandomColor()
 const _grid = Object.freeze({
   cells: (function() {
     let output = [];
@@ -25,23 +23,8 @@ const GridReducer = (state = _grid, action) => {
   Object.freeze(state);
   let newState = {ants: {}};
   switch(action.type) {
-    case TOGGLE_ANT:
-      const id = `x${action.x}y${action.y}`;
-      if (state.ants[id]) {
-        newState = merge({}, state);
-        delete newState.ants[id];
-        return merge({}, state, newState);
-      } else {
-        newState.ants[id] = {
-          antId: id,
-          x_0: action.x, y_0: action.y, dir_0: 'r',
-          x: action.x, y: action.y, dir: 'r',
-          musical_attrs: null
-        };
-        return merge({}, state, newState);
-      }
     case INCREMENT_STEP:
-      return merge({}, state, {cells: action.cells}, {ants: action.ants});
+      return merge({}, state, {cells: action.cells});
     default:
       return state;
   }
