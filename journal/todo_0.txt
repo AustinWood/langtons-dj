@@ -1,7 +1,6 @@
 ####################
 ### NOW
 
-add play/pause/reset buttons
 fix iterator key warning
 
 ####################
@@ -16,11 +15,3 @@ sidebar controls
 
 ####################
 ### IMAGE LINKS
-
-http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png
-http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png
-http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_hg6fyp.png
-
-http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_filled_e1onta.png
-http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_filled_z6i2bd.png
-http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_filled_ikqt0t.png

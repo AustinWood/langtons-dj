@@ -14,7 +14,7 @@ class Canvas extends React.Component {
     const flattenedArr = [].concat.apply([], cellArr);
     return (
       flattenedArr.map(cell => (
-        <CellContainer x={cell.x} y={cell.y} />
+        <CellContainer x={cell.x} y={cell.y} key={`x${cell.x}y${cell.y}`} />
       ))
     );
   }
@@ -25,7 +25,7 @@ class Canvas extends React.Component {
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
         const ant = ants[key];
-        antComponents.push(<AntContainer x={ant.x} y={ant.y} />);
+        antComponents.push(<AntContainer x={ant.x} y={ant.y} key={`x${ant.x}y${ant.y}`} />);
       }
     }
     return antComponents;
