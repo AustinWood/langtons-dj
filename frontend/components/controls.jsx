@@ -25,10 +25,12 @@ class Controls extends React.Component {
     } else if (!this.props.isPlaying && handler) {
       window.clearInterval(handler);
       this.setState({ intervalHandler: null });
+      // this.props.reset();
     }
   }
 
   update() {
+    // if (!this.props.isPlaying) { return; }
     let cells = this.props.cells;
     let ants = merge({}, this.props.ants);
     let rules = this.props.rules;

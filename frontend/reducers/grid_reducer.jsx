@@ -24,7 +24,13 @@ const GridReducer = (state = _grid, action) => {
     case INCREMENT_STEP:
       return merge({}, state, {cells: action.cells});
     case RESET:
-      return _grid;
+      let newState = merge({}, state);
+      for (let i = 0; i < newState.cells.length; i++) {
+        for (let j = 0; j < newState.cells[i].length; j++) {
+          newState.cells[i][j].state = null;
+        }
+      }
+      return newState;
     default:
       return state;
   }
