@@ -19,25 +19,18 @@ class Controls extends React.Component {
 
   handleHandler() {
     const handler = this.state.intervalHandler;
-    // console.log(`isPlaying: ${this.props.isPlaying}`);
-    // console.log(`handler: ${handler}`);
     if (this.props.isPlaying && handler === null) {
-      // console.log("1st case");
       const newHandler = window.setInterval(this.update, 200);
       this.setState({ intervalHandler: newHandler });
     } else if (!this.props.isPlaying && handler) {
-      // console.log("2nd case");
       window.clearInterval(handler);
       this.setState({ intervalHandler: null });
     }
   }
 
   update() {
-    console.log('update()');
     let cells = this.props.cells;
-    console.log(this.props.ants);
     let ants = merge({}, this.props.ants);
-    console.log(ants);
     let rules = this.props.rules;
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
@@ -84,7 +77,7 @@ class Controls extends React.Component {
         cells[cell.y][cell.x] = cell;
       }
     }
-    console.log(ants);
+
     this.props.incrementStep(cells, ants);
   }
 

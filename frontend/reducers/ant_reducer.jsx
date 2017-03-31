@@ -8,7 +8,6 @@ const AntReducer = (state = _ants, action) => {
   let newState = {};
   switch(action.type) {
     case TOGGLE_ANT:
-      console.log(action);
       newState = merge({}, state);
       const id = `x${action.x}y${action.y}`;
       if (state[id]) {
@@ -24,10 +23,6 @@ const AntReducer = (state = _ants, action) => {
         return newState;
       }
     case INCREMENT_STEP:
-    console.log('-----------');
-      console.log('INCREMENT_STEP in ants reducer');
-      console.log(action);
-      console.log(action.ants);
       return merge({}, state, action.ants);
     default:
       return state;

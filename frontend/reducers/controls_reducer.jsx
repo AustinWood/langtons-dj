@@ -14,11 +14,9 @@ const GridReducer = (state = _controls, action) => {
       newState.stepCount += 1;
       return newState;
     case TOGGLE_PLAY:
-      console.log("TOGGLE_PLAY");
       newState.isPlaying = !newState.isPlaying;
       return newState;
     case RESET:
-      console.log("RESET");
       newState.isPlaying = false;
       return newState;
     default:
