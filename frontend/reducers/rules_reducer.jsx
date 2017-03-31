@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 // import { INCREMENT_STEP } from '../actions/actions';
 
+//gpinkpuryellobluegreenpinkpurpleyellowbluegreen
 const _rules = Object.freeze({
   0: {
     color: '#197be0', // #282c34
@@ -13,6 +14,14 @@ const _rules = Object.freeze({
   2: {
     color: "#fc2a68",
     rotateRight: false
+  },
+  3: {
+    color: "#8c54e5",
+    rotateRight: true
+  },
+  4: {
+    color: "#f9cd35",
+    rotateRight: true
   }
 });
 

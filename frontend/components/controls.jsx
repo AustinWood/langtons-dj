@@ -9,13 +9,12 @@ class Controls extends React.Component {
   }
 
   componentDidMount() {
-    const newHandler = window.setInterval(this.update, 10);
+    const newHandler = window.setInterval(this.update, 1500);
     this.setState({ intervalHandler: newHandler });
-    // this.update();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // this.update();
+    //
   }
 
   update() {
@@ -24,7 +23,6 @@ class Controls extends React.Component {
     let rules = this.props.rules;
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
-        // TODO: store copies of cell and ant, then put them back in their respective arrays after mutations
         let ant = ants[key];
         let cell = cells[ant.y][ant.x];
         const currentCellState = cell.state || 0;
@@ -40,7 +38,7 @@ class Controls extends React.Component {
         }
 
         // change cell state
-        if (currentCellState < 2) {
+        if (currentCellState < 1) {
           cell.state += 1;
         } else {
           cell.state = 0;
@@ -49,36 +47,21 @@ class Controls extends React.Component {
         // move ant
         switch (ant.dir) {
           case 'r':
-            if (ant.x < 19) {
-              ant.x += 1;
-            } else {
-              ant.x = 0;
-            }
+            ant.x < 19 ? ant.x += 1 : ant.x = 0;
             break;
           case 'd':
-            if (ant.y < 19) {
-              ant.y += 1;
-            } else {
-              ant.y = 0;
-            }
+            ant.y < 19 ? ant.y += 1 : ant.y = 0;
             break;
           case 'l':
-            if (ant.x > 0) {
-              ant.x -= 1;
-            } else {
-              ant.x = 19;
-            }
+            ant.x > 0 ? ant.x -= 1 : ant.x = 19;
             break;
           case 'u':
-            if (ant.y > 0) {
-              ant.y -= 1;
-            } else {
-              ant.y = 19;
-            }
+            ant.y > 0 ? ant.y -= 1 : ant.y = 19;
             break;
           default:
             console.log('unrecogized ant direction in state');
         }
+
         ants[key] = ant;
         cells[cell.y][cell.x] = cell;
       }

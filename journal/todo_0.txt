@@ -1,11 +1,9 @@
 ####################
 ### NOW
 
-color palette
-
-add play/pause/reset buttons
-why does rules[0] colorize to null color?
 don't hardcode cellState switches (controls.jsx line 43)
+put ant back in own state
+add play/pause/reset buttons
 
 ####################
 ### LATER
