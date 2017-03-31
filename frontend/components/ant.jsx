@@ -14,8 +14,7 @@ class Ant extends React.Component {
         x={this.props.x * this.props.cellSize + this.props.cellSize / 2}
         y={this.props.y * this.props.cellSize + this.props.cellSize / 2}
         radius={this.props.cellSize * 0.25}
-        fill={this.props.color}
-        fill={'red'} />
+        fill={this.props.color} />
     );
   }
 }

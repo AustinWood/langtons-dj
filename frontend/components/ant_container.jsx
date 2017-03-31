@@ -3,7 +3,7 @@ import Ant from './ant';
 
 const mapStateToProps = state => ({
   cellSize: state.grid.cellSize,
-  color: 'red'
+  color: 'white'
 });
 
 const mapDispatchToProps = dispatch => ({
