@@ -38,19 +38,11 @@ class Canvas extends React.Component {
       return (
         <Circle
           ref='cell'
-          x={20}
-          y={20}
+          x={this.props.hover.x * this.props.cellSize + this.props.cellSize / 2}
+          y={this.props.hover.y * this.props.cellSize + this.props.cellSize / 2}
           fill="pink"
-          radius={60} />
+          radius={this.props.cellSize * 0.25} />
       );
-      // return (
-      //   <Circle
-      //     ref='cell'
-      //     x={this.props.hover.x * this.props.cellSize + this.props.cellSize / 2}
-      //     y={this.props.hover.y * this.props.cellSize + this.props.cellSize / 2}
-      //     fill="pink"
-      //     radius={this.props.cellSize * 0.45} />
-      // );
     }
     return null;
   }

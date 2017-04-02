@@ -1,6 +1,8 @@
 ####################
 ### NOW
 
+on hover, outline entire circle. Quick fix for my onMouseLeave issue
+store rules in ant tree for each ant, allow separate rules for each ant like : https://youtu.be/w6XQQhCgq5c
 render ant outline on cell hover
 add speed control
 color transition should be fraction of step interval
@@ -16,6 +18,7 @@ style sidebar controls
 ####################
 ### LATER
 
+change fade interval for 'reset' to be longer
 animate ants on reset
 canvas size saves to store, calculate grid size programmatically
 render ant as image of ant

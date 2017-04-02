@@ -4,7 +4,8 @@ import Canvas from './canvas';
 const mapStateToProps = state => ({
   cells: state.grid.cells,
   ants: state.ants,
-  hover: state.grid.hover
+  hover: state.grid.hover,
+  cellSize: state.grid.cellSize
 });
 
 const mapDispatchToProps = dispatch => ({
