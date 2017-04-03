@@ -55,21 +55,14 @@ class Canvas extends React.Component {
     console.log('native event', e.evt);
     console.log('Konva.Circle instance', e.target);
     console.log('mouse position on canvas', e.target.getStage().getPointerPosition());
-    // const clickPosition = e.target.getStage().getPointerPosition();
-    // const xClick = clickPosition.x;
-    // const yClick = clickPosition.y;
-    // const cellSize = this.props.cellSize;
-    // const x = (xClick % )
+    const clickPosition = e.target.getStage().getPointerPosition();
+    const xClick = clickPosition.x;
+    const yClick = clickPosition.y;
+    const cellSize = this.props.cellSize;
+    const x = (xClick - (xClick % cellSize)) / cellSize;
+    const y = (yClick - (yClick % cellSize)) / cellSize;
+    console.log(`grid_x: ${x}, grid_y: ${y}`);
   }
-
-  // handleClick() {
-  //   const stage = this.refs.stage;
-  //   console.log('usual click on ' + JSON.stringify(stage.getPointerPosition()));
-  // }
-
-  // stage.on('click', function() {
-  //
-  // });
 
   render() {
     return (
