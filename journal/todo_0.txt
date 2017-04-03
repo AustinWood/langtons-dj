@@ -1,12 +1,11 @@
 ####################
 ### NOW
 
-cleanup cell.jsx (remove references to click and hover)
 store rules in ant tree for each ant, allow separate rules for each ant like : https://youtu.be/w6XQQhCgq5c
-render ant outline on cell hover
 add speed control
 color transition should be fraction of step interval
 add cell size control
+prioritize todo
 
 ####################
 ### LAYOUT
@@ -18,6 +17,7 @@ style sidebar controls
 ####################
 ### LATER
 
+create global colors
 change fade interval for 'reset' to be longer
 animate ants on reset
 canvas size saves to store, calculate grid size programmatically

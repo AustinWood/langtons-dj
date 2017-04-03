@@ -10,11 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   });
 };
 
-const mapDispatchToProps = dispatch => ({
-  // none
-});
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(Cell);

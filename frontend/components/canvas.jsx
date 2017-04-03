@@ -36,9 +36,7 @@ class Canvas extends React.Component {
   }
 
   hover() {
-    console.log("in HOVER");
     if (this.props.hoverPos.x !== null && this.props.hoverPos.y !== null) {
-      console.log("return somethin");
       return (
         <Circle
           ref='cell'
