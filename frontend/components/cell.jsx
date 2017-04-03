@@ -28,7 +28,7 @@ class Cell extends React.Component {
         // scaleY: Math.random() + 0.8,
         // fill: this.mix(this.props.color, 'ffffff', 50),
         fill: this.props.color,
-        duration: 1.15
+        duration: 0.15
     });
   }
 

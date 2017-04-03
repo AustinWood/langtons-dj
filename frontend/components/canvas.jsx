@@ -40,8 +40,10 @@ class Canvas extends React.Component {
           ref='cell'
           x={this.props.hover.x * this.props.cellSize + this.props.cellSize / 2}
           y={this.props.hover.y * this.props.cellSize + this.props.cellSize / 2}
-          fill="pink"
-          radius={this.props.cellSize * 0.25} />
+          radius={this.props.cellSize * 0.45}
+          fill={null}
+          stroke={'white'}
+          strokeWidth={2} />
       );
     }
     return null;
@@ -52,9 +54,9 @@ class Canvas extends React.Component {
       <Stage width={700} height={700}>
         <Layer>
           <Board width={700} height={700} />
+          {this.hover()}
           {this.cells()}
           {this.ants()}
-          {this.hover()}
         </Layer>
       </Stage>
     );
