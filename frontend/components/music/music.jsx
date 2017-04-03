@@ -1,6 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import merge from 'lodash/merge';
+// import merge from 'lodash/merge';
+// import flock from 'flocking';
+
+import {
+  Analyser,
+  Song,
+  Sequencer,
+  Sampler,
+  Synth,
+} from 'react-music';
 
 class Music extends React.Component {
   constructor(props) {
