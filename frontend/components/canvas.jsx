@@ -9,6 +9,8 @@ class Canvas extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
   }
 
   cells() {
@@ -35,13 +37,13 @@ class Canvas extends React.Component {
 
   hover() {
     console.log("in HOVER");
-    if (this.props.hover.x !== null && this.props.hover.y !== null) {
+    if (this.props.hoverPos.x !== null && this.props.hoverPos.y !== null) {
       console.log("return somethin");
       return (
         <Circle
           ref='cell'
-          x={this.props.hover.x * this.props.cellSize + this.props.cellSize / 2}
-          y={this.props.hover.y * this.props.cellSize + this.props.cellSize / 2}
+          x={this.props.hoverPos.x * this.props.cellSize + this.props.cellSize / 2}
+          y={this.props.hoverPos.y * this.props.cellSize + this.props.cellSize / 2}
           radius={this.props.cellSize * 0.45}
           fill={null}
           stroke={'white'}
@@ -51,29 +53,47 @@ class Canvas extends React.Component {
     return null;
   }
 
-  handleClick(e) {
-    console.log('native event', e.evt);
-    console.log('Konva.Circle instance', e.target);
-    console.log('mouse position on canvas', e.target.getStage().getPointerPosition());
-    const clickPosition = e.target.getStage().getPointerPosition();
-    const xClick = clickPosition.x;
-    const yClick = clickPosition.y;
+  convertToGridCoords(e) {
+    const pointerPosition = e.target.getStage().getPointerPosition();
+    const xClick = pointerPosition.x;
+    const yClick = pointerPosition.y;
     const cellSize = this.props.cellSize;
     const x = (xClick - (xClick % cellSize)) / cellSize;
     const y = (yClick - (yClick % cellSize)) / cellSize;
-    console.log(`grid_x: ${x}, grid_y: ${y}`);
-    this.props.toggleAnt(x, y);
+    return {x: x, y: y};
+  }
+
+  handleClick(e) {
+    const gridCoords = this.convertToGridCoords(e);
+    this.props.toggleAnt(gridCoords.x, gridCoords.y);
+  }
+
+  onMouseEnter(e) {
+    const gridCoords = this.convertToGridCoords(e);
+    this.props.hover(gridCoords.x, gridCoords.y);
+  }
+
+  onMouseLeave() {
+    this.props.hover(null, null);
   }
 
   render() {
     return (
-      <Stage ref='stage' width={700} height={700} onClick={this.handleClick}>
+      <Stage
+        ref='stage'
+        width={700}
+        height={700}
+        onClick={this.handleClick}
+        onMouseOver={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave} >
+
         <Layer>
           <Board width={700} height={700} />
           {this.hover()}
           {this.cells()}
           {this.ants()}
         </Layer>
+
       </Stage>
     );
   }

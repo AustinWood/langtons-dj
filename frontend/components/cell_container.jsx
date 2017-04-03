@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import Cell from './cell';
-// import { toggleAnt, hover } from '../actions/actions';
 
 const mapStateToProps = (state, ownProps) => {
   const cellState = state.grid.cells[ownProps.y][ownProps.x].state;

@@ -25,18 +25,6 @@ class Cell extends React.Component {
     });
   }
 
-  handleClick() {
-    // this.props.toggleAnt(this.props.x, this.props.y);
-  }
-
-  onMouseEnter() {
-    // this.props.hover(this.props.x, this.props.y);
-  }
-
-  onMouseLeave() {
-    // this.props.hover(null, null);
-  }
-
   render() {
     return (
       <Circle
