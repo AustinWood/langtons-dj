@@ -69,7 +69,7 @@ class Cell extends React.Component {
     console.log(color);
     return color;
   }
-
+// onClick={this.handleClick}
   render() {
     return (
       <Circle
@@ -77,7 +77,7 @@ class Cell extends React.Component {
         x={this.props.x * this.props.cellSize + this.props.cellSize / 2}
         y={this.props.y * this.props.cellSize + this.props.cellSize / 2}
         radius={this.props.cellSize * 0.45}
-        onClick={this.handleClick}
+
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave} />
     );

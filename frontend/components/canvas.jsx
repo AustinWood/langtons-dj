@@ -3,10 +3,12 @@ import Board from './board.jsx';
 import CellContainer from './cell_container.jsx';
 import AntContainer from './ant_container.jsx';
 import { Layer, Stage, Circle } from 'react-konva';
+import Konva from 'konva';
 
 class Canvas extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   cells() {
@@ -49,9 +51,29 @@ class Canvas extends React.Component {
     return null;
   }
 
+  handleClick(e) {
+    console.log('native event', e.evt);
+    console.log('Konva.Circle instance', e.target);
+    console.log('mouse position on canvas', e.target.getStage().getPointerPosition());
+    // const clickPosition = e.target.getStage().getPointerPosition();
+    // const xClick = clickPosition.x;
+    // const yClick = clickPosition.y;
+    // const cellSize = this.props.cellSize;
+    // const x = (xClick % )
+  }
+
+  // handleClick() {
+  //   const stage = this.refs.stage;
+  //   console.log('usual click on ' + JSON.stringify(stage.getPointerPosition()));
+  // }
+
+  // stage.on('click', function() {
+  //
+  // });
+
   render() {
     return (
-      <Stage width={700} height={700}>
+      <Stage ref='stage' width={700} height={700} onClick={this.handleClick}>
         <Layer>
           <Board width={700} height={700} />
           {this.hover()}
