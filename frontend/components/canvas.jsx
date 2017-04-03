@@ -62,6 +62,7 @@ class Canvas extends React.Component {
     const x = (xClick - (xClick % cellSize)) / cellSize;
     const y = (yClick - (yClick % cellSize)) / cellSize;
     console.log(`grid_x: ${x}, grid_y: ${y}`);
+    this.props.toggleAnt(x, y);
   }
 
   render() {

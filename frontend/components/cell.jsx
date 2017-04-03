@@ -33,15 +33,15 @@ class Cell extends React.Component {
   }
 
   handleClick() {
-    this.props.toggleAnt(this.props.x, this.props.y);
+    // this.props.toggleAnt(this.props.x, this.props.y);
   }
 
   onMouseEnter() {
-    this.props.hover(this.props.x, this.props.y);
+    // this.props.hover(this.props.x, this.props.y);
   }
 
   onMouseLeave() {
-    this.props.hover(null, null);
+    // this.props.hover(null, null);
   }
 
   mix(color1, color2, weight = 50) {
@@ -69,7 +69,7 @@ class Cell extends React.Component {
     console.log(color);
     return color;
   }
-// onClick={this.handleClick}
+
   render() {
     return (
       <Circle

@@ -1,7 +1,7 @@
 ####################
 ### NOW
 
-on hover, outline entire circle. Quick fix for my onMouseLeave issue
+cleanup cell.jsx (remove references to click and hover)
 store rules in ant tree for each ant, allow separate rules for each ant like : https://youtu.be/w6XQQhCgq5c
 render ant outline on cell hover
 add speed control
