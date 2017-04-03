@@ -67,27 +67,16 @@ class Canvas extends React.Component {
   }
 
   onMouseOver(e) {
-    console.log("in onMouseOver");
     const gridCoords = this.convertToGridCoords(e);
-    // this.props.hover(gridCoords.x, gridCoords.y);
-    const hover = this.refs.hover;
-    // hover.to({
-    //     position
-    //     stroke: 'orange',
-    //     duration: 0.15
-    // });
-    // hover.moveTo(100, 100);
+    const x = gridCoords.x * this.props.cellSize + this.props.cellSize / 2;
+    const y = gridCoords.y * this.props.cellSize + this.props.cellSize / 2;
 
+    const hover = this.refs.hover;
     const tween = new Konva.Tween({
         node: hover,
-        duration: 1,
-        x: 140,
-        y: 90,
-        fill : 'red',
-        rotation: Math.PI * 2,
-        opacity: 1,
-        strokeWidth: 6,
-        scaleX: 1.5
+        duration: 0.15,
+        x: x,
+        y: y
     });
     tween.play();
   }
@@ -107,7 +96,10 @@ class Canvas extends React.Component {
         onMouseLeave={this.onMouseLeave} >
 
         <Layer>
+
           <Board width={700} height={700} />
+          {this.cells()}
+          {this.ants()}
 
           <Circle
             ref='hover'
@@ -118,8 +110,6 @@ class Canvas extends React.Component {
             stroke={'white'}
             strokeWidth={2} />
 
-          {this.cells()}
-          {this.ants()}
         </Layer>
 
       </Stage>
