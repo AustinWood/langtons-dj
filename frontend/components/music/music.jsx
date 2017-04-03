@@ -17,39 +17,19 @@ export default class Demo extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      playing: true,
-      lightMode: true
-    };
-
     this.handleAudioProcess = this.handleAudioProcess.bind(this);
-    this.handlePlayToggle = this.handlePlayToggle.bind(this);
-    this.toggleLightMode = this.toggleLightMode.bind(this);
   }
+
   handleAudioProcess(analyser) {
     this.visualization.audioProcess(analyser);
   }
-  handlePlayToggle() {
-    this.setState({
-      playing: !this.state.playing,
-    });
-  }
-  toggleLightMode(){
-    this.setState({lightMode: !this.state.lightMode});
-  }
+
   render() {
     return (
-      <div style={this.state.lightMode ? {
-        paddingTop: '30px'
-      } : {
-        backgroundColor: '#000',
-        width: '100%',
-        height: '100%',
-        paddingTop: '30px'
-      }}>
+      <div>
         <Song
           playing={this.props.isPlaying}
-          tempo={90}
+          tempo={10}
         >
           <Analyser onAudioProcess={this.handleAudioProcess}>
             <Sequencer
@@ -104,23 +84,8 @@ export default class Demo extends Component {
           </Analyser>
         </Song>
 
-        <div style={{ textAlign: 'center' }}>
-          <p style={this.state.lightMode ? {color: 'black'} : {color: 'white'}}>Light Mode</p>
-          <label className="switch">
-            <input type="checkbox" onChange={this.toggleLightMode} checked={this.state.lightMode} />
-            <div className="slider round"></div>
-          </label>
-        </div>
-
         <Visualization ref={(c) => { this.visualization = c; }} />
 
-        <button
-          className="react-music-button"
-          type="button"
-          onClick={this.handlePlayToggle}
-        >
-          {this.state.playing ? 'Stop' : 'Play'}
-        </button>
       </div>
     );
   }
