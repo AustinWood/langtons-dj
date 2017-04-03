@@ -9,7 +9,7 @@ class Canvas extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
   }
 
@@ -37,16 +37,16 @@ class Canvas extends React.Component {
 
   hover() {
     if (this.props.hoverPos.x !== null && this.props.hoverPos.y !== null) {
-      return (
-        <Circle
-          ref='cell'
-          x={this.props.hoverPos.x * this.props.cellSize + this.props.cellSize / 2}
-          y={this.props.hoverPos.y * this.props.cellSize + this.props.cellSize / 2}
-          radius={this.props.cellSize * 0.45}
-          fill={null}
-          stroke={'white'}
-          strokeWidth={2} />
-      );
+      // return (
+      //   <Circle
+      //     ref='hover'
+      //     x={this.props.hoverPos.x * this.props.cellSize + this.props.cellSize / 2}
+      //     y={this.props.hoverPos.y * this.props.cellSize + this.props.cellSize / 2}
+      //     radius={this.props.cellSize * 0.45}
+      //     fill={null}
+      //     stroke={'white'}
+      //     strokeWidth={2} />
+      // );
     }
     return null;
   }
@@ -66,9 +66,30 @@ class Canvas extends React.Component {
     this.props.toggleAnt(gridCoords.x, gridCoords.y);
   }
 
-  onMouseEnter(e) {
+  onMouseOver(e) {
+    console.log("in onMouseOver");
     const gridCoords = this.convertToGridCoords(e);
-    this.props.hover(gridCoords.x, gridCoords.y);
+    // this.props.hover(gridCoords.x, gridCoords.y);
+    const hover = this.refs.hover;
+    // hover.to({
+    //     position
+    //     stroke: 'orange',
+    //     duration: 0.15
+    // });
+    // hover.moveTo(100, 100);
+
+    const tween = new Konva.Tween({
+        node: hover,
+        duration: 1,
+        x: 140,
+        y: 90,
+        fill : 'red',
+        rotation: Math.PI * 2,
+        opacity: 1,
+        strokeWidth: 6,
+        scaleX: 1.5
+    });
+    tween.play();
   }
 
   onMouseLeave() {
@@ -82,12 +103,21 @@ class Canvas extends React.Component {
         width={700}
         height={700}
         onClick={this.handleClick}
-        onMouseOver={this.onMouseEnter}
+        onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseLeave} >
 
         <Layer>
           <Board width={700} height={700} />
-          {this.hover()}
+
+          <Circle
+            ref='hover'
+            x={3 * this.props.cellSize + this.props.cellSize / 2}
+            y={4 * this.props.cellSize + this.props.cellSize / 2}
+            radius={this.props.cellSize * 0.45}
+            fill={null}
+            stroke={'white'}
+            strokeWidth={2} />
+
           {this.cells()}
           {this.ants()}
         </Layer>
