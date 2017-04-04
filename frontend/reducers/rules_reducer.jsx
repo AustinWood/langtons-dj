@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-const _slowBox = [false, false, false, true, true]
+const _slowBox = [false, false, false, true, true];
 const _rules = Object.freeze({
   0: {
     color: '#197be0', // blue

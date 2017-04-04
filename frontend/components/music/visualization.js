@@ -5,19 +5,23 @@ export default class Visualization extends Component {
     super(props);
     this.audioProcess = this.audioProcess.bind(this);
   }
+
   componentDidMount() {
     this.ctx = this.canvas.getContext('2d');
   }
+
   componentDidReceiveProps() {
 
   }
+
   audioProcess(analyser) {
     if (this.ctx) {
       const gradient = this.ctx.createLinearGradient(0, 0, 0, 512);
-      gradient.addColorStop(1, '#000000');
-      gradient.addColorStop(0.75, '#2ecc71');
-      gradient.addColorStop(0.25, '#f1c40f');
-      gradient.addColorStop(0, '#e74c3c');
+      gradient.addColorStop(1, '#8c54e5'); // puruple
+      gradient.addColorStop(0.7, '#197be0');
+      gradient.addColorStop(0.6, '#7ed43a');
+      gradient.addColorStop(0.3, '#f9cd35');
+      gradient.addColorStop(0, '#fc2a68'); // pink
 
       const array = new Uint8Array(analyser.frequencyBinCount);
       analyser.getByteFrequencyData(array);
@@ -30,6 +34,7 @@ export default class Visualization extends Component {
       }
     }
   }
+
   render() {
     return (
       <canvas

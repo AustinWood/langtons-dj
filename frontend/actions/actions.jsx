@@ -8,8 +8,8 @@ export const toggleAnt = (x, y) => {
   return ({ type: TOGGLE_ANT, x, y });
 };
 
-export const incrementStep = (cells, ants) => {
-  return ({ type: INCREMENT_STEP, cells, ants });
+export const incrementStep = (cells, ants, music) => {
+  return ({ type: INCREMENT_STEP, cells, ants, music });
 };
 
 export const togglePlay = () => {

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+
 
 import {
   Delay,
@@ -7,28 +8,40 @@ import {
   Synth,
 } from 'react-music';
 
-const Polysynth = (props) => (
-  <Delay>
-    <Reverb>
-      <Synth
-        type="sine"
-        gain={0.15}
-        steps={props.steps}
-      />
-      <MoogFilter bufferSize={4096}>
-        <Synth
-          type="square"
-          gain={0.15}
-          transpose={1}
-          steps={props.steps}
-        />
-      </MoogFilter>
-    </Reverb>
-  </Delay>
-);
+export default class Polysynth extends Component {
+  constructor(props) {
+    super(props);
+  }
 
+  render() {
+    (
+      <Delay>
+        <Reverb>
+          <Synth
+            type="sine"
+            gain={0.15}
+            steps={this.props.steps}
+          />
+          <MoogFilter bufferSize={4096}>
+            <Synth
+              type="square"
+              gain={0.15}
+              transpose={1}
+              steps={this.props.steps}
+            />
+          </MoogFilter>
+        </Reverb>
+      </Delay>
+    );
+  }
+}
+
+// const Polysynth = (props) => (
+//
+// );
+//
 Polysynth.propTypes = {
   steps: PropTypes.array,
 };
 
-export default Polysynth;
+// export default Polysynth;

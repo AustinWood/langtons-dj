@@ -20,7 +20,7 @@ class Controls extends React.Component {
   handleHandler() {
     const handler = this.state.intervalHandler;
     if (this.props.isPlaying && handler === null) {
-      const newHandler = window.setInterval(this.update, 200);
+      const newHandler = window.setInterval(this.update, 300);
       this.setState({ intervalHandler: newHandler });
     } else if (!this.props.isPlaying && handler) {
       window.clearInterval(handler);
@@ -34,11 +34,13 @@ class Controls extends React.Component {
     let cells = this.props.cells;
     let ants = merge({}, this.props.ants);
     let rules = this.props.rules;
+    let lastCellState;
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
         let ant = ants[key];
         let cell = cells[ant.y][ant.x];
         const currentCellState = cell.state || 0;
+        lastCellState = currentCellState;
 
         // rotate ant
         const rotateRight = rules[currentCellState].rotateRight;
@@ -79,8 +81,8 @@ class Controls extends React.Component {
         cells[cell.y][cell.x] = cell;
       }
     }
-
-    this.props.incrementStep(cells, ants);
+    let music = {currentCellState: lastCellState};
+    this.props.incrementStep(cells, ants, music);
   }
 
   ///////////////

@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  incrementStep: (cells, ants) => dispatch(incrementStep(cells, ants)),
+  incrementStep: (cells, ants, music) => dispatch(incrementStep(cells, ants, music)),
   togglePlay: () => dispatch(togglePlay()),
   reset: () => dispatch(reset())
 });

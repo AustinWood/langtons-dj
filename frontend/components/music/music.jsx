@@ -25,11 +25,13 @@ export default class Demo extends Component {
   }
 
   render() {
+    // console.log(this.props);
     return (
       <div>
+
         <Song
           playing={this.props.isPlaying}
-          tempo={10}
+          tempo={90}
         >
           <Analyser onAudioProcess={this.handleAudioProcess}>
             <Sequencer
@@ -42,7 +44,7 @@ export default class Demo extends Component {
               />
               <Sampler
                 sample="samples/snare.wav"
-                steps={[4, 12, 13, 15]}
+                steps={[4, 12]}
               />
             </Sequencer>
             <Sequencer
