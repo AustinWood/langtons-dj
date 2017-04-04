@@ -20,7 +20,7 @@ class Controls extends React.Component {
   handleHandler() {
     const handler = this.state.intervalHandler;
     if (this.props.isPlaying && handler === null) {
-      const newHandler = window.setInterval(this.update, 300);
+      const newHandler = window.setInterval(this.update, 400);
       this.setState({ intervalHandler: newHandler });
     } else if (!this.props.isPlaying && handler) {
       window.clearInterval(handler);
