@@ -16,7 +16,6 @@ export default class Demo extends Component {
   componentDidUpdate() {
     if (this.state.stepCount !== this.props.stepCount) {
       this.state.stepCount = this.props.stepCount;
-      console.log(this.props.stepCount);
       switch (this.props.currentCellState) {
         case 0:
           var audio = new Audio('./samples/kick.wav');
@@ -51,9 +50,7 @@ export default class Demo extends Component {
   render() {
     // console.log(this.props);
     return (
-      <div>
-        Synth
-      </div>
+      <div></div>
     );
   }
 }
