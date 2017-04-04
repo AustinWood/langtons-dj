@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Tone from 'tone';
 
-export default class Demo extends Component {
+export default class Synth extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,26 +16,23 @@ export default class Demo extends Component {
   componentDidUpdate() {
     if (this.state.stepCount !== this.props.stepCount) {
       this.state.stepCount = this.props.stepCount;
-      switch (this.props.currentCellState) {
+      var synth = new Tone.Synth().toMaster();
+
+      switch (this.props.cellState) {
         case 0:
-          var audio = new Audio('./samples/kick.wav');
-          audio.play();
+          synth.triggerAttackRelease("E4", "8n");
           break;
         case 1:
-          var audio = new Audio('./samples/snare.wav');
-          audio.play();
+          synth.triggerAttackRelease("G4", "8n");
           break;
         case 2:
-          var audio = new Audio('./samples/hihat.wav');
-          audio.play();
+          synth.triggerAttackRelease("C4", "8n");
           break;
         case 3:
-          var audio = new Audio('./samples/kick.wav');
-          audio.play();
+          synth.triggerAttackRelease("C5", "8n");
           break;
         default:
-          var audio = new Audio('./samples/hihat.wav');
-          audio.play();
+          synth.triggerAttackRelease("E5", "8n");
           break;
       }
     }

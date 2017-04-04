@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import { INCREMENT_STEP } from '../actions/actions';
 
 const _music = {
-  currentCellState: 0
+  cellStates: [0, 0, 0, 0]
 };
 
 const AntReducer = (state = _music, action) => {

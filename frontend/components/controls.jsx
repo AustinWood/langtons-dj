@@ -34,13 +34,13 @@ class Controls extends React.Component {
     let cells = this.props.cells;
     let ants = merge({}, this.props.ants);
     let rules = this.props.rules;
-    let lastCellState;
+    let cellStates = [];
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
         let ant = ants[key];
         let cell = cells[ant.y][ant.x];
         const currentCellState = cell.state || 0;
-        lastCellState = currentCellState;
+        cellStates.push(currentCellState);
 
         // rotate ant
         const rotateRight = rules[currentCellState].rotateRight;
@@ -81,7 +81,8 @@ class Controls extends React.Component {
         cells[cell.y][cell.x] = cell;
       }
     }
-    let music = {currentCellState: lastCellState};
+    console.log(cellStates);
+    let music = {cellStates: cellStates};
     this.props.incrementStep(cells, ants, music);
   }
 

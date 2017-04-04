@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Tone from 'tone';
 
-export default class Demo extends Component {
+export default class Drums extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,23 +15,26 @@ export default class Demo extends Component {
   componentDidUpdate() {
     if (this.state.stepCount !== this.props.stepCount) {
       this.state.stepCount = this.props.stepCount;
-      var synth = new Tone.Synth().toMaster();
-
-      switch (this.props.currentCellState) {
+      switch (this.props.cellState) {
         case 0:
-          synth.triggerAttackRelease("E4", "8n");
+          var audio = new Audio('./samples/kick.wav');
+          audio.play();
           break;
         case 1:
-          synth.triggerAttackRelease("G4", "8n");
+          var audio = new Audio('./samples/snare.wav');
+          audio.play();
           break;
         case 2:
-          synth.triggerAttackRelease("C4", "8n");
+          var audio = new Audio('./samples/hihat.wav');
+          audio.play();
           break;
         case 3:
-          synth.triggerAttackRelease("C5", "8n");
+          var audio = new Audio('./samples/kick.wav');
+          audio.play();
           break;
         default:
-          synth.triggerAttackRelease("E5", "8n");
+          var audio = new Audio('./samples/hihat.wav');
+          audio.play();
           break;
       }
     }

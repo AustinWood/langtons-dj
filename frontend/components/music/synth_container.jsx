@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Drums from './drums';
+import Synth from './synth';
 
 const mapStateToProps = state => ({
   stepCount: state.controls.stepCount,
@@ -13,4 +13,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   null
-)(Drums);
+)(Synth);
