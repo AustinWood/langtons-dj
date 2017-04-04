@@ -17,9 +17,30 @@ export default class Demo extends Component {
     if (this.state.stepCount !== this.props.stepCount) {
       this.state.stepCount = this.props.stepCount;
       console.log(this.props.stepCount);
+      switch (this.props.currentCellState) {
+        case 0:
+          var audio = new Audio('./samples/kick.wav');
+          audio.play();
+          break;
+        case 1:
+          var audio = new Audio('./samples/snare.wav');
+          audio.play();
+          break;
+        case 2:
+          var audio = new Audio('./samples/hihat.wav');
+          audio.play();
+          break;
+        case 3:
+          var audio = new Audio('./samples/kick.wav');
+          audio.play();
+          break;
+        default:
+          var audio = new Audio('./samples/hihat.wav');
+          audio.play();
+          break;
+      }
       if (this.props.currentCellState === 0) {
-        var audio = new Audio('./samples/cowbell.wav');
-        audio.play();
+
       } else {
         var audio = new Audio('./samples/hihat.wav');
         audio.play();
