@@ -10,6 +10,7 @@ const AntReducer = (state = _music, action) => {
   let newState = {};
   switch(action.type) {
     case INCREMENT_STEP:
+      console.log(action.music);
       return action.music;
     default:
       return state;

@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
   ants: state.ants,
   rules: state.rules,
   isPlaying: state.controls.isPlaying,
-  cellState: state.music.cellStates[1]
+  cellStates: state.music.cellStates
 });
 
 export default connect(
