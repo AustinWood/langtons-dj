@@ -3,6 +3,7 @@ export const INCREMENT_STEP = "INCREMENT_STEP";
 export const TOGGLE_PLAY = "TOGGLE_PLAY";
 export const RESET = "RESET";
 export const HOVER = "HOVER";
+export const UPDATE_GRID = "UPDATE_GRID";
 
 export const toggleAnt = (x, y) => {
   return ({ type: TOGGLE_ANT, x, y });
@@ -22,4 +23,9 @@ export const reset = () => {
 
 export const hover = (x, y) => {
   return ({ type: HOVER, x, y });
+};
+
+export const updateGrid = () => {
+  console.log("actsion = update grid");
+  return ({ type: UPDATE_GRID });
 };

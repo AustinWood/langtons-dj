@@ -66,20 +66,10 @@ class Canvas extends React.Component {
     this.props.toggleAnt(gridCoords.x, gridCoords.y);
   }
 
+  // pass (pos) instead of (x, y)
   onMouseOver(e) {
     const gridCoords = this.convertToGridCoords(e);
     this.props.hover(gridCoords.x, gridCoords.y);
-    // const x = gridCoords.x * this.props.cellSize + this.props.cellSize / 2;
-    // const y = gridCoords.y * this.props.cellSize + this.props.cellSize / 2;
-
-    // const hover = this.refs.hover;
-    // const tween = new Konva.Tween({
-    //     node: hover,
-    //     duration: 0.15,
-    //     x: x,
-    //     y: y
-    // });
-    // tween.play();
   }
 
   onMouseLeave() {
