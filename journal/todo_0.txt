@@ -15,6 +15,8 @@ style sidebar controls
 ####################
 ### LATER
 
+volume slider
+add envelopes visualizer between canvas layers https://tonejs.github.io/examples/#funkyShape
 ask David for melody
 ask Frank for melody
 ask Scott Bookman for melody
