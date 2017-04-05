@@ -7,11 +7,7 @@ export default class Drums extends Component {
       stepCount: 0
     };
   }
-
-  componentDidMount() {
-    console.log("synth mounted");
-  }
-
+  
   componentDidUpdate() {
     // if (this.state.stepCount !== this.props.stepCount) {
     //   this.state.stepCount = this.props.stepCount;

@@ -1,10 +1,8 @@
 ####################
 ### NOW
 
-store rules in ant tree for each ant, allow separate rules for each ant like : https://youtu.be/w6XQQhCgq5c
+store rules in ant tree for each ant, allow separate rules for each
 add speed control
-color transition should be fraction of step interval
-add cell size control
 prioritize todo
 
 ####################
@@ -17,6 +15,12 @@ style sidebar controls
 ####################
 ### LATER
 
+ask David for melody
+ask Frank for melody
+ask Scott Bookman for melody
+ant like : https://youtu.be/w6XQQhCgq5c
+color transition should be fraction of step interval
+add cell size control
 create global colors
 change fade interval for 'reset' to be longer
 animate ants on reset

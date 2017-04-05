@@ -81,7 +81,6 @@ class Controls extends React.Component {
         cells[cell.y][cell.x] = cell;
       }
     }
-    console.log(cellStates);
     let music = {cellStates: cellStates};
     this.props.incrementStep(cells, ants, music);
   }
