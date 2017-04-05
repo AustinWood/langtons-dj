@@ -11,7 +11,7 @@ export default class Synth extends Component {
 
     var synth = new Tone.PolySynth(6, Tone.FMSynth, {
 			"oscillator" : {
-				"type" : "fatsawtooth",
+        "type" : "fatsawtooth",
 				"count" : 3,
 				"spread" : 30
 			},
@@ -21,9 +21,8 @@ export default class Synth extends Component {
 				"sustain": 0.5,
 				"release": 0.4,
 				"attackCurve" : "exponential"
-			},
+			}
 		}).toMaster();
-
     this.state.synth = synth;
   }
 
@@ -38,11 +37,12 @@ export default class Synth extends Component {
 
   playMusic() {
     this.state.synth.triggerRelease(this.state.prevChord);
+    var vel = Math.random() * 0.5 + 0.5;
+
     this.state.stepCount = this.props.stepCount;
     let cellStates = this.props.cellStates;
-    console.log(cellStates);
     let chord = [];
-    for (let i = 0; i < cellStates.length; i++) {
+    for (let i = 0; i < 3; i++) { // i < cellStates.length
       const chords = [
         ["E4","C3","G3","C4","C4","G3"],
         ["E3","C2","G2","C3","C2","G2"],
@@ -50,12 +50,6 @@ export default class Synth extends Component {
       ];
       chord.push(chords[i][cellStates[i]]);
     }
-    console.log(chord);
-    //a polysynth composed of 6 Voices of Synth
-    // var synth = new Tone.PolySynth(3, Tone.Synth).toMaster();
-    //set the attributes using the set interface
-    this.state.synth.set("detune", 0);
-    //play a chord
     this.state.synth.triggerAttackRelease(chord, "1m");
     this.state.prevChord = chord;
   }
