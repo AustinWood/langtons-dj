@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Cell from './cell';
 
 const mapStateToProps = (state, ownProps) => {
-  const cellState = state.grid.cells[ownProps.y][ownProps.x].state;
+  const cellState = state.cells.currentCells[ownProps.y][ownProps.x].state;
   const color = (cellState === null ? '#282c34' : state.rules[cellState].color);
   return ({
     color: color,
