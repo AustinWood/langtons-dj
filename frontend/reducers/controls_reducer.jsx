@@ -6,7 +6,7 @@ const _controls = Object.freeze({
   isPlaying: false
 });
 
-const GridReducer = (state = _controls, action) => {
+const ControlsReducer = (state = _controls, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type) {
@@ -24,4 +24,4 @@ const GridReducer = (state = _controls, action) => {
   }
 };
 
-export default GridReducer;
+export default ControlsReducer;
