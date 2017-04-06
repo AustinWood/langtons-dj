@@ -5,32 +5,23 @@ import merge from 'lodash/merge';
 class Controls extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { intervalHandler: null };
-    this.update = this.update.bind(this);
+    this.state = {
+      stepCount: null
+    };
   }
 
   componentDidMount() {
-    this.handleHandler();
+    //
   }
 
   componentDidUpdate(prevProps, prevState) {
-    this.handleHandler();
-  }
-
-  handleHandler() {
-    const handler = this.state.intervalHandler;
-    if (this.props.isPlaying && handler === null) {
-      const newHandler = window.setInterval(this.update, 400);
-      this.setState({ intervalHandler: newHandler });
-    } else if (!this.props.isPlaying && handler) {
-      window.clearInterval(handler);
-      this.setState({ intervalHandler: null });
-      // this.props.reset();
+    if (this.state.stepCount !== this.props.stepCount) {
+      this.state.stepCount = this.props.stepCount;
+      this.update();
     }
   }
 
   update() {
-    // if (!this.props.isPlaying) { return; }
     let cells = this.props.cells;
     let ants = merge({}, this.props.ants);
     let rules = this.props.rules;

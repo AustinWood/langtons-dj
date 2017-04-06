@@ -17,6 +17,7 @@ style sidebar controls
 ####################
 ### LATER
 
+couple (x, y) -> (pos)
 add speed control
 slightly randomize attack, etc. https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html line 59
 volume slider

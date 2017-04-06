@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { INCREMENT_STEP, TOGGLE_PLAY, RESET } from '../actions/actions';
+import { INCREMENT_STEP, TOGGLE_PLAY, RESET, UPDATE_GRID } from '../actions/actions';
 
 const _controls = Object.freeze({
   stepCount: 0,
@@ -10,7 +10,7 @@ const GridReducer = (state = _controls, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type) {
-    case INCREMENT_STEP:
+    case UPDATE_GRID:
       newState.stepCount += 1;
       return newState;
     case TOGGLE_PLAY:
