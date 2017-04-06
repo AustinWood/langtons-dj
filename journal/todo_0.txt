@@ -21,6 +21,7 @@ style sidebar controls
 ####################
 ### LATER
 
+refactor currentAnts/oldAnts (works for cells, but very WET for ants)
 couple (x, y) -> (pos)
 add speed control
 slightly randomize attack, etc. https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html line 59

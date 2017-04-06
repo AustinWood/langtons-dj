@@ -16,16 +16,21 @@ const AntsReducer = (state = _ants, action) => {
     case TOGGLE_ANT:
       newState = merge({}, state);
       const id = `x${action.x}y${action.y}`;
-      if (state[id]) {
-        delete newState[id];
+      if (state.currentAnts[id]) {
+        delete newState.currentAnts[id];
+        if (state.nextAnts[id]) {
+          delete newState.nextAnts[id];
+        }
         return newState;
       } else {
-        newState[id] = {
+        const newAnt = {
           antId: id,
           x_0: action.x, y_0: action.y, dir_0: 'r',
           x: action.x, y: action.y, dir: 'r',
           musical_attrs: null
         };
+        newState.currentAnts[id] = newAnt;
+        newState.nextAnts[id] = newAnt;
         return newState;
       }
     case RESET:
