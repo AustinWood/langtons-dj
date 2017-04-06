@@ -31,11 +31,12 @@ const CellsReducer = (state = _grid, action) => {
       newState.nextCells = action.cells;
       return newState;
     case RESET:
-      for (let i = 0; i < newState.cells.length; i++) {
-        for (let j = 0; j < newState.cells[i].length; j++) {
-          newState.cells[i][j].state = null;
+      for (let i = 0; i < newState.currentCells.length; i++) {
+        for (let j = 0; j < newState.currentCells[i].length; j++) {
+          newState.currentCells[i][j].state = null;
         }
       }
+      newState.nextCells = newState.currentCells;
       return newState;
     case HOVER:
       newState.hover = { x: action.x, y: action.y };

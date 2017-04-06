@@ -36,15 +36,16 @@ const AntsReducer = (state = _ants, action) => {
         return newState;
       }
     case RESET:
-      for (var key in newState) {
-        if (newState.hasOwnProperty(key)) {
-          let ant = newState[key];
+      for (var key in newState.currentAnts) {
+        if (newState.currentAnts.hasOwnProperty(key)) {
+          let ant = newState.currentAnts[key];
           ant.x = ant.x_0;
           ant.y = ant.y_0;
           ant.dir = ant.dir_0;
-          newState[key] = ant;
+          newState.currentAnts[key] = ant;
         }
       }
+      newState.nextAnts = newState.currentAnts;
       return newState;
     default:
       return state;

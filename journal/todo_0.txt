@@ -1,8 +1,16 @@
 ####################
 ### NOW
 
+stop button broken
 refactor everything (start with checklist)
 prioritize todo
+
+####################
+### REFACTOR and CLEANUP
+
+ACTIONS
+COMPONENTS
+REDUCERS
 
 ####################
 ### NEXT
@@ -15,7 +23,6 @@ fix lag by one
 flex course
 add navbar component
 style sidebar controls
-stop button broken
 refactor currentAnts/oldAnts (works for cells, but very WET for ants)
 couple (x, y) -> (pos)
 add speed control
