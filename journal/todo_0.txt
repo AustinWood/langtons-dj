@@ -1,7 +1,6 @@
 ####################
 ### NOW
 
-stop button broken
 refactor everything (start with checklist)
 prioritize todo
 

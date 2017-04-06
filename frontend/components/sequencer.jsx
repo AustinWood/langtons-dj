@@ -11,7 +11,7 @@ export default class Sequencer extends React.Component {
   }
 
   componentDidMount() {
-    let synth = new Tone.PolySynth(3, Tone.Synth, {
+    let synth = new Tone.PolySynth(3, Tone.FMSynth, {
       "oscillator" : {
         "type" : "fatsawtooth",
         "count" : 3,
@@ -36,8 +36,8 @@ export default class Sequencer extends React.Component {
     part.loopEnd = "4n";
     part.start(0);
     this.state.part = part;
-    Tone.Transport.bpm.value = 136;
-    this.togglePlay();
+    Tone.Transport.bpm.value = 450;
+    this.toggleTransport();
   }
 
   handleDispatch() {
@@ -45,17 +45,19 @@ export default class Sequencer extends React.Component {
   }
 
   componentDidUpdate() {
-    this.togglePlay();
+    this.toggleTransport();
     this.calculateChord();
   }
 
   calculateChord() {
-    const pentatonic = [
-      ["C3","D3","E3","G3","A3"],
-      ["C4","D4","E4","G4","A4"],
-      ["C5","D5","E5","G5","A5"]
+    const notes = [
+      ["C3","E3","D3","E3","D3"],
+      ["G4","F#4","G4","F#4","G4"],
+      ["B5","D5","A5","B5","A5"]
     ];
-
+    // ["C3","E3","D3","D3","D3"],
+    // ["G4","G4","G4","F#4","G4"],
+    // ["B5","D5","A5","A5","A5"]
     let newChord = [];
     const chordObj = this.props.chord;
     let i = 0;
@@ -74,7 +76,7 @@ export default class Sequencer extends React.Component {
     this.state.part.add(0, newChord);
   }
 
-  togglePlay() {
+  toggleTransport() {
     if (this.props.isPlaying && Tone.Transport.state !== "started") {
       Tone.Transport.start();
     } else if (!this.props.isPlaying && Tone.Transport.state === "started") {

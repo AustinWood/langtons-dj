@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { TOGGLE_ANT, RESET, HOVER } from '../actions/actions';
+import { RESET, HOVER } from '../actions/actions';
 
 const gridSize = 20;
 
