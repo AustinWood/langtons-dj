@@ -2,15 +2,13 @@
 ### NOW
 
 beat plays ant chord
-pentatonic scale
-fix lag by one
+refactor everything (start with checklist)
+prioritize todo
 
 ####################
 ### NEXT
 
-refactor everything
-prioritize todo
-implement 1 UI control
+fix lag by one
 
 ####################
 ### LATER
