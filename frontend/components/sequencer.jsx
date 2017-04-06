@@ -31,12 +31,12 @@ export default class Sequencer extends React.Component {
     var part = new Tone.Part(function(time, note) {
       synth.triggerAttackRelease(note, "8n", time);
       handleDispatchB();
-    }, [[0, this.state.chord]]);
+    }, [[0, ["C3", "D4", "G5"]]]);
     part.loop = true;
     part.loopEnd = "4n";
     part.start(0);
     this.state.part = part;
-    Tone.Transport.bpm.value = 80;
+    Tone.Transport.bpm.value = 136;
     this.togglePlay();
   }
 
@@ -70,8 +70,8 @@ export default class Sequencer extends React.Component {
     }
 
     console.log(newChord);
-    this.state.chord = newChord;
-
+    this.state.part.removeAll();
+    this.state.part.add(0, newChord);
   }
 
   togglePlay() {

@@ -1,7 +1,6 @@
 ####################
 ### NOW
 
-beat plays ant chord
 refactor everything (start with checklist)
 prioritize todo
 
