@@ -1,9 +1,11 @@
 ####################
 ### NOW
 
-store rules in ant tree for each ant, allow separate rules for each
-add speed control
+ants move to beat
+beat plays ant chord
+rewrite state tree
 prioritize todo
+implement 1 UI control
 
 ####################
 ### LAYOUT
@@ -15,6 +17,7 @@ style sidebar controls
 ####################
 ### LATER
 
+add speed control
 slightly randomize attack, etc. https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html line 59
 volume slider
 add envelopes visualizer between canvas layers https://tonejs.github.io/examples/#funkyShape
