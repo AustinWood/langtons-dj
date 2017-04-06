@@ -25,13 +25,9 @@ const CellsReducer = (state = _grid, action) => {
   let newState = merge({}, state);
   switch(action.type) {
     case UPDATE_GRID:
-      console.log("UPDATE_GRID");
-      console.log(state.nextCells);
       newState.currentCells = state.nextCells;
       return newState;
     case SAVE_NEXT_GRID:
-      console.log("SAVE_NEXT_GRID");
-      console.log(action.cells);
       newState.nextCells = action.cells;
       return newState;
     case RESET:

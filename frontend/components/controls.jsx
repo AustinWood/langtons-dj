@@ -73,8 +73,6 @@ class Controls extends React.Component {
       }
     }
     let music = {cellStates: cellStates};
-    console.log("CONTROLS before saveNextGrid()");
-    console.log(cells);
     this.props.saveNextGrid(cells, ants, music);
   }
 
