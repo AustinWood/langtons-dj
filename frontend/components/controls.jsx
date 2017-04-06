@@ -25,13 +25,20 @@ class Controls extends React.Component {
     let cells = this.props.cells;
     let ants = merge({}, this.props.ants);
     let rules = this.props.rules;
-    let cellStates = [];
+    let music = {};
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
         let ant = ants[key];
         let cell = cells[ant.y][ant.x];
         const currentCellState = cell.state || 0;
-        cellStates.push(currentCellState);
+        music[key] = currentCellState;
+
+        // change cell state
+        if (rules.hasOwnProperty(cell.state + 1)) {
+          cell.state += 1;
+        } else {
+          cell.state = 0;
+        }
 
         // rotate ant
         const rotateRight = rules[currentCellState].rotateRight;
@@ -41,13 +48,6 @@ class Controls extends React.Component {
           ant.dir = mapRightRotate[ant.dir];
         } else {
           ant.dir = mapLeftRotate[ant.dir];
-        }
-
-        // change cell state
-        if (rules.hasOwnProperty(cell.state + 1)) {
-          cell.state += 1;
-        } else {
-          cell.state = 0;
         }
 
         // move ant
@@ -72,7 +72,6 @@ class Controls extends React.Component {
         cells[cell.y][cell.x] = cell;
       }
     }
-    let music = {cellStates: cellStates};
     this.props.saveNextGrid(cells, ants, music);
   }
 

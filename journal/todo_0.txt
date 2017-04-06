@@ -1,26 +1,24 @@
 ####################
 ### NOW
 
-stop button broken
+beat plays ant chord
+pentatonic scale
+fix lag by one
 
 ####################
 ### NEXT
 
-beat plays ant chord
-rewrite state tree
+refactor everything
 prioritize todo
 implement 1 UI control
 
 ####################
-### LAYOUT
+### LATER
 
 flex course
 add navbar component
 style sidebar controls
-
-####################
-### LATER
-
+stop button broken
 refactor currentAnts/oldAnts (works for cells, but very WET for ants)
 couple (x, y) -> (pos)
 add speed control

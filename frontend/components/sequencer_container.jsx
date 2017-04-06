@@ -3,12 +3,13 @@ import Sequencer from './sequencer';
 import { updateGrid } from '../actions/actions';
 
 const mapStateToProps = state => ({
-  // stepCount: state.controls.stepCount,
+  stepCount: state.controls.stepCount,
   // cells: state.grid.cells,
   // ants: state.ants,
   // rules: state.rules,
   isPlaying: state.controls.isPlaying,
   // cellStates: state.music.cellStates
+  chord: state.music.chord
 });
 
 const mapDispatchToProps = dispatch => ({

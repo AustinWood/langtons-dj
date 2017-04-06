@@ -4,7 +4,9 @@ import Tone from 'tone';
 export default class Sequencer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      chord: ["C3", "D4", "G5"]
+    };
     this.handleDispatch = this.handleDispatch.bind(this);
   }
 
@@ -29,12 +31,12 @@ export default class Sequencer extends React.Component {
     var part = new Tone.Part(function(time, note) {
       synth.triggerAttackRelease(note, "8n", time);
       handleDispatchB();
-    }, [[0, ["E4","C3","G3"]]]);
+    }, [[0, this.state.chord]]);
     part.loop = true;
     part.loopEnd = "4n";
     part.start(0);
     this.state.part = part;
-    Tone.Transport.bpm.value = 132;
+    Tone.Transport.bpm.value = 80;
     this.togglePlay();
   }
 
@@ -44,6 +46,32 @@ export default class Sequencer extends React.Component {
 
   componentDidUpdate() {
     this.togglePlay();
+    this.calculateChord();
+  }
+
+  calculateChord() {
+    const pentatonic = [
+      ["C3","D3","E3","G3","A3"],
+      ["C4","D4","E4","G4","A4"],
+      ["C5","D5","E5","G5","A5"]
+    ];
+
+    let newChord = [];
+    const chordObj = this.props.chord;
+    let i = 0;
+    for (var key in chordObj) {
+      if (chordObj.hasOwnProperty(key)) {
+        const pentatonicSub = pentatonic[i];
+        const cellState = chordObj[key];
+        const note = pentatonicSub[cellState];
+        newChord.push(note);
+        i += 1;
+      }
+    }
+
+    console.log(newChord);
+    this.state.chord = newChord;
+
   }
 
   togglePlay() {
