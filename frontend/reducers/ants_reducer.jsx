@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { TOGGLE_ANT, RESET, UPDATE_GRID } from '../actions/actions';
+import { TOGGLE_ANT, RESET, UPDATE_GRID, SAVE_NEXT_GRID } from '../actions/actions';
 
 const _ants = {
   currentAnts: {},
@@ -8,13 +8,15 @@ const _ants = {
 
 const AntsReducer = (state = _ants, action) => {
   Object.freeze(state);
-  let newState = {};
+  let newState = merge({}, state);
   switch(action.type) {
     case UPDATE_GRID:
       newState.currentAnts = state.nextAnts;
       return newState;
+    case SAVE_NEXT_GRID:
+      newState.nextAnts = action.ants;
+      return newState;
     case TOGGLE_ANT:
-      newState = merge({}, state);
       const id = `x${action.x}y${action.y}`;
       if (state.currentAnts[id]) {
         delete newState.currentAnts[id];
@@ -34,7 +36,6 @@ const AntsReducer = (state = _ants, action) => {
         return newState;
       }
     case RESET:
-      newState = merge({}, state);
       for (var key in newState) {
         if (newState.hasOwnProperty(key)) {
           let ant = newState[key];

@@ -6,7 +6,6 @@ export const UPDATE_GRID = "UPDATE_GRID";
 export const SAVE_NEXT_GRID = "SAVE_NEXT_GRID";
 
 export const toggleAnt = (x, y) => {
-  console.log("ACTIONS.jsx toggleAnt");
   return ({ type: TOGGLE_ANT, x, y });
 };
 

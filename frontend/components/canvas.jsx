@@ -93,8 +93,6 @@ class Canvas extends React.Component {
   }
 
   render() {
-    // console.log("CANVAS RENDER");
-    // console.log(this.props);
     return (
       <Stage
         ref='stage'
