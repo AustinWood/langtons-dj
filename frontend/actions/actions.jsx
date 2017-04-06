@@ -26,6 +26,5 @@ export const hover = (x, y) => {
 };
 
 export const updateGrid = () => {
-  console.log("actsion = update grid");
   return ({ type: UPDATE_GRID });
 };

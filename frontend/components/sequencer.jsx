@@ -1,20 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Tone from 'tone';
 
-export default class Sequencer extends Component {
+export default class Sequencer extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {};
-
-
     this.handleDispatch = this.handleDispatch.bind(this);
-
-
-  }
-
-  handleDispatch() {
-    this.props.updateGrid();
   }
 
   componentDidMount() {
@@ -47,8 +38,11 @@ export default class Sequencer extends Component {
     this.togglePlay();
   }
 
+  handleDispatch() {
+    this.props.updateGrid();
+  }
+
   componentDidUpdate() {
-    console.log('updatein');
     this.togglePlay();
   }
 
@@ -61,8 +55,6 @@ export default class Sequencer extends Component {
   }
 
   render() {
-    return (
-      <div></div>
-    );
+    return (<div />);
   }
 }
