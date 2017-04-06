@@ -1,10 +1,10 @@
 import merge from 'lodash/merge';
-import { TOGGLE_ANT, RESET, HOVER } from '../actions/actions';
+import { TOGGLE_ANT, RESET, HOVER, UPDATE_GRID, SAVE_NEXT_GRID } from '../actions/actions';
 
 const gridSize = 20;
 
 const _grid = Object.freeze({
-  cells: (function() {
+  currentCells: (function() {
     let output = [];
     for (var i = 0; i < gridSize; i++) {
       let row = [];
@@ -15,14 +15,21 @@ const _grid = Object.freeze({
     }
     return output;
   }()),
+  nextCells: null,
   cellSize: 35,
   hover: { x: null, y: null }
 });
 
-const GridReducer = (state = _grid, action) => {
+const CellsReducer = (state = _grid, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type) {
+    case UPDATE_GRID:
+      newState.currentCells = state.nextCells;
+      return newState;
+    case SAVE_NEXT_GRID:
+      newState.nextCells = action.cells;
+      return newState;
     case RESET:
       for (let i = 0; i < newState.cells.length; i++) {
         for (let j = 0; j < newState.cells[i].length; j++) {
@@ -38,4 +45,4 @@ const GridReducer = (state = _grid, action) => {
   }
 };
 
-export default GridReducer;
+export default CellsReducer;

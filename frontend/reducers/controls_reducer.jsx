@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { INCREMENT_STEP, TOGGLE_PLAY, RESET, UPDATE_GRID } from '../actions/actions';
+import { TOGGLE_PLAY, RESET, UPDATE_GRID } from '../actions/actions';
 
 const _controls = Object.freeze({
   stepCount: 0,

@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import Controls from './controls';
-import { incrementStep, togglePlay, reset } from '../actions/actions';
+import { togglePlay, reset, saveNextGrid } from '../actions/actions';
 
 const mapStateToProps = state => ({
   stepCount: state.controls.stepCount,
-  cells: state.grid.cells,
-  ants: state.ants,
+  cells: state.cells.currentCells,
+  ants: state.ants.currentAnts,
   rules: state.rules,
   isPlaying: state.controls.isPlaying
 });
 
 const mapDispatchToProps = dispatch => ({
-  incrementStep: (cells, ants, music) => dispatch(incrementStep(cells, ants, music)),
+  saveNextGrid: (cells, ants, music) => dispatch(saveNextGrid(cells, ants, music)),
   togglePlay: () => dispatch(togglePlay()),
   reset: () => dispatch(reset())
 });

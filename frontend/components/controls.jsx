@@ -22,6 +22,8 @@ class Controls extends React.Component {
   }
 
   update() {
+    console.log("CONTROLS at beginning of update()");
+    console.log(this.props);
     let cells = this.props.cells;
     let ants = merge({}, this.props.ants);
     let rules = this.props.rules;
@@ -73,7 +75,9 @@ class Controls extends React.Component {
       }
     }
     let music = {cellStates: cellStates};
-    this.props.incrementStep(cells, ants, music);
+    console.log("CONTROLS before saveNextGrid()");
+    console.log(cells);
+    this.props.saveNextGrid(cells, ants, music);
   }
 
   ///////////////

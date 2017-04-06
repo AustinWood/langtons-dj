@@ -3,8 +3,8 @@ import Canvas from './canvas';
 import { toggleAnt, hover } from '../actions/actions';
 
 const mapStateToProps = state => ({
-  cells: state.grid.cells,
-  ants: state.ants,
+  cells: state.cells.currentCells,
+  ants: state.ants.currentAnts,
   hoverPos: state.grid.hover,
   cellSize: state.grid.cellSize
 });

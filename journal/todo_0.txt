@@ -1,7 +1,11 @@
 ####################
 ### NOW
 
-ants move to beat
+stop button broken
+
+####################
+### NEXT
+
 beat plays ant chord
 rewrite state tree
 prioritize todo

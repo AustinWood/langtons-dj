@@ -1,12 +1,18 @@
 import merge from 'lodash/merge';
-import { TOGGLE_ANT, INCREMENT_STEP, RESET } from '../actions/actions';
+import { TOGGLE_ANT, RESET, UPDATE_GRID } from '../actions/actions';
 
-const _ants = {};
+const _ants = {
+  currentAnts: {},
+  nextAnts: {}
+};
 
-const AntReducer = (state = _ants, action) => {
+const AntsReducer = (state = _ants, action) => {
   Object.freeze(state);
   let newState = {};
   switch(action.type) {
+    case UPDATE_GRID:
+      newState.currentAnts = state.nextAnts;
+      return newState;
     case TOGGLE_ANT:
       newState = merge({}, state);
       const id = `x${action.x}y${action.y}`;
@@ -22,8 +28,6 @@ const AntReducer = (state = _ants, action) => {
         };
         return newState;
       }
-    case INCREMENT_STEP:
-      return merge({}, state, action.ants);
     case RESET:
       newState = merge({}, state);
       for (var key in newState) {
@@ -41,4 +45,4 @@ const AntReducer = (state = _ants, action) => {
   }
 };
 
-export default AntReducer;
+export default AntsReducer;

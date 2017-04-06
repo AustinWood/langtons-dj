@@ -1,16 +1,16 @@
 export const TOGGLE_ANT = "TOGGLE_ANT";
-export const INCREMENT_STEP = "INCREMENT_STEP";
 export const TOGGLE_PLAY = "TOGGLE_PLAY";
 export const RESET = "RESET";
 export const HOVER = "HOVER";
 export const UPDATE_GRID = "UPDATE_GRID";
+export const SAVE_NEXT_GRID = "SAVE_NEXT_GRID";
 
 export const toggleAnt = (x, y) => {
   return ({ type: TOGGLE_ANT, x, y });
 };
 
-export const incrementStep = (cells, ants, music) => {
-  return ({ type: INCREMENT_STEP, cells, ants, music });
+export const saveNextGrid = (cells, ants, music) => {
+  return ({ type: SAVE_NEXT_GRID, cells, ants, music });
 };
 
 export const togglePlay = () => {
