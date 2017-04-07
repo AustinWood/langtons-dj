@@ -18,22 +18,12 @@ export const hover = (x, y) => {
   return ({ type: HOVER, x, y });
 };
 
-
 export const UPDATE_GRID = "UPDATE_GRID";
-export const SAVE_NEXT_GRID = "SAVE_NEXT_GRID";
-
-
-
-export const saveNextGrid = (cells, ants, music) => {
-  return ({ type: SAVE_NEXT_GRID, cells, ants, music });
-};
-
-
-
-
-
-
-
 export const updateGrid = () => {
   return ({ type: UPDATE_GRID });
+};
+
+export const SAVE_NEXT_GRID = "SAVE_NEXT_GRID";
+export const saveNextGrid = (cells, ants, music) => {
+  return ({ type: SAVE_NEXT_GRID, cells, ants, music });
 };

@@ -36,7 +36,7 @@ export default class Sequencer extends React.Component {
     part.loopEnd = "4n";
     part.start(0);
     this.state.part = part;
-    Tone.Transport.bpm.value = 450;
+    Tone.Transport.bpm.value = 500;
     this.toggleTransport();
   }
 
@@ -50,11 +50,51 @@ export default class Sequencer extends React.Component {
   }
 
   calculateChord() {
-    const notes = [
-      ["C3","E3","D3","E3","D3"],
-      ["G4","F#4","G4","F#4","G4"],
-      ["B5","D5","A5","B5","A5"]
+
+    // "G", "E", "D#", "F#", "C#", "F", "D", "B", "Bb", "C" "A" G#
+    //
+    // Ant 2: G B♭ B G# C# A C E♭ E D F G♭
+    //
+    // Ant 3: D D# F# E F G# B G C A A# C#
+    //
+    // Ant 4: C B G# B♭ A F# E♭ G D F E C#
+
+    // const pentatonic = [ // broodfood
+    //   ["C2", "C3", "C4", "C5", "C6"],
+    //   ["G3", "G4", "G5", "F3", "F4"],
+    //   ["E3", "E4", "E5", "A3", "A4"]
+    // ];
+    // const pentatonic = [ // Tetrachords
+    //   ["E2", "F3", "G3", "Db3", "F3"],
+    //   ["Gb3", "Eb3", "Ab3", "D4", "Ab4"],
+    //   ["B4", "C4", "A4", "Bb5", "A5"]
+    // ];
+    // const pentatonic = [ // Trichords
+    //   ["E2", "F2", "C#2", "E2", "F2"],
+    //   ["Eb3", "C3", "D3", "Eb3", "C3"],
+    //   ["G#4", "A4", "Bb4", "G#4", "A4"],
+    //   ["F#5", "G5", "B5", "F#5", "G5"]
+    // ];
+    const pentatonic = [ // Tetrachords
+      ["E2", "F3", "G3", "Db3", "F3"],
+      ["Gb3", "Eb3", "Ab3", "D4", "Ab4"],
+      ["B4", "C4", "A4", "Bb5", "A5"]
     ];
+    // const pentatonic = [
+    //   ["D2", "A3", "D3", "A3", "D3"],
+    //   ["F3", "G3", "A3", "C4", "D4"],
+    //   ["E4", "G4", "A4", "C5", "D5"]
+    // ];
+    // const pentatonic = [
+    //   ["C3", "D3", "E3", "F#3", "G#3", "A#3"],
+    //   ["C4", "D4", "E4", "F#4", "G#4", "A#4"],
+    //   ["C5", "D5", "E5", "F#5", "G#5", "A#5"]
+    // ];
+    // const pentatonic = [
+    //   ["C3","E3","D3","E3","D3"],
+    //   ["G4","F#4","G4","F#4","G4"],
+    //   ["B5","D5","A5","B5","A5"]
+    // ];
     // ["C3","E3","D3","D3","D3"],
     // ["G4","G4","G4","F#4","G4"],
     // ["B5","D5","A5","A5","A5"]
