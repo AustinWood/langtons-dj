@@ -1,9 +1,10 @@
 import React from 'react';
+import Konva from 'konva';
+import { Layer, Stage, Circle } from 'react-konva';
+
 import Board from './board.jsx';
 import CellContainer from './cell_container.jsx';
 import AntContainer from './ant_container.jsx';
-import { Layer, Stage, Circle } from 'react-konva';
-import Konva from 'konva';
 
 class Canvas extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Canvas extends React.Component {
     this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
   }
-  
+
   cells() {
     const cellArr = this.props.cells;
     const flattenedArr = [].concat.apply([], cellArr);

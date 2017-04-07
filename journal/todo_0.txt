@@ -10,7 +10,6 @@ prioritize todo
 COMPONENTS
 ant_c
 ant
-canvas_c
 canvas
 cell_c
 controls_c

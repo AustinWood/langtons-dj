@@ -64,22 +64,22 @@ export default class Sequencer extends React.Component {
     //   ["G3", "G4", "G5", "F3", "F4"],
     //   ["E3", "E4", "E5", "A3", "A4"]
     // ];
-    // const pentatonic = [ // Tetrachords
-    //   ["E2", "F3", "G3", "Db3", "F3"],
-    //   ["Gb3", "Eb3", "Ab3", "D4", "Ab4"],
-    //   ["B4", "C4", "A4", "Bb5", "A5"]
-    // ];
+    const pentatonic = [ // Tetrachords
+      ["E2", "F3", "G3", "Db3", "F3"],
+      ["Gb3", "Eb3", "Ab3", "D4", "Ab4"],
+      ["B4", "C4", "A4", "Bb5", "A5"]
+    ];
     // const pentatonic = [ // Trichords
     //   ["E2", "F2", "C#2", "E2", "F2"],
     //   ["Eb3", "C3", "D3", "Eb3", "C3"],
     //   ["G#4", "A4", "Bb4", "G#4", "A4"],
     //   ["F#5", "G5", "B5", "F#5", "G5"]
     // ];
-    const pentatonic = [ // Tetrachords
-      ["E2", "F3", "G3", "Db3", "F3"],
-      ["Gb3", "Eb3", "Ab3", "D4", "Ab4"],
-      ["B4", "C4", "A4", "Bb5", "A5"]
-    ];
+    // const pentatonic = [ // Tetrachords
+    //   ["E2", "F3", "G3", "Db3", "F3"],
+    //   ["Gb3", "Eb3", "Ab3", "D4", "Ab4"],
+    //   ["B4", "C4", "A4", "Bb5", "A5"]
+    // ];
     // const pentatonic = [
     //   ["D2", "A3", "D3", "A3", "D3"],
     //   ["F3", "G3", "A3", "C4", "D4"],

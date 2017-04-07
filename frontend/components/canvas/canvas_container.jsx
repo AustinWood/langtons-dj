@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import Canvas from './canvas';
 import { toggleAnt, hover } from '../../actions/actions';
+import Canvas from './canvas';
 
 const mapStateToProps = state => ({
   cells: state.cells.currentCells,
   ants: state.ants.currentAnts,
-  hoverPos: state.cells.hover,
+  hoverPos: state.cells.hoverPos,
   cellSize: state.cells.cellSize
 });
 

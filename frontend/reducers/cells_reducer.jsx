@@ -1,26 +1,29 @@
 import merge from 'lodash/merge';
 import { RESET, HOVER, UPDATE_GRID, SAVE_NEXT_GRID } from '../actions/actions';
 
-const gridSize = 20;
+const _cellSize = 35;
+const _gridSize = 20;
 
-const _grid = Object.freeze({
-  currentCells: (function() {
-    let output = [];
-    for (var i = 0; i < gridSize; i++) {
-      let row = [];
-      for (var j = 0; j < gridSize; j++) {
-        row.push({x: j, y: i, state: null});
-      }
-      output.push(row);
+const _initialCells = function() {
+  let output = [];
+  for (var i = 0; i < _gridSize; i++) {
+    let row = [];
+    for (var j = 0; j < _gridSize; j++) {
+      row.push({x: j, y: i, state: null});
     }
-    return output;
-  }()),
+    output.push(row);
+  }
+  return output;
+}();
+
+const _cells = Object.freeze({
+  currentCells: _initialCells,
   nextCells: null,
-  cellSize: 35,
-  hover: { x: null, y: null }
+  cellSize: _cellSize,
+  hoverPos: { x: null, y: null }
 });
 
-const CellsReducer = (state = _grid, action) => {
+const CellsReducer = (state = _cells, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type) {
@@ -36,12 +39,12 @@ const CellsReducer = (state = _grid, action) => {
           newState.currentCells[i][j].state = null;
         }
       }
-      newState.nextCells = newState.currentCells;
+      newState.nextCells = null;
       return newState;
     case HOVER:
       const x = action.pos.x || null;
       const y = action.pos.y || null;
-      newState.hover = { x: x, y: y };
+      newState.hoverPos = { x: x, y: y };
       return newState;
     default:
       return state;
