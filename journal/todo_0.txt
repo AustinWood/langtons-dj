@@ -10,13 +10,10 @@ prioritize todo
 COMPONENTS
 ant_c
 ant
-app
-board
 canvas_c
 canvas
 cell_c
 controls_c
-root
 sequencer_c
 sequencer
 
