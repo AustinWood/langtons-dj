@@ -1,5 +1,9 @@
 import merge from 'lodash/merge';
-import { UPDATE_GRID, SAVE_NEXT_GRID, RESET, TOGGLE_ANT } from '../actions/actions';
+
+import {
+  UPDATE_GRID, SAVE_NEXT_GRID, RESET,
+  TOGGLE_ANT
+} from '../actions/actions';
 
 const _ants = {};
 

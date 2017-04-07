@@ -1,17 +1,7 @@
 ####################
 ### NOW
 
-refactor everything (start with checklist)
 prioritize todo
-
-####################
-### REFACTOR REDUCERS
-
-ants
-controls
-music
-root
-rules
 
 ####################
 ### SEQUENCER
@@ -29,6 +19,7 @@ fix lag by one
 ####################
 ### LATER
 
+refactor rules_reducer.jsx
 refactor sequencer.jsx
 move sequencer.jsx to util, or render something
 move controls.jsx#update() to util
