@@ -4,7 +4,7 @@ import Canvas from './canvas';
 
 const mapStateToProps = state => ({
   cells: state.cells.currentCells,
-  ants: state.ants.currentAnts,
+  ants: state.ants,
   hoverPos: state.cells.hoverPos,
   cellSize: state.cells.cellSize
 });

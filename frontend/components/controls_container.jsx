@@ -5,7 +5,7 @@ import Controls from './controls';
 const mapStateToProps = state => ({
   stepCount: state.controls.stepCount,
   cells: state.cells.currentCells,
-  ants: state.ants.currentAnts,
+  ants: state.ants,
   rules: state.rules,
   isPlaying: state.controls.isPlaying
 });

@@ -23,7 +23,8 @@ class Controls extends React.Component {
     for (var key in ants) {
       if (ants.hasOwnProperty(key)) {
         let ant = ants[key];
-        let cell = cells[ant.y][ant.x];
+        const currentState = ant.currentState;
+        let cell = cells[currentState.pos.y][currentState.pos.x];
         const currentCellState = cell.state || 0;
         music[key] = currentCellState;
 
@@ -39,28 +40,31 @@ class Controls extends React.Component {
         const mapRightRotate = {r: 'd', d: 'l', l: 'u', u: 'r'};
         const mapLeftRotate = {r: 'u', u: 'l', l: 'd', d: 'r'};
         if (rotateRight) {
-          ant.dir = mapRightRotate[ant.dir];
+          ant.nextState.dir = mapRightRotate[ant.currentState.dir];
         } else {
-          ant.dir = mapLeftRotate[ant.dir];
+          ant.nextState.dir = mapLeftRotate[ant.currentState.dir];
         }
 
         // Move ant
-        switch (ant.dir) {
+        let x = ant.currentState.pos.x;
+        let y = ant.currentState.pos.y;
+        switch (ant.nextState.dir) {
           case 'r':
-            ant.x < 19 ? ant.x += 1 : ant.x = 0;
+            x < 19 ? x += 1 : x = 0;
             break;
           case 'd':
-            ant.y < 19 ? ant.y += 1 : ant.y = 0;
+            y < 19 ? y += 1 : y = 0;
             break;
           case 'l':
-            ant.x > 0 ? ant.x -= 1 : ant.x = 19;
+            x > 0 ? x -= 1 : x = 19;
             break;
           case 'u':
-            ant.y > 0 ? ant.y -= 1 : ant.y = 19;
+            y > 0 ? y -= 1 : y = 19;
             break;
           default:
-            console.log('unrecogized ant direction');
+            break;
         }
+        ant.nextState.pos = { x: x, y: y };
 
         // Save changes
         ants[key] = ant;

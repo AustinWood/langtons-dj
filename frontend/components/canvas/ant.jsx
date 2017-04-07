@@ -1,7 +1,9 @@
 import React from 'react';
 import { Circle } from 'react-konva';
 
-const Ant = ({ x, y, cellSize, color }) => {
+const Ant = ({ currentState, cellSize, color }) => {
+  const x = currentState.pos.x;
+  const y = currentState.pos.y;
   return (
     <Circle
       x={x * cellSize + cellSize / 2}

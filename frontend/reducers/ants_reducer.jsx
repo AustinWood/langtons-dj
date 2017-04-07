@@ -1,54 +1,51 @@
 import merge from 'lodash/merge';
-import { TOGGLE_ANT, RESET, UPDATE_GRID, SAVE_NEXT_GRID } from '../actions/actions';
+import { UPDATE_GRID, SAVE_NEXT_GRID, RESET, TOGGLE_ANT } from '../actions/actions';
 
-const _ants = {
-  currentAnts: {},
-  nextAnts: {}
-};
+const _ants = {};
 
 const AntsReducer = (state = _ants, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type) {
+
     case UPDATE_GRID:
-      newState.currentAnts = state.nextAnts;
+      for (var key in newState) {
+        if (newState.hasOwnProperty(key)) {
+          newState[key].currentState = newState[key].nextState;
+        }
+      }
       return newState;
+
     case SAVE_NEXT_GRID:
-      newState.nextAnts = action.ants;
-      return newState;
-    case TOGGLE_ANT:
-      const x = action.pos.x;
-      const y = action.pos.y;
-      const id = `x${x}y${y}`;
-      if (state.currentAnts[id]) {
-        delete newState.currentAnts[id];
-        if (state.nextAnts[id]) {
-          delete newState.nextAnts[id];
-        }
-        return newState;
-      } else {
-        const newAnt = {
-          antId: id,
-          x_0: x, y_0: y, dir_0: 'r',
-          x: x, y: y, dir: 'r',
-          musical_attrs: null
-        };
-        newState.currentAnts[id] = newAnt;
-        newState.nextAnts[id] = newAnt;
-        return newState;
-      }
+      return action.ants;
+
     case RESET:
-      for (var key in newState.currentAnts) {
-        if (newState.currentAnts.hasOwnProperty(key)) {
-          let ant = newState.currentAnts[key];
-          ant.x = ant.x_0;
-          ant.y = ant.y_0;
-          ant.dir = ant.dir_0;
-          newState.currentAnts[key] = ant;
+      for (var key in newState.ants) {
+        if (newState.ants.hasOwnProperty(key)) {
+          let ant = newState[key];
+          ant.currentState = ant.initialState;
+          ant.nextState = ant.initialState;
+          newState[key] = ant;
         }
       }
-      newState.nextAnts = newState.currentAnts;
       return newState;
+
+    case TOGGLE_ANT:
+      const pos = action.pos;
+      const id = `x${pos.x}y${pos.y}`;
+      if (state[id]) {
+        delete newState[id];
+        return newState;
+      }
+      const newAnt = {
+        id: id,
+        initialState: { pos: pos, dir: 'r' },
+        currentState: { pos: pos, dir: 'r' },
+        nextState: { pos: pos, dir: 'r' }
+      };
+      newState[id] = newAnt;
+      return newState;
+
     default:
       return state;
   }
