@@ -102,9 +102,11 @@ export default class Sequencer extends React.Component {
     for (var key in chordObj) {
       if (chordObj.hasOwnProperty(key)) {
         const pentatonicSub = pentatonic[i];
-        const cellState = chordObj[key];
-        const note = pentatonicSub[cellState];
-        newChord.push(note);
+        if (pentatonicSub != null) {
+          const cellState = chordObj[key];
+          const note = pentatonicSub[cellState];
+          newChord.push(note);
+        }
         i += 1;
       }
     }
