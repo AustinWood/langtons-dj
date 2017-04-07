@@ -39,7 +39,7 @@ const CellsReducer = (state = _cells, action) => {
           newState.currentCells[i][j].state = null;
         }
       }
-      newState.nextCells = null;
+      newState.nextCells = newState.currentCells;
       return newState;
     case HOVER:
       const x = action.pos.x || null;
