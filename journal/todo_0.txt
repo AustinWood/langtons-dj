@@ -5,18 +5,21 @@ refactor everything (start with checklist)
 prioritize todo
 
 ####################
-### REFACTOR and CLEANUP
+### REFACTOR REDUCERS
 
-COMPONENTS
-sequencer_c
-sequencer
-
-REDUCERS
 ants
 controls
 music
 root
 rules
+
+####################
+### SEQUENCER
+
+allow easy chord progression selection
+tempo slider
+provide multiple synth options
+don't crash if ants > number of note collections
 
 ####################
 ### NEXT
@@ -26,6 +29,8 @@ fix lag by one
 ####################
 ### LATER
 
+refactor sequencer.jsx
+move sequencer.jsx to util, or render something
 move controls.jsx#update() to util
 disable color transition abocve tempo x
 flex course
