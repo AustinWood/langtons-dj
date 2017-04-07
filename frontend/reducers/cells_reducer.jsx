@@ -9,7 +9,7 @@ const _initialCells = function() {
   for (var i = 0; i < _gridSize; i++) {
     let row = [];
     for (var j = 0; j < _gridSize; j++) {
-      row.push({x: j, y: i, state: null});
+      row.push({ x: j, y: i, state: null });
     }
     output.push(row);
   }

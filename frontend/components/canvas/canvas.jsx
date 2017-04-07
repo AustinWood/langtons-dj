@@ -14,6 +14,28 @@ class Canvas extends React.Component {
     this.onMouseLeave = this.onMouseLeave.bind(this);
   }
 
+  handleClick(e) {
+    this.props.toggleAnt(this.convertToGridCoords(e));
+  }
+
+  onMouseOver(e) {
+    this.props.hover(this.convertToGridCoords(e));
+  }
+
+  onMouseLeave() {
+    this.props.hover({ x: null, y: null });
+  }
+
+  convertToGridCoords(e) {
+    const pointerPosition = e.target.getStage().getPointerPosition();
+    const xClick = pointerPosition.x;
+    const yClick = pointerPosition.y;
+    const cellSize = this.props.cellSize;
+    const x = (xClick - (xClick % cellSize)) / cellSize;
+    const y = (yClick - (yClick % cellSize)) / cellSize;
+    return { x: x, y: y };
+  }
+
   cells() {
     const cellArr = this.props.cells;
     const flattenedArr = [].concat.apply([], cellArr);
@@ -34,28 +56,6 @@ class Canvas extends React.Component {
       }
     }
     return antComponents;
-  }
-
-  convertToGridCoords(e) {
-    const pointerPosition = e.target.getStage().getPointerPosition();
-    const xClick = pointerPosition.x;
-    const yClick = pointerPosition.y;
-    const cellSize = this.props.cellSize;
-    const x = (xClick - (xClick % cellSize)) / cellSize;
-    const y = (yClick - (yClick % cellSize)) / cellSize;
-    return { x: x, y: y };
-  }
-
-  handleClick(e) {
-    this.props.toggleAnt(this.convertToGridCoords(e));
-  }
-
-  onMouseOver(e) {
-    this.props.hover(this.convertToGridCoords(e));
-  }
-
-  onMouseLeave() {
-    this.props.hover({ x: null, y: null });
   }
 
   hover() {

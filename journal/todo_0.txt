@@ -17,6 +17,11 @@ sequencer_c
 sequencer
 
 REDUCERS
+ants
+controls
+music
+root
+rules
 
 ####################
 ### NEXT
