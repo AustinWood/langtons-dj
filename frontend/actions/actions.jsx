@@ -1,6 +1,6 @@
 export const TOGGLE_ANT = "TOGGLE_ANT";
-export const toggleAnt = (x, y) => {
-  return ({ type: TOGGLE_ANT, x, y });
+export const toggleAnt = (pos) => {
+  return ({ type: TOGGLE_ANT, pos });
 };
 
 export const TOGGLE_PLAY = "TOGGLE_PLAY";
@@ -14,8 +14,8 @@ export const reset = () => {
 };
 
 export const HOVER = "HOVER";
-export const hover = (x, y) => {
-  return ({ type: HOVER, x, y });
+export const hover = (pos) => {
+  return ({ type: HOVER, pos });
 };
 
 export const UPDATE_GRID = "UPDATE_GRID";

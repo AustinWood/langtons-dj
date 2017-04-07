@@ -39,7 +39,9 @@ const CellsReducer = (state = _grid, action) => {
       newState.nextCells = newState.currentCells;
       return newState;
     case HOVER:
-      newState.hover = { x: action.x, y: action.y };
+      const x = action.pos.x;
+      const y = action.pos.y;
+      newState.hover = { x: x, y: y };
       return newState;
     default:
       return state;

@@ -17,7 +17,9 @@ const AntsReducer = (state = _ants, action) => {
       newState.nextAnts = action.ants;
       return newState;
     case TOGGLE_ANT:
-      const id = `x${action.x}y${action.y}`;
+      const x = action.pos.x;
+      const y = action.pos.y;
+      const id = `x${x}y${y}`;
       if (state.currentAnts[id]) {
         delete newState.currentAnts[id];
         if (state.nextAnts[id]) {
@@ -27,8 +29,8 @@ const AntsReducer = (state = _ants, action) => {
       } else {
         const newAnt = {
           antId: id,
-          x_0: action.x, y_0: action.y, dir_0: 'r',
-          x: action.x, y: action.y, dir: 'r',
+          x_0: x, y_0: y, dir_0: 'r',
+          x: x, y: y, dir: 'r',
           musical_attrs: null
         };
         newState.currentAnts[id] = newAnt;

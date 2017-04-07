@@ -5,13 +5,13 @@ import { toggleAnt, hover } from '../actions/actions';
 const mapStateToProps = state => ({
   cells: state.cells.currentCells,
   ants: state.ants.currentAnts,
-  hoverPos: state.grid.hover,
-  cellSize: state.grid.cellSize
+  hoverPos: state.cells.hover,
+  cellSize: state.cells.cellSize
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleAnt: (x, y) => dispatch(toggleAnt(x, y)),
-  hover: (x, y) => dispatch(hover(x, y))
+  toggleAnt: (pos) => dispatch(toggleAnt(pos)),
+  hover: (pos) => dispatch(hover(pos))
 });
 
 export default connect(
