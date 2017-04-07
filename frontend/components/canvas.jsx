@@ -46,7 +46,7 @@ class Canvas extends React.Component {
     const cellSize = this.props.cellSize;
     const x = (xClick - (xClick % cellSize)) / cellSize;
     const y = (yClick - (yClick % cellSize)) / cellSize;
-    return {x: x, y: y};
+    return { x: x, y: y };
   }
 
   handleClick(e) {
@@ -58,7 +58,7 @@ class Canvas extends React.Component {
   }
 
   onMouseLeave() {
-    this.props.hover(null, null);
+    this.props.hover({ x: null, y: null });
   }
 
   hover() {
