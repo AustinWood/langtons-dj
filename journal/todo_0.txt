@@ -7,13 +7,7 @@ prioritize todo
 ####################
 ### REFACTOR and CLEANUP
 
-CANVAS COMPONENTS
-ant_c
-ant
-
-OTHER COMPONENTS
-controls_c
-controls
+COMPONENTS
 sequencer_c
 sequencer
 
@@ -32,6 +26,7 @@ fix lag by one
 ####################
 ### LATER
 
+move controls.jsx#update() to util
 disable color transition abocve tempo x
 flex course
 add navbar component

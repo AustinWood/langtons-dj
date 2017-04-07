@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Circle } from 'react-konva';
 
 const Ant = ({ x, y, cellSize, color }) => {

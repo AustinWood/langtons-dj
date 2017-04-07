@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Rect } from 'react-konva';
 
 const Board = ({ width, height }) => {

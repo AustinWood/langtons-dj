@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
+import { saveNextGrid, togglePlay, reset } from '../actions/actions';
 import Controls from './controls';
-import { togglePlay, reset, saveNextGrid } from '../actions/actions';
 
 const mapStateToProps = state => ({
   stepCount: state.controls.stepCount,

@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import merge from 'lodash/merge';
 
 class Controls extends React.Component {
   constructor(props) {
@@ -10,11 +8,7 @@ class Controls extends React.Component {
     };
   }
 
-  componentDidMount() {
-    //
-  }
-
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     if (this.state.stepCount !== this.props.stepCount) {
       this.state.stepCount = this.props.stepCount;
       this.update();
@@ -23,7 +17,7 @@ class Controls extends React.Component {
 
   update() {
     let cells = this.props.cells;
-    let ants = merge({}, this.props.ants);
+    let ants = this.props.ants;
     let rules = this.props.rules;
     let music = {};
     for (var key in ants) {
@@ -33,14 +27,14 @@ class Controls extends React.Component {
         const currentCellState = cell.state || 0;
         music[key] = currentCellState;
 
-        // change cell state
+        // Change cell state
         if (rules.hasOwnProperty(cell.state + 1)) {
           cell.state += 1;
         } else {
           cell.state = 0;
         }
 
-        // rotate ant
+        // Rotate ant
         const rotateRight = rules[currentCellState].rotateRight;
         const mapRightRotate = {r: 'd', d: 'l', l: 'u', u: 'r'};
         const mapLeftRotate = {r: 'u', u: 'l', l: 'd', d: 'r'};
@@ -50,7 +44,7 @@ class Controls extends React.Component {
           ant.dir = mapLeftRotate[ant.dir];
         }
 
-        // move ant
+        // Move ant
         switch (ant.dir) {
           case 'r':
             ant.x < 19 ? ant.x += 1 : ant.x = 0;
@@ -68,6 +62,7 @@ class Controls extends React.Component {
             console.log('unrecogized ant direction');
         }
 
+        // Save changes
         ants[key] = ant;
         cells[cell.y][cell.x] = cell;
       }
@@ -75,13 +70,6 @@ class Controls extends React.Component {
     this.props.saveNextGrid(cells, ants, music);
   }
 
-  ///////////////
-  ///// Buttons
-
-
-
-  ///////////////
-  ///// Render
   render() {
     return (
       <div id='nav'>
