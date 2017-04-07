@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
   const color = (cellState === null ? '#282c34' : state.rules[cellState].color);
   return ({
     color: color,
-    cellSize: state.grid.cellSize
+    cellSize: state.cells.cellSize
   });
 };
 

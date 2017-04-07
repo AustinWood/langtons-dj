@@ -12,11 +12,7 @@ class Canvas extends React.Component {
     this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
   }
-
-  componentDidUpdate() {
-    console.log(this.props.hover);
-  }
-
+  
   cells() {
     const cellArr = this.props.cells;
     const flattenedArr = [].concat.apply([], cellArr);
