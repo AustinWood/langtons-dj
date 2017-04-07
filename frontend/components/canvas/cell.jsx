@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Rect } from 'react-konva';
 import { Circle } from 'react-konva';
 
 class Cell extends React.Component {
