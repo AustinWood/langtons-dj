@@ -1,49 +1,45 @@
 ####################
 ### NOW
 
-prioritize todo
-
-####################
-### SEQUENCER
-
-allow easy chord progression selection
-tempo slider
-provide multiple synth options
 don't crash if ants > number of note collections
+tempo slider
+volume slider
 
 ####################
 ### NEXT
 
-fix lag by one
+.gitignore bundle?
+
+create global colors
+color transition fraction of step interval, disable above tempo x
+fade interval for 'reset' should be longer than regular fade interval
 
 ####################
-### LATER
+### RULES
 
+UI for selecting default note arrangements
+default rules for ants: https://youtu.be/w6XQQhCgq5c
+
+####################
+### BEFORE MVP
+
+flex course
 refactor rules_reducer.jsx
-refactor sequencer.jsx
 move sequencer.jsx to util, or render something
 move controls.jsx#update() to util
-disable color transition abocve tempo x
-flex course
-add navbar component
-style sidebar controls
-refactor currentAnts/oldAnts (works for cells, but very WET for ants)
-couple (x, y) -> (pos)
-add speed control
+fix lag by one
+provide multiple synth options
 slightly randomize attack, etc. https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html line 59
-volume slider
 add envelopes visualizer between canvas layers https://tonejs.github.io/examples/#funkyShape
+canvas size saves to store, calculate grid size programmatically
+render ant as image of ant
+
+####################
+### AFTER MVP
+
 ask David for melody
 ask Frank for melody
 ask Scott Bookman for melody
-ant like : https://youtu.be/w6XQQhCgq5c
-color transition should be fraction of step interval
-add cell size control
-create global colors
-change fade interval for 'reset' to be longer
 animate ants on reset
-canvas size saves to store, calculate grid size programmatically
-render ant as image of ant
-can only toggle if clicking outside ant but inside cell
-.gitignore bundle?
+add cell size control
 movement and sounds reversible
