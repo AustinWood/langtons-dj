@@ -4,12 +4,23 @@ import Tone from 'tone';
 export default class Sequencer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.handleDispatch = this.handleDispatch.bind(this);
+    this.state = {
+      stepCount: 0
+    };
   }
 
   componentDidMount() {
-    let synth = new Tone.PolySynth(3, Tone.FMSynth, {
+    this.initializeSynthesizers();
+    this.initializeStepper();
+    Tone.Transport.bpm.value = 80;
+    this.toggleTransport();
+  }
+
+  /////////////////////////
+  // SYNTHESIZERS
+
+  initializeSynthesizers() {
+    let treble1 = new Tone.FMSynth({
       "oscillator" : {
         "type" : "fatsawtooth",
         "count" : 3,
@@ -21,27 +32,35 @@ export default class Sequencer extends React.Component {
         "sustain": 0.5,
         "release": 0.4,
         "attackCurve" : "exponential"
-      },
+      }
     }).toMaster();
 
+    this.state.treble1 = treble1;
+  }
+
+  /////////////////////////
+  // STEPPER
+
+  initializeStepper() {
+    this.handleDispatch = this.handleDispatch.bind(this);
+    let handleDispatchB = this.handleDispatch;
+    const treble1 = this.state.treble1;
     let stepper = new Tone.Part(function(time, note) {
       handleDispatchB();
-      synth.triggerAttackRelease(note, "32n", time);
+      treble1.triggerAttack("A4");
     }, []);
     stepper.loop = true;
     stepper.loopEnd = "16n";
     stepper.start(0);
     this.state.stepper = stepper;
-
-    let handleDispatchB = this.handleDispatch;
-
-    Tone.Transport.bpm.value = 80;
-    this.toggleTransport();
   }
 
   handleDispatch() {
     this.props.updateGrid();
   }
+
+  /////////////////////////
+  // CALCULATE CHORD
 
   componentDidUpdate() {
     this.toggleTransport();
@@ -63,7 +82,7 @@ export default class Sequencer extends React.Component {
     for (var key in chordObj) {
       if (chordObj.hasOwnProperty(key)) {
         const pentatonicSub = pentatonic[i];
-        if (pentatonicSub != null) {
+        if (pentatonicSub !== null) {
           const cellState = chordObj[key];
           const note = pentatonicSub[cellState];
           newChord.push(note);
@@ -75,7 +94,12 @@ export default class Sequencer extends React.Component {
     this.state.stepper.add(0, newChord);
   }
 
+  /////////////////////////
+  // TRANSPORT and RENDER
+
   toggleTransport() {
+    // can I put transport in separate comopnent (it's a singleton)
+    // so as only to perform this logic when .isPlaying changes ?
     if (this.props.isPlaying && Tone.Transport.state !== "started") {
       Tone.Transport.start();
     } else if (!this.props.isPlaying && Tone.Transport.state === "started") {
