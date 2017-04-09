@@ -1,4 +1,5 @@
 import React from 'react';
+import InputRange from 'react-input-range';
 
 class Controls extends React.Component {
   constructor(props) {
@@ -85,6 +86,11 @@ class Controls extends React.Component {
           onClick={this.props.togglePlay}
           id={this.props.isPlaying ? 'pause' : 'play'}
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
+        <InputRange
+          maxValue={20}
+          minValue={0}
+          value={10}
+          onChange={value => this.setState({ value })} />
       </div>
     );
   }

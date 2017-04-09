@@ -19,11 +19,12 @@ class Cell extends React.Component {
     const cell = this.refs.cell;
     cell.to({
         fill: this.props.color,
-        duration: 0.15
+        duration: 0.0
     });
   }
 
   render() {
+    console.log(`rendering ${this.props.key}`);
     return (
       <Circle
         ref='cell'

@@ -3,6 +3,7 @@ import { updateGrid } from '../actions/actions';
 import Sequencer from './sequencer';
 
 const mapStateToProps = state => ({
+  stepCount: state.controls.stepCount,
   isPlaying: state.controls.isPlaying,
   chord: state.music.chord
 });

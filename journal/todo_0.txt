@@ -26,6 +26,7 @@ default rules for ants: https://youtu.be/w6XQQhCgq5c
 ####################
 ### BEFORE MVP
 
+dynamics for each individual ant
 flex course
 refactor rules_reducer.jsx
 move sequencer.jsx to util, or render something
