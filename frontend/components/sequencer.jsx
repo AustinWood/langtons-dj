@@ -35,9 +35,15 @@ export default class Sequencer extends React.Component {
       }
     };
 
-    let treble1 = new Tone.FMSynth(synthProperties).toMaster();
+    let bass = new Tone.FMSynth(synthProperties).toMaster();
+    let tenor = new Tone.FMSynth(synthProperties).toMaster();
+    let alto = new Tone.FMSynth(synthProperties).toMaster();
+    let treble = new Tone.FMSynth(synthProperties).toMaster();
 
-    this.state.treble1 = treble1;
+    this.state.bass = bass;
+    this.state.tenor = tenor;
+    this.state.alto = alto;
+    this.state.treble = treble;
   }
 
   /////////////////////////
@@ -47,12 +53,24 @@ export default class Sequencer extends React.Component {
     this.handleDispatch = this.handleDispatch.bind(this);
     let handleDispatchB = this.handleDispatch;
 
-    this.playTreble1 = this.playTreble1 = this.playTreble1.bind(this);
-    let playTreble1B = this.playTreble1;
+    this.playBass = this.playBass = this.playBass.bind(this);
+    let playBassB = this.playBass;
+
+    this.playTenor = this.playTenor = this.playTenor.bind(this);
+    let playTenorB = this.playTenor;
+
+    this.playAlto = this.playAlto = this.playAlto.bind(this);
+    let playAltoB = this.playAlto;
+
+    this.playTreble = this.playTreble = this.playTreble.bind(this);
+    let playTrebleB = this.playTreble;
 
     let stepper = new Tone.Part(function(time, note) {
       handleDispatchB();
-      playTreble1B();
+      playBassB();
+      playTenorB();
+      playAltoB();
+      playTrebleB();
     }, []);
 
     stepper.loop = true;
@@ -76,12 +94,18 @@ export default class Sequencer extends React.Component {
 
   calculateChord() {
     console.log("calculate chord");
-    const noteCollection = [
-      ["C2", "C3", "C4", "C5", "C6"],
-      ["G3", "G4", "G5", "F3", "F4"],
-      ["E3", "E4", "E5", "A3", "A4"],
-      ["C2", "C3", "C4", "C5", "C1"]
+    const noteCollection = [ // Tetrachords
+      ["E2", "F3", "G3", "Db3", "F3"],
+      ["Gb3", "Eb3", "Ab3", "D4", "Ab4"],
+      ["B4", "C4", "A4", "Bb5", "A5"],
+      ["B5", "C5", "A5", "Bb6", "A6"]
     ];
+    // const noteCollection = [
+    //   ["C2", "C3", "C4", "C5", "C6"],
+    //   ["G3", "G4", "G5", "F3", "F4"],
+    //   ["E3", "E4", "E5", "A3", "A4"],
+    //   ["C2", "C3", "C4", "C5", "C1"]
+    // ];
     let newChord = [];
     const chordObj = this.props.chord;
     let i = 0;
@@ -105,9 +129,24 @@ export default class Sequencer extends React.Component {
   /////////////////////////
   // PLAY CHORD
 
-  playTreble1() {
-    const treble1Note = this.state.chord[3];
-    this.state.treble1.triggerAttack(treble1Note);
+  playBass() {
+    const note = this.state.chord[0];
+    this.state.bass.triggerAttack(note);
+  }
+
+  playTenor() {
+    const note = this.state.chord[1];
+    this.state.tenor.triggerAttack(note);
+  }
+
+  playAlto() {
+    const note = this.state.chord[2];
+    this.state.alto.triggerAttack(note);
+  }
+
+  playTreble() {
+    const note = this.state.chord[3];
+    this.state.treble.triggerAttack(note);
   }
 
   /////////////////////////
