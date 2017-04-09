@@ -24,7 +24,6 @@ class Cell extends React.Component {
   }
 
   render() {
-    console.log(`rendering ${this.props.key}`);
     return (
       <Circle
         ref='cell'
