@@ -12,7 +12,7 @@ export default class Sequencer extends React.Component {
   componentDidMount() {
     this.initializeSynthesizers();
     this.initializeStepper();
-    Tone.Transport.bpm.value = 80;
+    Tone.Transport.bpm.value = 30;
     this.toggleTransport();
   }
 
@@ -130,13 +130,18 @@ export default class Sequencer extends React.Component {
   // PLAY CHORD
 
   playBass() {
-    const note = this.state.chord[0];
-    this.state.bass.triggerAttack(note);
+    if (this.props.stepCount % 4 === 1) {
+      const note = this.state.chord[0];
+      this.state.bass.triggerAttack(note);
+    }
   }
 
   playTenor() {
-    const note = this.state.chord[1];
-    this.state.tenor.triggerAttack(note);
+    const mod = this.props.stepCount % 4;
+    if (mod === 1 || mod === 3) {
+      const note = this.state.chord[1];
+      this.state.tenor.triggerAttack(note);
+    }
   }
 
   playAlto() {
