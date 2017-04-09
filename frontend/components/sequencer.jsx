@@ -178,6 +178,10 @@ export default class Sequencer extends React.Component {
       Tone.Transport.start();
     } else if (!this.props.isPlaying && Tone.Transport.state === "started") {
       Tone.Transport.stop();
+      this.state.bass.triggerRelease();
+      this.state.tenor.triggerRelease();
+      this.state.alto.triggerRelease();
+      this.state.treble.triggerRelease();
     }
   }
 
