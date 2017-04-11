@@ -79,7 +79,6 @@ class Controls extends React.Component {
 
   onChange(value) {
     this.props.changeTempo(value);
-    // console.log(value); //eslint-disable-line
   }
 
   render() {

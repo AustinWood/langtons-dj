@@ -1,14 +1,7 @@
 ####################
 ### NOW
 
-
-
-tempo slider
 volume slider
-
-https://github.com/Tonejs/Tone.js/blob/master/examples/oscillator.html # for volume
-https://github.com/Tonejs/Tone.js/blob/master/examples/scripts/Interface.js # for slider
-https://github.com/Tonejs/Tone.js/blob/master/examples/signal.html # for slider implementation
 
 ####################
 ### NEXT
