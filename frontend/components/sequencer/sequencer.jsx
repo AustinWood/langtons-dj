@@ -1,5 +1,6 @@
 import React from 'react';
 import Tone from 'tone';
+import { monoSynths, amSynths, fmSynths } from './synth_properties';
 
 export default class Sequencer extends React.Component {
   constructor(props) {
@@ -20,25 +21,10 @@ export default class Sequencer extends React.Component {
   // SYNTHESIZERS
 
   initializeSynthesizers() {
-    const synthProperties = {
-      "oscillator" : {
-        "type" : "fatsawtooth",
-        "count" : 3,
-        "spread" : 30
-      },
-      "envelope": {
-        "attack": 0.01,
-        "decay": 0.1,
-        "sustain": 0.5,
-        "release": 0.4,
-        "attackCurve" : "exponential"
-      }
-    };
-
-    let bass = new Tone.FMSynth(synthProperties).toMaster();
-    let tenor = new Tone.FMSynth(synthProperties).toMaster();
-    let alto = new Tone.FMSynth(synthProperties).toMaster();
-    let treble = new Tone.FMSynth(synthProperties).toMaster();
+    let bass = new Tone.Synth(monoSynths.bassy).toMaster();
+    let tenor = new Tone.Synth(monoSynths.bassy).toMaster();
+    let alto = new Tone.AMSynth(amSynths.tiny).toMaster();
+    let treble = new Tone.AMSynth(amSynths.tiny).toMaster();
 
     this.state.bass = bass;
     this.state.tenor = tenor;
@@ -130,22 +116,21 @@ export default class Sequencer extends React.Component {
   // PLAY CHORD
 
   playBass() {
-    if (this.props.stepCount % 4 === 1) {
+    if (this.props.stepCount % 16 === 1) {
       const note = this.state.chord[0];
       this.state.bass.triggerAttack(note);
     }
   }
 
   playTenor() {
-    const mod = this.props.stepCount % 4;
-    if (mod === 1 || mod === 3) {
+    if (this.props.stepCount % 4 === 1) {
       const note = this.state.chord[1];
       this.state.tenor.triggerAttack(note);
     }
   }
 
   playAlto() {
-    const rand = Math.floor(Math.random() * 100);
+    const rand = 1; //Math.floor(Math.random() * 100);
     if (rand < 50) {
       const note = this.state.chord[2];
       this.state.alto.triggerAttack(note);
@@ -157,7 +142,7 @@ export default class Sequencer extends React.Component {
   }
 
   playTreble() {
-    const rand = Math.floor(Math.random() * 100);
+    const rand = 1; //Math.floor(Math.random() * 100);
     if (rand < 70) {
       const note = this.state.chord[3];
       this.state.treble.triggerAttack(note);

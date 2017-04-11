@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateGrid } from '../actions/actions';
+import { updateGrid } from '../../actions/actions';
 import Sequencer from './sequencer';
 
 const mapStateToProps = state => ({
