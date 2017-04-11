@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { saveNextGrid, togglePlay, reset } from '../actions/actions';
+import { saveNextGrid, togglePlay, reset, changeTempo } from '../actions/actions';
 import Controls from './controls';
 
 const mapStateToProps = state => ({
@@ -13,7 +13,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   saveNextGrid: (cells, ants, music) => dispatch(saveNextGrid(cells, ants, music)),
   togglePlay: () => dispatch(togglePlay()),
-  reset: () => dispatch(reset())
+  reset: () => dispatch(reset()),
+  changeTempo: (tempo) => dispatch(changeTempo(tempo))
 });
 
 export default connect(

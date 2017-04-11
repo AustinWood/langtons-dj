@@ -1,8 +1,11 @@
 import merge from 'lodash/merge';
-import { SAVE_NEXT_GRID } from '../actions/actions';
+import {
+  SAVE_NEXT_GRID,
+  CHANGE_TEMPO } from '../actions/actions';
 
 const _music = {
-  chord: []
+  chord: [],
+  tempo: 120
 };
 
 const AntReducer = (state = _music, action) => {
@@ -12,6 +15,11 @@ const AntReducer = (state = _music, action) => {
 
     case SAVE_NEXT_GRID:
       newState.chord = action.music;
+      return newState;
+
+    case CHANGE_TEMPO:
+      console.log(action);
+      newState.tempo = action.tempo;
       return newState;
 
     default:

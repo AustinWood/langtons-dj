@@ -1,21 +1,29 @@
 import React from 'react';
 import Tone from 'tone';
 import { monoSynths, amSynths, fmSynths } from './synth_properties';
-import { notes } from './notes'
+import { notes } from './notes';
 
 export default class Sequencer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stepCount: 0
+      stepCount: 0,
+      tempo: null
     };
   }
 
   componentDidMount() {
     this.initializeSynthesizers();
     this.initializeStepper();
-    Tone.Transport.bpm.value = 120;
     this.toggleTransport();
+    this.updateTempo();
+  }
+
+  updateTempo() {
+    if (this.props.tempo !== this.state.tempo) {
+      this.state.tempo = this.props.tempo;
+      Tone.Transport.bpm.value = this.props.tempo;
+    }
   }
 
   /////////////////////////
@@ -77,6 +85,7 @@ export default class Sequencer extends React.Component {
     console.log("did update");
     this.toggleTransport();
     this.calculateChord();
+    this.updateTempo();
   }
 
   calculateChord() {
@@ -120,7 +129,8 @@ export default class Sequencer extends React.Component {
   }
 
   playAlto() {
-    const rand = 1; //Math.floor(Math.random() * 100);
+    // const rand = Math.floor(Math.random() * 100);
+    const rand = 1;
     if (rand < 50) {
       const note = this.state.chord[2];
       this.state.alto.triggerAttack(note);
@@ -132,7 +142,8 @@ export default class Sequencer extends React.Component {
   }
 
   playTreble() {
-    const rand = 1; //Math.floor(Math.random() * 100);
+    // const rand = Math.floor(Math.random() * 100);
+    const rand = 1;
     if (rand < 70) {
       const note = this.state.chord[3];
       this.state.treble.triggerAttack(note);

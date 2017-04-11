@@ -1,12 +1,14 @@
 import React from 'react';
-import InputRange from 'react-input-range';
+import Slider from 'rc-slider';
 
 class Controls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stepCount: null
+      stepCount: null,
+      value: 10
     };
+    this.onChange = this.onChange.bind(this);
   }
 
   componentDidUpdate() {
@@ -75,6 +77,11 @@ class Controls extends React.Component {
     this.props.saveNextGrid(cells, ants, music);
   }
 
+  onChange(value) {
+    this.props.changeTempo(value);
+    // console.log(value); //eslint-disable-line
+  }
+
   render() {
     return (
       <div id='nav'>
@@ -86,11 +93,7 @@ class Controls extends React.Component {
           onClick={this.props.togglePlay}
           id={this.props.isPlaying ? 'pause' : 'play'}
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
-        <InputRange
-          maxValue={20}
-          minValue={0}
-          value={10}
-          onChange={value => this.setState({ value })} />
+        <Slider min={20} max={300} defaultValue={120} onChange={this.onChange} />
       </div>
     );
   }

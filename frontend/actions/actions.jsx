@@ -27,3 +27,8 @@ export const SAVE_NEXT_GRID = "SAVE_NEXT_GRID";
 export const saveNextGrid = (cells, ants, music) => {
   return ({ type: SAVE_NEXT_GRID, cells, ants, music });
 };
+
+export const CHANGE_TEMPO = "CHANGE_TEMPO";
+export const changeTempo = (tempo) => {
+  return ({ type: CHANGE_TEMPO, tempo });
+};

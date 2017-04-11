@@ -26,7 +26,7 @@ const ControlsReducer = (state = _controls, action) => {
     case TOGGLE_PLAY:
       newState.isPlaying = !newState.isPlaying;
       return newState;
-      
+
     default:
       return state;
   }

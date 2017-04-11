@@ -5,7 +5,8 @@ import Sequencer from './sequencer';
 const mapStateToProps = state => ({
   stepCount: state.controls.stepCount,
   isPlaying: state.controls.isPlaying,
-  chord: state.music.chord
+  chord: state.music.chord,
+  tempo: state.music.tempo
 });
 
 const mapDispatchToProps = dispatch => ({
