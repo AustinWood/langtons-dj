@@ -90,7 +90,7 @@ export default class Sequencer extends React.Component {
 
   calculateChord() {
     console.log("calculate chord");
-    const noteCollection = notes.wholeTone;
+    const noteCollection = notes.happy;
     let newChord = [];
     const chordObj = this.props.chord;
     let i = 0;
