@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { saveNextGrid, togglePlay, reset, changeTempo, changeVolume } from '../actions/actions';
+import { saveNextGrid, togglePlay, reset, changeTempo, changeVolume } from '../../actions/actions';
 import Controls from './controls';
 
 const mapStateToProps = state => ({

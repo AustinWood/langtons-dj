@@ -115,7 +115,7 @@ class Controls extends React.Component {
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
 
         <Slider min={20} max={300} defaultValue={120} onChange={this.changeTempo} />
-        <Slider min={-40} max={0} defaultValue={50} onChange={this.changeVolume} />
+        <Slider min={-40} max={0} defaultValue={0} onChange={this.changeVolume} />
 
         <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
 
