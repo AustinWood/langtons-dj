@@ -41,6 +41,9 @@ const AntsReducer = (state = _ants, action) => {
         delete newState[id];
         return newState;
       }
+      if (Object.keys(state).length === 4) {
+        return state;
+      }
       const newAnt = {
         id: id,
         initialState: { pos: pos, dir: 'r' },
