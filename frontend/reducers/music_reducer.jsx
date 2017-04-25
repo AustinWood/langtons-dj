@@ -7,7 +7,7 @@ import {
 const _music = {
   chord: [],
   tempo: 120,
-  volume: 100
+  volume: 0
 };
 
 const AntReducer = (state = _music, action) => {

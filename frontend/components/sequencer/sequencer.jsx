@@ -21,6 +21,13 @@ export default class Sequencer extends React.Component {
     this.updateVolume();
   }
 
+  componentDidUpdate() {
+    this.toggleTransport();
+    this.calculateChord();
+    this.updateTempo();
+    this.updateVolume();
+  }
+
   updateTempo() {
     if (this.props.tempo !== this.state.tempo) {
       this.state.tempo = this.props.tempo;
@@ -89,13 +96,6 @@ export default class Sequencer extends React.Component {
 
   /////////////////////////
   // CALCULATE CHORD
-
-  componentDidUpdate() {
-    this.toggleTransport();
-    this.calculateChord();
-    this.updateTempo();
-    this.updateVolume();
-  }
 
   calculateChord() {
     const noteCollection = notes.octaveJumper;
