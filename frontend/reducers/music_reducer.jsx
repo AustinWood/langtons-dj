@@ -3,11 +3,13 @@ import {
   SAVE_NEXT_GRID,
   CHANGE_TEMPO,
   CHANGE_VOLUME } from '../actions/actions';
+import { notes } from '../components/sequencer/notes';
 
 const _music = {
   chord: [],
   tempo: 120,
-  volume: 0
+  volume: 0,
+  notes: notes[0].notes
 };
 
 const AntReducer = (state = _music, action) => {

@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
   isPlaying: state.controls.isPlaying,
   chord: state.music.chord,
   tempo: state.music.tempo,
-  volume: state.music.volume
+  volume: state.music.volume,
+  notes: state.music.notes
 });
 
 const mapDispatchToProps = dispatch => ({

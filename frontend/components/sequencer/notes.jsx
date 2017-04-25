@@ -1,5 +1,5 @@
 export const notes = {
-  tetrachords: {
+  0: {
     name: "Tetrachords",
     notes: [
       ["E2", "F3", "G3", "Db3", "F3"],
@@ -8,7 +8,7 @@ export const notes = {
       ["B5", "C5", "A5", "Bb6", "A6"]
     ]
   },
-  octaveJumper: {
+  1: {
     name: "Octave Jumper",
     notes: [
       ["C2", "C3", "C4", "C5", "C6"],
@@ -17,7 +17,7 @@ export const notes = {
       ["A5", "F5", "A5", "F5", "A5"]
     ]
   },
-  wholeTone: {
+  2: {
     name: "Dreamy",
     notes: [
       ["C3","D3","E3","F#3","G#3"],
@@ -26,7 +26,7 @@ export const notes = {
       ["F#5","G#5","A#6","C6","D6"]
     ]
   },
-  trichords: {
+  3: {
     name: "Trichords",
     notes: [
       ["E2", "F2", "C#2", "E2", "F2"],
@@ -35,7 +35,7 @@ export const notes = {
       ["F#5", "G5", "B5", "F#5", "G5"]
     ]
   },
-  pentatonic: {
+  4: {
     name: "Pentatonic",
     notes: [
       ["C3", "D3", "E3", "F#3", "G#3", "A#3"],
@@ -44,7 +44,7 @@ export const notes = {
       ["C6", "D6", "E6", "F#6", "G#6", "A#6"]
     ]
   },
-  happy: {
+  5: {
     name: "Happy",
     notes: [
       ["C3", "E3", "D3", "E3", "D3"],

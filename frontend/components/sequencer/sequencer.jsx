@@ -1,7 +1,7 @@
 import React from 'react';
 import Tone from 'tone';
 import { monoSynths, amSynths, fmSynths } from './synth_properties';
-import { notes } from '../sequencer/notes';
+// import { notes } from '../sequencer/notes';
 
 export default class Sequencer extends React.Component {
   constructor(props) {
@@ -98,7 +98,8 @@ export default class Sequencer extends React.Component {
   // CALCULATE CHORD
 
   calculateChord() {
-    const noteCollection = notes.octaveJumper.notes;
+    const noteCollection = this.props.notes;
+    console.log(noteCollection);
     let newChord = [];
     const chordObj = this.props.chord;
     let i = 0;

@@ -22,9 +22,9 @@ class DropdownComponent extends React.Component {
   }
 
   _onSelect(option) {
-    const optionIdx = options.indexOf(option.label);
-    console.log(optionIdx);
     this.setState({selected: option});
+    const optionIdx = options.indexOf(option.label);
+    console.log(notes[optionIdx].notes);
   }
 
   render() {
