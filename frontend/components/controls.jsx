@@ -1,15 +1,22 @@
 import React from 'react';
 import Slider from 'rc-slider';
+import Dropdown from 'react-dropdown';
+
+const options = [
+  'one', 'two', 'three'
+];
 
 class Controls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       stepCount: null,
-      value: 10
+      value: 10,
+      selected: options[0]
     };
     this.changeTempo = this.changeTempo.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
+    this._onSelect = this._onSelect.bind(this);
   }
 
   componentDidUpdate() {
@@ -87,9 +94,17 @@ class Controls extends React.Component {
     this.props.changeVolume(value);
   }
 
+  _onSelect (option) {
+    console.log('You selected ', option.label);
+    this.setState({selected: option});
+  }
+
   render() {
+    const defaultOption = this.state.selected;
+
     return (
       <div id='nav'>
+
         <img
           onClick={this.props.reset}
           id={'stop'}
@@ -98,8 +113,12 @@ class Controls extends React.Component {
           onClick={this.props.togglePlay}
           id={this.props.isPlaying ? 'pause' : 'play'}
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
+
         <Slider min={20} max={300} defaultValue={120} onChange={this.changeTempo} />
         <Slider min={-40} max={0} defaultValue={50} onChange={this.changeVolume} />
+
+        <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
+
       </div>
     );
   }

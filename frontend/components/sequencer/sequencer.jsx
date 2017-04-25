@@ -137,29 +137,13 @@ export default class Sequencer extends React.Component {
   }
 
   playAlto() {
-    // const rand = Math.floor(Math.random() * 100);
-    const rand = 1;
-    if (rand < 50) {
-      const note = this.state.chord[2];
-      this.state.alto.triggerAttack(note);
-    } else if (rand < 80) {
-      // hold the note
-    } else {
-      this.state.alto.triggerRelease();
-    }
+    const note = this.state.chord[2];
+    this.state.alto.triggerAttack(note);
   }
 
   playTreble() {
-    // const rand = Math.floor(Math.random() * 100);
-    const rand = 1;
-    if (rand < 70) {
-      const note = this.state.chord[3];
-      this.state.treble.triggerAttack(note);
-    } else if (rand < 80) {
-      // hold the note
-    } else {
-      this.state.alto.triggerRelease();
-    }
+    const note = this.state.chord[3];
+    this.state.treble.triggerAttack(note);
   }
 
   /////////////////////////
