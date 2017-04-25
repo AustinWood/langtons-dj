@@ -24,8 +24,8 @@ const AntsReducer = (state = _ants, action) => {
       return action.ants;
 
     case RESET:
-      for (var key in newState.ants) {
-        if (newState.ants.hasOwnProperty(key)) {
+      for (var key in newState) {
+        if (newState.hasOwnProperty(key)) {
           let ant = newState[key];
           ant.currentState = ant.initialState;
           ant.nextState = ant.initialState;
