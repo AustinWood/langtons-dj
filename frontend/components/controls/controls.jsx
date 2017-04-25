@@ -1,22 +1,16 @@
 import React from 'react';
 import Slider from 'rc-slider';
-import Dropdown from 'react-dropdown';
-
-const options = [
-  'one', 'two', 'three'
-];
+import DropdownComponent from './dropdown_component';
 
 class Controls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       stepCount: null,
-      value: 10,
-      selected: options[0]
+      value: 10
     };
     this.changeTempo = this.changeTempo.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
-    this._onSelect = this._onSelect.bind(this);
   }
 
   componentDidUpdate() {
@@ -94,14 +88,7 @@ class Controls extends React.Component {
     this.props.changeVolume(value);
   }
 
-  _onSelect (option) {
-    console.log('You selected ', option.label);
-    this.setState({selected: option});
-  }
-
   render() {
-    const defaultOption = this.state.selected;
-
     return (
       <div id='nav'>
 
@@ -117,7 +104,7 @@ class Controls extends React.Component {
         <Slider min={20} max={300} defaultValue={120} onChange={this.changeTempo} />
         <Slider min={-40} max={0} defaultValue={0} onChange={this.changeVolume} />
 
-        <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
+        <DropdownComponent />
 
       </div>
     );
