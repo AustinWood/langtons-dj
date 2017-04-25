@@ -1,0 +1,12 @@
+####################
+### AFTER MVP
+
+animate ants on reset
+add controls to change number of cells
+movement and sounds reversible
+slightly randomize attack, etc. https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html line 59
+color transition fraction of step interval, disable above tempo x
+fade interval for 'reset' should be longer than regular fade interval
+fix lag by one
+add envelopes visualizer between canvas layers https://tonejs.github.io/examples/#funkyShape
+render ant as image of ant

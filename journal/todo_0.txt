@@ -1,40 +1,22 @@
 ####################
 ### NOW
 
-dropdown to select tonal structure
-toggle for long-notes vs even chords
 don't allow play if ants.count === 0
+toggle for long-notes vs even chords
+add all tonal structures from Reddit
 
 ####################
 ### NEXT
 
-add all tonal structures from Reddit
-create global colors
-color transition fraction of step interval, disable above tempo x
-fade interval for 'reset' should be longer than regular fade interval
-
-####################
-### RULES
-
 UI for selecting default note arrangements
 default rules for ants: https://youtu.be/w6XQQhCgq5c
-
-####################
-### BEFORE MVP
-
-flex course
 refactor rules_reducer.jsx
 move sequencer.jsx to util, or render something
 move controls.jsx#update() to util
-fix lag by one
-add envelopes visualizer between canvas layers https://tonejs.github.io/examples/#funkyShape
-canvas size saves to store, calculate grid size programmatically
-render ant as image of ant
 
 ####################
-### AFTER MVP
+### STYLING
 
-animate ants on reset
-add controls to change number of cells
-movement and sounds reversible
-slightly randomize attack, etc. https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html line 59
+create global colors
+flex course
+canvas size saves to store, calculate grid size programmatically
