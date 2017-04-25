@@ -32,3 +32,8 @@ export const CHANGE_TEMPO = "CHANGE_TEMPO";
 export const changeTempo = (tempo) => {
   return ({ type: CHANGE_TEMPO, tempo });
 };
+
+export const CHANGE_VOLUME = "CHANGE_VOLUME";
+export const changeVolume = (volume) => {
+  return ({ type: CHANGE_VOLUME, volume });
+};

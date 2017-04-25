@@ -6,7 +6,8 @@ const mapStateToProps = state => ({
   stepCount: state.controls.stepCount,
   isPlaying: state.controls.isPlaying,
   chord: state.music.chord,
-  tempo: state.music.tempo
+  tempo: state.music.tempo,
+  volume: state.music.volume
 });
 
 const mapDispatchToProps = dispatch => ({

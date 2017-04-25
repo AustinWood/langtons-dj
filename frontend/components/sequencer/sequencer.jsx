@@ -8,7 +8,8 @@ export default class Sequencer extends React.Component {
     super(props);
     this.state = {
       stepCount: 0,
-      tempo: null
+      tempo: null,
+      volume: null
     };
   }
 
@@ -17,12 +18,20 @@ export default class Sequencer extends React.Component {
     this.initializeStepper();
     this.toggleTransport();
     this.updateTempo();
+    this.updateVolume();
   }
 
   updateTempo() {
     if (this.props.tempo !== this.state.tempo) {
       this.state.tempo = this.props.tempo;
       Tone.Transport.bpm.value = this.props.tempo;
+    }
+  }
+
+  updateVolume() {
+    if (this.props.volume !== this.state.volume) {
+      this.state.volume = this.props.volume;
+      Tone.Master.volume.value = this.props.volume;
     }
   }
 
@@ -82,14 +91,13 @@ export default class Sequencer extends React.Component {
   // CALCULATE CHORD
 
   componentDidUpdate() {
-    console.log("did update");
     this.toggleTransport();
     this.calculateChord();
     this.updateTempo();
+    this.updateVolume();
   }
 
   calculateChord() {
-    console.log("calculate chord");
     const noteCollection = notes.octaveJumper;
     let newChord = [];
     const chordObj = this.props.chord;
@@ -105,7 +113,7 @@ export default class Sequencer extends React.Component {
         i += 1;
       }
     }
-    console.log(newChord);
+    // console.log(newChord);
     this.state.chord = newChord;
     this.state.stepper.removeAll();
     this.state.stepper.add(0, []);
@@ -158,7 +166,7 @@ export default class Sequencer extends React.Component {
   // TRANSPORT and RENDER
 
   toggleTransport() {
-    // can I put transport in separate comopnent (it's a singleton)
+    // Can I put transport in separate comopnent (it's a singleton)
     // so as only to perform this logic when .isPlaying changes ?
     if (this.props.isPlaying && Tone.Transport.state !== "started") {
       Tone.Transport.start();
