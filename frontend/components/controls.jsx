@@ -8,7 +8,8 @@ class Controls extends React.Component {
       stepCount: null,
       value: 10
     };
-    this.onChange = this.onChange.bind(this);
+    this.changeTempo = this.changeTempo.bind(this);
+    this.changeVolume = this.changeVolume.bind(this);
   }
 
   componentDidUpdate() {
@@ -77,8 +78,13 @@ class Controls extends React.Component {
     this.props.saveNextGrid(cells, ants, music);
   }
 
-  onChange(value) {
+  changeTempo(value) {
     this.props.changeTempo(value);
+  }
+
+  changeVolume(value) {
+    console.log(value);
+    // this.props.changeTempo(value);
   }
 
   render() {
@@ -92,7 +98,8 @@ class Controls extends React.Component {
           onClick={this.props.togglePlay}
           id={this.props.isPlaying ? 'pause' : 'play'}
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
-        <Slider min={20} max={300} defaultValue={120} onChange={this.onChange} />
+        <Slider min={20} max={300} defaultValue={120} onChange={this.changeTempo} />
+        <Slider min={0} max={100} defaultValue={50} onChange={this.changeVolume} />
       </div>
     );
   }
