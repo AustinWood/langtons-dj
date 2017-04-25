@@ -4,8 +4,8 @@ import { notes } from '../sequencer/notes';
 
 let options = function () {
   let output = [];
-  for(var key in notes) {
-    if(notes.hasOwnProperty(key)) {
+  for (var key in notes) {
+    if (notes.hasOwnProperty(key)) {
         output.push(notes[key].name);
     }
   }
@@ -21,8 +21,9 @@ class DropdownComponent extends React.Component {
     this._onSelect = this._onSelect.bind(this);
   }
 
-  _onSelect (option) {
-    console.log('You selected ', option.label);
+  _onSelect(option) {
+    const optionIdx = options.indexOf(option.label);
+    console.log(optionIdx);
     this.setState({selected: option});
   }
 
