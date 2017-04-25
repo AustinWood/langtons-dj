@@ -1,7 +1,6 @@
 ####################
 ### NOW
 
-don't allow more than 4 ants
 dropdown to select tonal structure
 toggle for long-notes vs even chords
 slightly randomize attack, etc. https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html line 59
@@ -9,10 +8,10 @@ slightly randomize attack, etc. https://github.com/Tonejs/Tone.js/blob/master/ex
 ####################
 ### NEXT
 
+add all tonal structures from Reddit
 create global colors
 color transition fraction of step interval, disable above tempo x
 fade interval for 'reset' should be longer than regular fade interval
-reset doesn't put ants back at original position
 
 ####################
 ### RULES
