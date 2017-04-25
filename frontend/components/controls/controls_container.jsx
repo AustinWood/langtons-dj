@@ -7,7 +7,9 @@ const mapStateToProps = state => ({
   cells: state.cells.currentCells,
   ants: state.ants,
   rules: state.rules,
-  isPlaying: state.controls.isPlaying
+  isPlaying: state.controls.isPlaying,
+  tempo: state.music.tempo,
+  volume: state.music.volume
 });
 
 const mapDispatchToProps = dispatch => ({

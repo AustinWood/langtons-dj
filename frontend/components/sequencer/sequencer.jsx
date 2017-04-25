@@ -99,7 +99,6 @@ export default class Sequencer extends React.Component {
 
   calculateChord() {
     const noteCollection = this.props.notes;
-    console.log(noteCollection);
     let newChord = [];
     const chordObj = this.props.chord;
     let i = 0;
@@ -114,7 +113,6 @@ export default class Sequencer extends React.Component {
         i += 1;
       }
     }
-    // console.log(newChord);
     this.state.chord = newChord;
     this.state.stepper.removeAll();
     this.state.stepper.add(0, []);

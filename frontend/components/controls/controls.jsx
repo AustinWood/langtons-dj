@@ -84,7 +84,6 @@ class Controls extends React.Component {
   }
 
   changeVolume(value) {
-    console.log(value);
     this.props.changeVolume(value);
   }
 
@@ -101,8 +100,8 @@ class Controls extends React.Component {
           id={this.props.isPlaying ? 'pause' : 'play'}
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
 
-        <Slider min={20} max={300} defaultValue={120} onChange={this.changeTempo} />
-        <Slider min={-40} max={0} defaultValue={0} onChange={this.changeVolume} />
+        <Slider min={20} max={300} defaultValue={this.props.tempo} onChange={this.changeTempo} />
+        <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
 
         <DropdownContainer />
 
