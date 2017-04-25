@@ -1,9 +1,16 @@
 import React from 'react';
 import Dropdown from 'react-dropdown';
+import { notes } from '../sequencer/notes';
 
-const options = [
-  'one', 'two', 'three'
-];
+let options = function () {
+  let output = [];
+  for(var key in notes) {
+    if(notes.hasOwnProperty(key)) {
+        output.push(notes[key].name);
+    }
+  }
+  return output;
+}();
 
 class DropdownComponent extends React.Component {
   constructor(props) {

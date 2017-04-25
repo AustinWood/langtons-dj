@@ -1,7 +1,7 @@
 import React from 'react';
 import Tone from 'tone';
 import { monoSynths, amSynths, fmSynths } from './synth_properties';
-import { notes } from './notes';
+import { notes } from '../sequencer/notes';
 
 export default class Sequencer extends React.Component {
   constructor(props) {

@@ -3,6 +3,7 @@
 
 dropdown to select tonal structure
 toggle for long-notes vs even chords
+don't allow play if ants.count === 0
 
 ####################
 ### NEXT
