@@ -37,3 +37,8 @@ export const CHANGE_VOLUME = "CHANGE_VOLUME";
 export const changeVolume = (volume) => {
   return ({ type: CHANGE_VOLUME, volume });
 };
+
+export const SELECT_NOTE_COLLECTION = "SELECT_NOTE_COLLECTION";
+export const selectNoteCollection = (int) => {
+  return ({ type: SELECT_NOTE_COLLECTION, int });
+};

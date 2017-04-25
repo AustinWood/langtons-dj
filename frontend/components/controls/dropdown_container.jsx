@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-// import { saveNextGrid, togglePlay, reset, changeTempo, changeVolume } from '../../actions/actions';
+import { selectNoteCollection, changeVolume } from '../../actions/actions';
 import DropdownComponent from './dropdown_component';
 
 const mapStateToProps = state => ({
@@ -11,11 +11,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // saveNextGrid: (cells, ants, music) => dispatch(saveNextGrid(cells, ants, music)),
-  // togglePlay: () => dispatch(togglePlay()),
-  // reset: () => dispatch(reset()),
-  // changeTempo: (tempo) => dispatch(changeTempo(tempo)),
-  // changeVolume: (volume) => dispatch(changeVolume(volume))
+  selectNoteCollection: (int) => dispatch(selectNoteCollection(int))
 });
 
 export default connect(

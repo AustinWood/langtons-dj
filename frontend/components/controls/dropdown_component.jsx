@@ -19,12 +19,18 @@ class DropdownComponent extends React.Component {
       selected: options[0]
     };
     this._onSelect = this._onSelect.bind(this);
+    this.handleDispatch = this.handleDispatch.bind(this);
   }
 
   _onSelect(option) {
     this.setState({selected: option});
     const optionIdx = options.indexOf(option.label);
     console.log(notes[optionIdx].notes);
+    this.handleDispatch(optionIdx);
+  }
+
+  handleDispatch(int) {
+    this.props.selectNoteCollection(int);
   }
 
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'rc-slider';
-import DropdownComponent from './dropdown_component';
+import DropdownContainer from './dropdown_container';
 
 class Controls extends React.Component {
   constructor(props) {
@@ -104,7 +104,7 @@ class Controls extends React.Component {
         <Slider min={20} max={300} defaultValue={120} onChange={this.changeTempo} />
         <Slider min={-40} max={0} defaultValue={0} onChange={this.changeVolume} />
 
-        <DropdownComponent />
+        <DropdownContainer />
 
       </div>
     );
