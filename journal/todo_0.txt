@@ -1,7 +1,6 @@
 ####################
 ### NOW
 
-don't allow play if ants.count === 0
 toggle for long-notes vs even chords
 add all tonal structures from Reddit
 

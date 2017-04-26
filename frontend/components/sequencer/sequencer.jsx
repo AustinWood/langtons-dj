@@ -63,16 +63,12 @@ export default class Sequencer extends React.Component {
   initializeStepper() {
     this.handleDispatch = this.handleDispatch.bind(this);
     let handleDispatchB = this.handleDispatch;
-
     this.playBass = this.playBass = this.playBass.bind(this);
     let playBassB = this.playBass;
-
     this.playTenor = this.playTenor = this.playTenor.bind(this);
     let playTenorB = this.playTenor;
-
     this.playAlto = this.playAlto = this.playAlto.bind(this);
     let playAltoB = this.playAlto;
-
     this.playTreble = this.playTreble = this.playTreble.bind(this);
     let playTrebleB = this.playTreble;
 
@@ -151,7 +147,7 @@ export default class Sequencer extends React.Component {
   toggleTransport() {
     // Can I put transport in separate comopnent (it's a singleton)
     // so as only to perform this logic when .isPlaying changes ?
-    if (this.props.isPlaying && Tone.Transport.state !== "started") {
+    if (this.props.isPlaying && Tone.Transport.state !== "started" && this.props.antCount !== 0) {
       Tone.Transport.start();
     } else if (!this.props.isPlaying && Tone.Transport.state === "started") {
       Tone.Transport.stop();
