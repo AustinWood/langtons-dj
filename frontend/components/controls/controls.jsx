@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'rc-slider';
 import DropdownContainer from './dropdown_container';
+import RhythmContainer from './rhythm_container';
 
 class Controls extends React.Component {
   constructor(props) {
@@ -104,6 +105,8 @@ class Controls extends React.Component {
         <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
 
         <DropdownContainer />
+
+        <RhythmContainer />
 
       </div>
     );

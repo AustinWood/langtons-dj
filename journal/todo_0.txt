@@ -1,6 +1,13 @@
 ####################
 ### NOW
 
+http://res.cloudinary.com/oblaka/image/upload/v1493220171/silent_uhpgxg.png
+
+http://res.cloudinary.com/oblaka/image/upload/v1493219023/note1_pmgjuw.png
+http://res.cloudinary.com/oblaka/image/upload/v1493219023/note2_fycqcw.png
+http://res.cloudinary.com/oblaka/image/upload/v1493219023/note4_hpnkli.png
+http://res.cloudinary.com/oblaka/image/upload/v1493219023/note8_uqcp39.png
+
 toggle for long-notes vs even chords
 add all tonal structures from Reddit
 
