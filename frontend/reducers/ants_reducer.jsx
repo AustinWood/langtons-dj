@@ -48,7 +48,8 @@ const AntsReducer = (state = _ants, action) => {
         id: id,
         initialState: { pos: pos, dir: 'r' },
         currentState: { pos: pos, dir: 'r' },
-        nextState: { pos: pos, dir: 'r' }
+        nextState: { pos: pos, dir: 'r' },
+        rhythm: 4
       };
       newState[id] = newAnt;
       return newState;

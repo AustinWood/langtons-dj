@@ -16,15 +16,27 @@ class Rhythm extends React.Component {
     // http://res.cloudinary.com/oblaka/image/upload/v1493219023/note8_uqcp39.png
   }
 
+  ants() {
+    const ants = this.props.ants;
+    let antComponents = [];
+    for (var key in ants) {
+      if (ants.hasOwnProperty(key)) {
+        const ant = ants[key];
+        antComponents.push(
+          <img
+            onClick={this.props.reset}
+            className={'rhythm-img'}
+            src={this.imgUrl(0)} />
+        );
+      }
+    }
+    return antComponents;
+  }
+
   render() {
     return (
       <div id='rhythm'>
-
-        <img
-          onClick={this.props.reset}
-          className={'rhythm-img'}
-          src={this.imgUrl(0)} />
-
+        {this.ants()}
       </div>
     );
   }

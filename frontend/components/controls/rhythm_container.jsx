@@ -3,6 +3,7 @@ import {  } from '../../actions/actions';
 import Rhythm from './rhythm';
 
 const mapStateToProps = state => ({
+  ants: state.ants
   // stepCount: state.controls.stepCount,
   // cells: state.cells.currentCells,
   // ants: state.ants,
