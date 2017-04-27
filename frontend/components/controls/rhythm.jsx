@@ -26,7 +26,8 @@ class Rhythm extends React.Component {
           <img
             onClick={this.props.reset}
             className={'rhythm-img'}
-            src={this.imgUrl(0)} />
+            src={this.imgUrl(0)}
+            key={ant.id} />
         );
       }
     }
