@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'rc-slider';
 import DropdownContainer from './dropdown_container';
-import RhythmContainer from './rhythm_container';
+import AntsIndexContainer from './ants_index_container';
 
 class Controls extends React.Component {
   constructor(props) {
@@ -106,7 +106,7 @@ class Controls extends React.Component {
 
         <DropdownContainer />
 
-        <RhythmContainer />
+        <AntsIndexContainer />
 
       </div>
     );
