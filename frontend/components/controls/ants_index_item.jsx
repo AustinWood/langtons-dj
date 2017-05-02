@@ -15,10 +15,16 @@ class AntsIndexItem extends React.Component {
 
   render() {
     return (
-      <img
-        onClick={this.changeRhythm}
-        className={'rhythm-img'}
-        src={antImg} />
+      <div className="ants-index-item">
+        <img
+          onClick={this.changeRhythm}
+          className={'rhythm-img'}
+          src={antImg} />
+        <img
+          onClick={this.changeRhythm}
+          className={'rhythm-img'}
+          src={antImg} />
+      </div>
     );
   }
 }

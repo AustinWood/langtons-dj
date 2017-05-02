@@ -1,7 +1,6 @@
 ####################
 ### NOW - Toggle note rhythm
 
-render antsIndexItems vertically
 save rhythm to ant state
 display correct image for each ant
 click image to change that ant's rhythm-state

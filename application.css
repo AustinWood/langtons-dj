@@ -30,8 +30,14 @@
 #ants-index {
   display: flex;
   flex-direction: column;
+  margin-top: 12px;
 }
 
+.ants-index-item {
+  display: flex;
+  flex-direction: row;
+  margin: 8px;
+}
 
 /*DROPDOWN*/
 
