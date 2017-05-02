@@ -1,10 +1,8 @@
 ####################
 ### NOW - Toggle note rhythm
 
-save rhythm to ant state
-display correct image for each ant
-click image to change that ant's rhythm-state
 play notes according to rhythm
+change volume and tempo without action, use singleton
 
 ####################
 ### NEXT
