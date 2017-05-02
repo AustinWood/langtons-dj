@@ -57,7 +57,6 @@ const AntsReducer = (state = _ants, action) => {
       return newState;
 
     case CHANGE_RHYTHM:
-      console.log("CHANGE RHYTHM");
       const rhythmMap = { 0:1, 1:2, 2:4, 4:8, 8:16, 16:0 };
       let currentRhythm = newState[action.antId].rhythm;
       let newRhythm = rhythmMap[currentRhythm];

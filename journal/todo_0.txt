@@ -1,22 +1,23 @@
 ####################
-### NOW - Toggle note rhythm
+### NOW
 
-play notes according to rhythm
 change volume and tempo without action, use singleton
 
 ####################
 ### NEXT
 
+display ants on a bass/treble clef
 add all tonal structures from Reddit
-UI for selecting default note arrangements
+add default ant rhythms for default note arrangements
+
+####################
+### LATER
+
+add link to Reddit
+create global colors
+flex course
+canvas size saves to store, calculate grid size programmatically
 default rules for ants: https://youtu.be/w6XQQhCgq5c
 refactor rules_reducer.jsx
 move sequencer.jsx to util, or render something
 move controls.jsx#update() to util
-
-####################
-### STYLING
-
-create global colors
-flex course
-canvas size saves to store, calculate grid size programmatically
