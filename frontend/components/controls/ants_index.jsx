@@ -4,7 +4,6 @@ import AntsIndexItem from './ants_index_item';
 class AntsIndex extends React.Component {
   constructor(props) {
     super(props);
-    // this.changeRhythm = this.changeRhythm.bind(this);
   }
 
   antComponents() {
@@ -27,7 +26,6 @@ class AntsIndex extends React.Component {
     return (
       <div>
         {this.antComponents()}
-        <p>Hello from the index!</p>
       </div>
     );
   }

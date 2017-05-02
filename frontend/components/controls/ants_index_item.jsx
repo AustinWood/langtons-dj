@@ -9,10 +9,6 @@ class AntsIndexItem extends React.Component {
     this.changeRhythm = this.changeRhythm.bind(this);
   }
 
-  // selectCurrentNote() {
-  //   this.props.selectNote(this.props.note);
-  // }
-
   changeRhythm() {
     console.log(this.props.ant);
   }
@@ -22,14 +18,12 @@ class AntsIndexItem extends React.Component {
       <img
         onClick={this.changeRhythm}
         className={'rhythm-img'}
-        src={antImg}
-        key={this.props.ant.id} />
+        src={antImg} />
     );
   }
 }
 
 export default AntsIndexItem;
-
 
 //   imgUrl(antNum) {
 //     return 'http://res.cloudinary.com/oblaka/image/upload/v1493219023/note16_awjej6.png';
@@ -40,18 +34,3 @@ export default AntsIndexItem;
 //     // http://res.cloudinary.com/oblaka/image/upload/v1493219023/note4_hpnkli.png
 //     // http://res.cloudinary.com/oblaka/image/upload/v1493219023/note8_uqcp39.png
 //   }
-//
-
-//
-
-//
-//   render() {
-//     return (
-//       <div id='rhythm'>
-//         {this.ants()}
-//       </div>
-//     );
-//   }
-// }
-//
-// export default Rhythm;
