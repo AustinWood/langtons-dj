@@ -1,5 +1,5 @@
 import React from 'react';
-import AntsIndexItem from './ants_index_item';
+import AntsIndexItemContainer from './ants_index_item_container';
 
 class AntsIndex extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class AntsIndex extends React.Component {
       if (ants.hasOwnProperty(key)) {
         const ant = ants[key];
         antComponentArr.push(
-          <AntsIndexItem
+          <AntsIndexItemContainer
             ant={ant}
             key={ant.id} />
         );

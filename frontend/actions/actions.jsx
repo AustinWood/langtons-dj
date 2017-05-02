@@ -42,3 +42,8 @@ export const SELECT_NOTE_COLLECTION = "SELECT_NOTE_COLLECTION";
 export const selectNoteCollection = (int) => {
   return ({ type: SELECT_NOTE_COLLECTION, int });
 };
+
+export const CHANGE_RHYTHM = "CHANGE_RHYTHM";
+export const changeRhythm = (antId) => {
+  return ({ type: CHANGE_RHYTHM, antId });
+};
