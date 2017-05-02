@@ -16,13 +16,15 @@ class AntsIndexItem extends React.Component {
   }
 
   rhythmImg() {
-    return "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note16_awjej6.png";
-
-    // http://res.cloudinary.com/oblaka/image/upload/v1493220171/silent_uhpgxg.png
-    // http://res.cloudinary.com/oblaka/image/upload/v1493219023/note1_pmgjuw.png
-    // http://res.cloudinary.com/oblaka/image/upload/v1493219023/note2_fycqcw.png
-    // http://res.cloudinary.com/oblaka/image/upload/v1493219023/note4_hpnkli.png
-    // http://res.cloudinary.com/oblaka/image/upload/v1493219023/note8_uqcp39.png
+    const rhythmMap = {
+      0: "http://res.cloudinary.com/oblaka/image/upload/v1493220171/silent_uhpgxg.png",
+      1: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note1_pmgjuw.png",
+      2: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note2_fycqcw.png",
+      4: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note4_hpnkli.png",
+      8: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note8_uqcp39.png",
+      16: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note16_awjej6.png"
+    };
+    return rhythmMap[this.props.ant.rhythm];
   }
 
   render() {
