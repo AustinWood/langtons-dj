@@ -1,12 +1,12 @@
 ####################
 ### NOW
 
-change volume and tempo without action, use singleton
+display ants on a bass/treble clef
 
 ####################
 ### NEXT
 
-display ants on a bass/treble clef
+change volume and tempo without action, use singleton
 add all tonal structures from Reddit
 add default ant rhythms for default note arrangements
 

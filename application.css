@@ -27,10 +27,20 @@
   content: url('http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_filled_z6i2bd.png');
 }
 
+#ants-index-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+}
+
+#clef-imgs {
+  display: flex;
+  flex-direction: column;
+}
+
 #ants-index {
   display: flex;
   flex-direction: column;
-  margin-top: 12px;
 }
 
 .ants-index-item {
