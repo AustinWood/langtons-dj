@@ -24,7 +24,7 @@ class AntsIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="ants-index">
         {this.antComponents()}
       </div>
     );
