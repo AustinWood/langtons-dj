@@ -12,6 +12,7 @@ class AntsIndexItem extends React.Component {
 
   changeRhythm() {
     console.log(this.props.ant);
+    this.props.changeRhythm(this.props.ant.id);
   }
 
   rhythmImg() {

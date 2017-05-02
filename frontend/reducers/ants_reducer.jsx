@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import {
   UPDATE_GRID, SAVE_NEXT_GRID, RESET,
-  TOGGLE_ANT
+  TOGGLE_ANT, CHANGE_RHYTHM
 } from '../actions/actions';
 
 const _ants = {};
@@ -52,6 +52,11 @@ const AntsReducer = (state = _ants, action) => {
         rhythm: 4
       };
       newState[id] = newAnt;
+      return newState;
+
+    case CHANGE_RHYTHM:
+      console.log("CHANGE RHYTHM");
+      newState[action.antId].rhythm = 2;
       return newState;
 
     default:

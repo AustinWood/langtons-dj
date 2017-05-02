@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 import AntsIndexItem from './ants_index_item';
+import { changeRhythm } from '../../actions/actions';
 
-const mapStateToProps = state => ({
+// const mapStateToProps = state => ({
   // ants: state.ants
-});
+// });
 
 const mapDispatchToProps = dispatch => ({
-  // toggleAnt: (pos) => dispatch(toggleAnt(pos)),
-  // hover: (pos) => dispatch(hover(pos))
+  changeRhythm: (antId) => dispatch(changeRhythm(antId))
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(AntsIndexItem);

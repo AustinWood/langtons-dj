@@ -5,12 +5,12 @@ const mapStateToProps = state => ({
   ants: state.ants
 });
 
-const mapDispatchToProps = dispatch => ({
+// const mapDispatchToProps = dispatch => ({
   // toggleAnt: (pos) => dispatch(toggleAnt(pos)),
   // hover: (pos) => dispatch(hover(pos))
-});
+// });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(AntsIndex);
