@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
   tempo: state.music.tempo,
   volume: state.music.volume,
   notes: state.music.notes,
-  antCount: Object.keys(state.ants).length
+  antCount: Object.keys(state.ants).length,
+  ants: state.ants
 });
 
 const mapDispatchToProps = dispatch => ({

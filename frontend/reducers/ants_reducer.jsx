@@ -41,7 +41,8 @@ const AntsReducer = (state = _ants, action) => {
         delete newState[id];
         return newState;
       }
-      if (Object.keys(state).length === 4) {
+      const antCount = Object.keys(state).length;
+      if (antCount === 4) {
         return state;
       }
       const newAnt = {
@@ -49,7 +50,8 @@ const AntsReducer = (state = _ants, action) => {
         initialState: { pos: pos, dir: 'r' },
         currentState: { pos: pos, dir: 'r' },
         nextState: { pos: pos, dir: 'r' },
-        rhythm: 4
+        rhythm: 4,
+        number: antCount
       };
       newState[id] = newAnt;
       return newState;
