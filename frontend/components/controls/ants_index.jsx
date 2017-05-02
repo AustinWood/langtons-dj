@@ -8,7 +8,7 @@ const antComponents = (ants) => {
     if (ants.hasOwnProperty(key)) {
       const ant = ants[key];
       antComponentArr.push(
-        <NotesIndexItem
+        <AntsIndexItem
           ant={ant}
           key={ant.id} />
       );
