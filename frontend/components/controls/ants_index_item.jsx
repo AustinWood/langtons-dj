@@ -1,5 +1,8 @@
 import React from 'react';
 
+const antImg = "http://res.cloudinary.com/oblaka/image/upload/v1493737068/ant_edjrtt.png";
+const antImgFilled = "http://res.cloudinary.com/oblaka/image/upload/v1493737068/ant_filled_sviqwb.png";
+
 class AntsIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -17,12 +20,13 @@ class AntsIndexItem extends React.Component {
   render() {
     const { question } = this.props.note;
 
+    // <img
+    //   onClick={this.changeRhythm}
+    //   className={'rhythm-img'}
+    //   src={antImg}
+    //   key={this.props.ant.id} />
     return (
-      <img
-        onClick={this.changeRhythm}
-        className={'rhythm-img'}
-        src={this.imgUrl(0)}
-        key={this.props.ant.id} />
+      <div>"Hello"</div>
     );
   }
 }
