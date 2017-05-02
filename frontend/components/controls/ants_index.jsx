@@ -14,7 +14,9 @@ class AntsIndex extends React.Component {
       if (ants.hasOwnProperty(key)) {
         const ant = ants[key];
         antComponentArr.push(
-          <div>hello</div>
+          <AntsIndexItem
+            ant={ant}
+            key={ant.id} />
         );
       }
     }

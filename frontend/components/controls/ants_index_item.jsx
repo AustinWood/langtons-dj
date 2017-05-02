@@ -18,15 +18,12 @@ class AntsIndexItem extends React.Component {
   }
 
   render() {
-    const { question } = this.props.note;
-
-    // <img
-    //   onClick={this.changeRhythm}
-    //   className={'rhythm-img'}
-    //   src={antImg}
-    //   key={this.props.ant.id} />
     return (
-      <div>"Hello"</div>
+      <img
+        onClick={this.changeRhythm}
+        className={'rhythm-img'}
+        src={antImg}
+        key={this.props.ant.id} />
     );
   }
 }
