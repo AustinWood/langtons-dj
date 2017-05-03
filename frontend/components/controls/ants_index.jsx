@@ -29,7 +29,7 @@ class AntsIndex extends React.Component {
           key={antComponentArr.length} />
       );
     }
-    return antComponentArr;
+    return antComponentArr.reverse();
   }
 
   render() {
