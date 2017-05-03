@@ -4,6 +4,7 @@
 background colors
 style dropdown
 style sliders
+replace mouth with rest
 
 ####################
 ### NEXT

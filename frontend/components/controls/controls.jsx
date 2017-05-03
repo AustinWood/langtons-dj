@@ -116,11 +116,6 @@ class Controls extends React.Component {
         <div id="play-controls">
           <img
             onClick={this.props.reset}
-            id={'info'}
-            src={info} />
-          <div></div>
-          <img
-            onClick={this.props.reset}
             id={'stop'}
             src={stop} />
           <img
