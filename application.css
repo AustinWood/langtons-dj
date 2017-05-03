@@ -42,7 +42,8 @@
 /********************/
 
 #logo {
-  /*background-color: orange;*/
+  background-color: orange;
+  flex: 1 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,6 +66,8 @@
 /*********************/
 
 #play-controls {
+  background-color: green;
+  flex: 0 0 90px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -101,11 +104,21 @@
 /* VOLUME and TEMPO */
 /********************/
 
+#sliders {
+  background-color: orange;
+  flex: 0 0 140px;
+  padding: 12px 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .slider-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px 12px 0px 8px;
+  padding: 0px 16px 0px 8px;
 }
 
 .slider-img-container {
@@ -127,6 +140,11 @@
 /********************/
 /* CLEFS and NOTES */
 /********************/
+
+#note-controls {
+  background-color: green;
+  flex: 0 0 0;
+}
 
 #ants-index-container {
   /*background-color: green;*/

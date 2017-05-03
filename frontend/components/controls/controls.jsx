@@ -124,19 +124,22 @@ class Controls extends React.Component {
             src={this.props.isPlaying ? pause : play} />
         </div>
 
-        <div className="slider-container">
-          <div className="slider-img-container"><img src={this.volumeImg()} /></div>
-          <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
+        <div id="sliders">
+          <div className="slider-container">
+            <div className="slider-img-container"><img src={this.volumeImg()} /></div>
+            <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
+          </div>
+
+          <div className="slider-container">
+            <div className="slider-img-container"><img src={metronome} /></div>
+            <Slider min={20} max={300} defaultValue={this.props.tempo} onChange={this.changeTempo} />
+          </div>
         </div>
 
-        <div className="slider-container">
-          <div className="slider-img-container"><img src={metronome} /></div>
-          <Slider min={20} max={300} defaultValue={this.props.tempo} onChange={this.changeTempo} />
+        <div id="note-controls">
+          <DropdownContainer />
+          <AntsIndexContainer />
         </div>
-
-        <DropdownContainer />
-
-        <AntsIndexContainer />
 
       </div>
     );
