@@ -26,18 +26,24 @@ class AntsIndexItem extends React.Component {
       16: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note16_awjej6.png"
     };
     if (this.props.ant === null) {
-      return "http://res.cloudinary.com/oblaka/image/upload/v1493824846/clear_lq9lhy.png";
+      return (
+        <img
+          onClick={this.changeRhythm}
+          src="http://res.cloudinary.com/oblaka/image/upload/v1493824846/clear_lq9lhy.png" />
+      );
     }
-    return rhythmMap[this.props.ant.rhythm];
+    return (
+      <img
+        onClick={this.changeRhythm}
+        className={"rhythm-img"}
+        src={rhythmMap[this.props.ant.rhythm]} />
+    );
   }
 
   render() {
     return (
       <div className="ants-index-item">
-        <img
-          onClick={this.changeRhythm}
-          className={'rhythm-img'}
-          src={this.rhythmImg()} />
+        {this.rhythmImg()}
       </div>
     );
   }

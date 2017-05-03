@@ -107,18 +107,27 @@ class Controls extends React.Component {
 
   render() {
     return (
-      <div id='nav'>
+      <div id="nav">
 
-        <img
-          className="nav-img"
-          onClick={this.props.reset}
-          id={'stop'}
-          src={'http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_hg6fyp.png'} />
-        <img
-          className="nav-img"
-          onClick={this.props.togglePlay}
-          id={this.props.isPlaying ? 'pause' : 'play'}
-          src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
+        <div id="logo">
+          <img src={logo} />
+          <h1>Langton's DJ</h1>
+        </div>
+
+        <div id="play-controls">
+          <img
+            className="nav-img"
+            onClick={this.props.reset}
+            id={'stop'}
+            src={stop} />
+          <img
+            className="nav-img"
+            onClick={this.props.togglePlay}
+            id={this.props.isPlaying ? 'pause' : 'play'}
+            src={this.props.isPlaying ? pause : play} />
+        </div>
+
+
 
         <div className="slider-container">
           <div className="slider-img-container"><img src={this.volumeImg()} /></div>
@@ -140,6 +149,12 @@ class Controls extends React.Component {
     );
   }
 }
+
+const logo = "http://res.cloudinary.com/oblaka/image/upload/v1493737068/ant_filled_sviqwb.png";
+
+const stop = "http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_hg6fyp.png";
+const play = "http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png";
+const pause = "http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png";
 
 const volumeZero = "http://res.cloudinary.com/oblaka/image/upload/v1493825557/volume_zero_vw2id7.png";
 const volumeLow = "http://res.cloudinary.com/oblaka/image/upload/v1493825557/volume_low_rs1wai.png";

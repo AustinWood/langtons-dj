@@ -1,6 +1,7 @@
 ####################
 ### AFTER MVP
 
+change volume and tempo without action, use singleton
 animate ants on reset
 add controls to change number of cells
 movement and sounds reversible

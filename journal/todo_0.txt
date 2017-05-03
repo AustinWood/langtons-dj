@@ -1,12 +1,12 @@
 ####################
 ### NOW
 
-add volume and tempo images
+add footer links
+info button
 
 ####################
 ### NEXT
 
-change volume and tempo without action, use singleton
 add all tonal structures from Reddit
 add default ant rhythms for default note arrangements
 

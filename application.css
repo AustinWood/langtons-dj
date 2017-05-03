@@ -1,8 +1,51 @@
 #app {
+  background-color: black;
+
   display: flex;
   flex-direction: row;
-  background-color: black;
+  justify-content: center;
 }
+
+/********************/
+/*      SIDEBAR     */
+/********************/
+
+#nav {
+  background-color: red;
+  width: 250px;
+  margin-right: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/********************/
+/*       LOGO       */
+/********************/
+
+#logo {
+  /*background-color: orange;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo img {
+  height: 100px;
+  margin-top: 8px;
+}
+
+#logo h1 {
+  color: white;
+  font-size: 36px;
+  margin: 8px 0px;
+}
+
+/*********************/
+/* STOP, PLAY, PAUSE */
+/*********************/
 
 .nav-img {
   height: 40px;
@@ -12,7 +55,7 @@
   padding: 0;
 }
 
-#nav img:hover {
+.nav-img:hover {
   cursor: pointer;
 }
 
@@ -56,30 +99,28 @@
 /********************/
 
 #ants-index-container {
+  background-color: green;
   display: flex;
   flex-direction: row;
   margin-top: 12px;
-  background-color: green;
-  height: 300px;
+  height: 200px;
   justify-content: center;
   align-items: center;
 }
 
 #clef-imgs {
+  background-color: blue;
   display: flex;
   flex-direction: column;
-  background-color: blue;
-
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
-.clef-img {
-  height: 100px;
-  display: inline-block;
-  margin: 15px;
-  padding: 0;
+#clef-imgs img {
   background-color: pink;
+  height: 90px;
+  display: inline-block;
+  padding: 0;
 }
 
 #ants-index {
@@ -94,7 +135,11 @@
 }
 
 .ants-index-item img {
-  height: 50px;
+  height: 35px;
+}
+
+.rhythm-img:hover {
+  cursor: pointer;
 }
 
 /********************/
@@ -103,6 +148,11 @@
 
 #footer {
   background-color: orange;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #footer img {
@@ -110,7 +160,13 @@
   width: 60px;
 }
 
-/*DROPDOWN*/
+#footer img:hover {
+  cursor: pointer;
+}
+
+/********************/
+/*     DROPDOWN     */
+/********************/
 
 .result {
   padding: 8px 0;
