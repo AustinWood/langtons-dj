@@ -1,23 +1,19 @@
 ####################
 ### NOW
 
-add footer links
-info button
+style dropdown
+style sliders
 
 ####################
 ### NEXT
 
-add all tonal structures from Reddit
-add default ant rhythms for default note arrangements
+ants on canvas on startup
+add welcome message on load
+add info popup
 
 ####################
 ### LATER
 
-add link to Reddit
-create global colors
-flex course
-canvas size saves to store, calculate grid size programmatically
-default rules for ants: https://youtu.be/w6XQQhCgq5c
-refactor rules_reducer.jsx
-move sequencer.jsx to util, or render something
-move controls.jsx#update() to util
+add link to Reddit in info popup
+add all tonal structures from Reddit
+add default ant rhythms for default note arrangements

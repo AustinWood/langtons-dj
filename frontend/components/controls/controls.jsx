@@ -116,12 +116,15 @@ class Controls extends React.Component {
 
         <div id="play-controls">
           <img
-            className="nav-img"
+            onClick={this.props.reset}
+            id={'info'}
+            src={info} />
+          <div></div>
+          <img
             onClick={this.props.reset}
             id={'stop'}
             src={stop} />
           <img
-            className="nav-img"
             onClick={this.props.togglePlay}
             id={this.props.isPlaying ? 'pause' : 'play'}
             src={this.props.isPlaying ? pause : play} />
@@ -152,6 +155,7 @@ class Controls extends React.Component {
 
 const logo = "http://res.cloudinary.com/oblaka/image/upload/v1493737068/ant_filled_sviqwb.png";
 
+const info = "http://res.cloudinary.com/oblaka/image/upload/v1493833160/info_ccma7q.png";
 const stop = "http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_hg6fyp.png";
 const play = "http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png";
 const pause = "http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png";

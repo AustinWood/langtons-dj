@@ -47,16 +47,32 @@
 /* STOP, PLAY, PAUSE */
 /*********************/
 
-.nav-img {
-  height: 40px;
-  width: 40px;
-  display: inline-block;
-  margin: 0px 15px;
-  padding: 0;
+#play-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.nav-img:hover {
+#play-controls div {
+  height: 20px;
+  width: 20px;
+}
+
+#play-controls img {
+  height: 40px;
+  width: 40px;
+  /*display: inline-block;*/
+  /*margin: 0px 15px;*/
+  /*padding: 0;*/
+}
+
+#play-controls img:hover {
   cursor: pointer;
+}
+
+#info:hover {
+  content: url('http://res.cloudinary.com/oblaka/image/upload/v1493833160/info_filled_ykz9ue.png');
 }
 
 #stop:hover {
@@ -118,7 +134,7 @@
 
 #clef-imgs img {
   background-color: pink;
-  height: 90px;
+  width: 80px;
   display: inline-block;
   padding: 0;
 }

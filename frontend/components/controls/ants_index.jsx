@@ -48,4 +48,4 @@ class AntsIndex extends React.Component {
 export default AntsIndex;
 
 const trebleClefImg = "http://res.cloudinary.com/oblaka/image/upload/v1493822962/treble_clef_gjbzcv.png";
-const bassClefImg = "http://res.cloudinary.com/oblaka/image/upload/v1493822962/bass_clef_ant6x9.png";
+const bassClefImg = "http://res.cloudinary.com/oblaka/image/upload/v1493833919/bass_clef_uzmehq.png";
