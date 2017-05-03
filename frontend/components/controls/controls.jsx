@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'rc-slider';
 import DropdownContainer from './dropdown_container';
 import AntsIndexContainer from './ants_index_container';
+import Footer from './footer';
 
 class Controls extends React.Component {
   constructor(props) {
@@ -120,18 +121,20 @@ class Controls extends React.Component {
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
 
         <div className="slider-container">
-          <img src={this.volumeImg()} />
+          <div className="slider-img-container"><img src={this.volumeImg()} /></div>
           <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
         </div>
 
         <div className="slider-container">
-          <img src={metronome} />
+          <div className="slider-img-container"><img src={metronome} /></div>
           <Slider min={20} max={300} defaultValue={this.props.tempo} onChange={this.changeTempo} />
         </div>
 
         <DropdownContainer />
 
         <AntsIndexContainer />
+
+        <Footer />
 
       </div>
     );

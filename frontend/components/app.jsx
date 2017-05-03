@@ -5,8 +5,8 @@ import SequencerContainer from './sequencer/sequencer_container';
 
 const App = () => (
   <div id="app">
-    <CanvasContainer />
     <ControlsContainer />
+    <CanvasContainer />
     <SequencerContainer />
   </div>
 );

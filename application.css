@@ -1,6 +1,7 @@
 #app {
   display: flex;
   flex-direction: row;
+  background-color: black;
 }
 
 .nav-img {
@@ -34,7 +35,15 @@
 .slider-container {
   display: flex;
   flex-direction: row;
-  /*justify-content: center;*/
+  align-items: center;
+}
+
+.slider-img-container {
+  /*background-color: red;*/
+  height: 40px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -86,6 +95,19 @@
 
 .ants-index-item img {
   height: 50px;
+}
+
+/********************/
+/*      FOOTER      */
+/********************/
+
+#footer {
+  background-color: orange;
+}
+
+#footer img {
+  height: 60px;
+  width: 60px;
 }
 
 /*DROPDOWN*/
