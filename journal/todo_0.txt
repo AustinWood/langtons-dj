@@ -1,6 +1,7 @@
 ####################
 ### NOW
 
+background colors
 style dropdown
 style sliders
 
