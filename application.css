@@ -15,10 +15,10 @@
 }
 
 #canvas-container {
-  /*border: 1px solid gray;*/
-  /*border-radius: 12px;*/
-  /*padding: 12px;*/
-  /*background-color: #0A0B1A;*/
+  border: 1px solid gray;
+  border-radius: 12px;
+  padding: 6px;
+  background-color: #0A0B1A;
 }
 
 /********************/

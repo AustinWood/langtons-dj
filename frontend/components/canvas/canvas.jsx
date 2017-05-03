@@ -77,22 +77,24 @@ class Canvas extends React.Component {
 
   render() {
     return (
-      <Stage
-        ref='stage'
-        width={700}
-        height={700}
-        onClick={this.handleClick}
-        onMouseOver={this.onMouseOver}
-        onMouseLeave={this.onMouseLeave} >
+      <div id="canvas-container">
+        <Stage
+          ref='stage'
+          width={700}
+          height={700}
+          onClick={this.handleClick}
+          onMouseOver={this.onMouseOver}
+          onMouseLeave={this.onMouseLeave} >
 
-        <Layer>
-          <Board width={700} height={700} />
-          {this.cells()}
-          {this.ants()}
-          {this.hover()}
-        </Layer>
+          <Layer>
+            <Board width={700} height={700} />
+            {this.cells()}
+            {this.ants()}
+            {this.hover()}
+          </Layer>
 
-      </Stage>
+        </Stage>
+      </div>
     );
   }
 }
