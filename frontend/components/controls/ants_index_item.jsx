@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 
 const antImg = 'http://res.cloudinary.com/oblaka/image/upload/v1493737068/ant_edjrtt.png';
 const antImgFilled = 'http://res.cloudinary.com/oblaka/image/upload/v1493737068/ant_filled_sviqwb.png';
@@ -11,7 +11,9 @@ class AntsIndexItem extends React.Component {
   }
 
   changeRhythm() {
-    this.props.changeRhythm(this.props.ant.id);
+    if (this.props.ant !== null) {
+      this.props.changeRhythm(this.props.ant.id);
+    }
   }
 
   rhythmImg() {
@@ -23,15 +25,15 @@ class AntsIndexItem extends React.Component {
       8: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note8_uqcp39.png",
       16: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note16_awjej6.png"
     };
+    if (this.props.ant === null) {
+      return "http://res.cloudinary.com/oblaka/image/upload/v1493824846/clear_lq9lhy.png";
+    }
     return rhythmMap[this.props.ant.rhythm];
   }
 
   render() {
     return (
       <div className="ants-index-item">
-        <img
-          className={'rhythm-img'}
-          src={antImg} />
         <img
           onClick={this.changeRhythm}
           className={'rhythm-img'}

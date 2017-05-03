@@ -1,8 +1,8 @@
 import React from 'react';
 import AntsIndexItemContainer from './ants_index_item_container';
 
-const trebleClefImg = "http://res.cloudinary.com/oblaka/image/upload/v1493743199/treble_clef_cdqxc1.png";
-const bassClefImg = "http://res.cloudinary.com/oblaka/image/upload/v1493743199/bass_clef_i94fu0.png";
+const trebleClefImg = "http://res.cloudinary.com/oblaka/image/upload/v1493822962/treble_clef_gjbzcv.png";
+const bassClefImg = "http://res.cloudinary.com/oblaka/image/upload/v1493822962/bass_clef_ant6x9.png";
 
 class AntsIndex extends React.Component {
   constructor(props) {
@@ -22,6 +22,13 @@ class AntsIndex extends React.Component {
         );
       }
     }
+    while (antComponentArr.length < 4) {
+      antComponentArr.push(
+        <AntsIndexItemContainer
+          ant={null}
+          key={antComponentArr.length} />
+      );
+    }
     return antComponentArr;
   }
 
@@ -30,10 +37,10 @@ class AntsIndex extends React.Component {
       <div id="ants-index-container">
         <div id="clef-imgs">
           <img
-            className={'clef-img'}
+            className="clef-img"
             src={trebleClefImg} />
           <img
-            className={'clef-img'}
+            className="clef-img"
             src={bassClefImg} />
         </div>
         <div id="ants-index">

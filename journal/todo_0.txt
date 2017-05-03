@@ -1,7 +1,7 @@
 ####################
 ### NOW
 
-display ants on a bass/treble clef
+add volume and tempo images
 
 ####################
 ### NEXT

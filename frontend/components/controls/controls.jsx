@@ -93,10 +93,12 @@ class Controls extends React.Component {
       <div id='nav'>
 
         <img
+          className="nav-img"
           onClick={this.props.reset}
           id={'stop'}
           src={'http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_hg6fyp.png'} />
         <img
+          className="nav-img"
           onClick={this.props.togglePlay}
           id={this.props.isPlaying ? 'pause' : 'play'}
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
