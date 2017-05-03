@@ -31,11 +31,13 @@ class DropdownComponent extends React.Component {
     const defaultOption = this.state.selected;
 
     return (
-      <Dropdown
-        options={options}
-        onChange={this._onSelect}
-        value={this.state.selected}
-        placeholder="Select an option" />
+      <div id="dropdown-container">
+        <Dropdown
+          options={options}
+          onChange={this._onSelect}
+          value={this.state.selected}
+          placeholder="Select an option" />
+      </div>
     );
   }
 }

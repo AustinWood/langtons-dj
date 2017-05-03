@@ -145,9 +145,10 @@
 
 #note-controls {
   background-color: #282c34;
+  border-top: 1px solid gray;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  padding: 0 0 12px 0;
+  padding: 18px 0 12px 0;
   flex: 0 0 0;
 }
 
@@ -220,6 +221,10 @@
 /*     DROPDOWN     */
 /********************/
 
+#dropdown-container {
+  padding: 0 16px;
+}
+
 .result {
   padding: 8px 0;
 }
@@ -231,11 +236,11 @@
 .Dropdown-control {
   position: relative;
   overflow: hidden;
-  background-color: white;
-  border: 1px solid #ccc;
+  background-color: #1A1B25;
+  border: 1px solid white;
   border-radius: 2px;
   box-sizing: border-box;
-  color: #333;
+  color: white;
   cursor: default;
   outline: none;
   padding: 8px 52px 8px 10px;
@@ -243,11 +248,12 @@
 }
 
 .Dropdown-control:hover {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  /*box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);*/
+  cursor: pointer;
 }
 
 .Dropdown-arrow {
-  border-color: #999 transparent transparent;
+  border-color: white transparent transparent;
   border-style: solid;
   border-width: 5px 5px 0;
   content: ' ';
@@ -261,17 +267,17 @@
 }
 
 .is-open .Dropdown-arrow {
-  border-color: transparent transparent #999;
+  border-color: transparent transparent white;
   border-width: 0 5px 5px;
 }
 
 .Dropdown-menu {
-  background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  background-color: #1A1B25;
+  border: 1px solid white;
+  /*box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);*/
   box-sizing: border-box;
   margin-top: -1px;
-  max-height: 200px;
+  max-height: 300px;
   overflow-y: auto;
   position: absolute;
   top: 100%;
@@ -282,14 +288,14 @@
 
 .Dropdown-menu .Dropdown-group > .Dropdown-title {
   padding: 8px 10px;
-  color: rgba(51, 51, 51, 1.2);
+  color: white;
   font-weight: bold;
   text-transform: capitalize;
 }
 
 .Dropdown-option {
   box-sizing: border-box;
-  color: rgba(51, 51, 51, 0.8);
+  color: gray;
   cursor: pointer;
   display: block;
   padding: 8px 10px;
@@ -297,22 +303,22 @@
 
 .Dropdown-option:last-child {
   border-bottom-right-radius: 2px;
-   border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 .Dropdown-option:hover {
-  background-color: #f2f9fc;
-  color: #333;
+  background-color: #282c34;
+  color: white;
 }
 
 .Dropdown-option.is-selected {
-  background-color: #f2f9fc;
-  color: #333;
+  background-color: #282c34;
+  color: white;
 }
 
 .Dropdown-noresults {
   box-sizing: border-box;
-  color: #ccc;
+  color: red;
   cursor: default;
   display: block;
   padding: 8px 10px;

@@ -1,6 +1,7 @@
 ####################
 ### AFTER MVP
 
+selected dropdown option only highlight on load
 show BPM on drag
 create global colors
 canvas size saves to store, calculate grid size programmatically
