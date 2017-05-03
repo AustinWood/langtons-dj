@@ -94,9 +94,14 @@ class Controls extends React.Component {
 
   volumeImg() {
     const volume = this.props.volume;
-    // if (volume === ) {
-    //
-    // }
+    if (volume === -1000) {
+      return volumeZero;
+    } else if (volume < -25) {
+      return volumeLow;
+    } else if (volume < -10) {
+      return volumeMed;
+    }
+    return volumeHigh;
   }
 
   render() {
@@ -115,12 +120,13 @@ class Controls extends React.Component {
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
 
         <div className="slider-container">
-          <img src="http://res.cloudinary.com/oblaka/image/upload/v1493825557/volume_zero_vw2id7.png" />
-          <Slider min={20} max={300} defaultValue={this.props.tempo} onChange={this.changeTempo} />
+          <img src={this.volumeImg()} />
+          <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
         </div>
+
         <div className="slider-container">
           <img src={metronome} />
-          <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
+          <Slider min={20} max={300} defaultValue={this.props.tempo} onChange={this.changeTempo} />
         </div>
 
         <DropdownContainer />
