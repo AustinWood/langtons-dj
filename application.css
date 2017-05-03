@@ -42,7 +42,7 @@
 /********************/
 
 #logo {
-  background-color: orange;
+  /*background-color: orange;*/
   flex: 1 0 0;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,6 @@
 
 #logo img {
   height: 100px;
-  margin-top: 18px;
 }
 
 #logo h1 {
@@ -66,8 +65,11 @@
 /*********************/
 
 #play-controls {
-  background-color: green;
-  flex: 0 0 90px;
+  background-color: #282c34;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  flex: 0 0 80px;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -75,8 +77,8 @@
 }
 
 #play-controls img {
-  height: 60px;
-  width: 60px;
+  height: 52px;
+  width: 52px;
   margin: 0px 12px;
 }
 
@@ -105,8 +107,8 @@
 /********************/
 
 #sliders {
-  background-color: orange;
-  flex: 0 0 140px;
+  /*background-color: orange;*/
+  flex: 0 0 130px;
   padding: 12px 0px;
 
   display: flex;
@@ -134,7 +136,7 @@
 }
 
 .slider-container img {
-  height: 50px;
+  height: 46px;
 }
 
 /********************/
@@ -142,12 +144,14 @@
 /********************/
 
 #note-controls {
-  background-color: green;
+  background-color: #282c34;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 0 0 12px 0;
   flex: 0 0 0;
 }
 
 #ants-index-container {
-  /*background-color: green;*/
   margin-top: 12px;
   height: 200px;
 

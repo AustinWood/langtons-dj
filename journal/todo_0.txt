@@ -1,21 +1,20 @@
 ####################
 ### NOW
 
-background colors
 style dropdown
-style sliders
 replace mouth with rest
 
 ####################
 ### NEXT
 
+footer bio + info
 ants on canvas on startup
 add welcome message on load
-add info popup
 
 ####################
 ### LATER
 
+choose global font
 add link to Reddit in info popup
 add all tonal structures from Reddit
 add default ant rhythms for default note arrangements

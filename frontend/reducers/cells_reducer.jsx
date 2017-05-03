@@ -54,7 +54,6 @@ const CellsReducer = (state = _cells, action) => {
         y = action.pos.y;
       }
       newState.hoverPos = { x: x, y: y };
-      console.log(x);
       return newState;
 
     default:
