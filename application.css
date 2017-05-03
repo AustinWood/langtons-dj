@@ -28,6 +28,21 @@
 }
 
 /********************/
+/* VOLUME and TEMPO */
+/********************/
+
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  /*justify-content: center;*/
+  align-items: center;
+}
+
+.slider-container img {
+  height: 40px;
+}
+
+/********************/
 /* CLEFS and NOTES */
 /********************/
 

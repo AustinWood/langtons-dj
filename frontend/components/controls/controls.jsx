@@ -85,7 +85,18 @@ class Controls extends React.Component {
   }
 
   changeVolume(value) {
-    this.props.changeVolume(value);
+    if (value === -40) {
+      this.props.changeVolume(-1000);
+    } else {
+      this.props.changeVolume(value);
+    }
+  }
+
+  volumeImg() {
+    const volume = this.props.volume;
+    // if (volume === ) {
+    //
+    // }
   }
 
   render() {
@@ -103,8 +114,14 @@ class Controls extends React.Component {
           id={this.props.isPlaying ? 'pause' : 'play'}
           src={this.props.isPlaying ? 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/pause_yn3cfz.png' : 'http://res.cloudinary.com/oblaka/image/upload/v1490970171/play_xfvjjv.png'} />
 
-        <Slider min={20} max={300} defaultValue={this.props.tempo} onChange={this.changeTempo} />
-        <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
+        <div className="slider-container">
+          <img src="http://res.cloudinary.com/oblaka/image/upload/v1493825557/volume_zero_vw2id7.png" />
+          <Slider min={20} max={300} defaultValue={this.props.tempo} onChange={this.changeTempo} />
+        </div>
+        <div className="slider-container">
+          <img src={metronome} />
+          <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
+        </div>
 
         <DropdownContainer />
 
@@ -114,5 +131,12 @@ class Controls extends React.Component {
     );
   }
 }
+
+const volumeZero = "http://res.cloudinary.com/oblaka/image/upload/v1493825557/volume_zero_vw2id7.png";
+const volumeLow = "http://res.cloudinary.com/oblaka/image/upload/v1493825557/volume_low_rs1wai.png";
+const volumeMed = "http://res.cloudinary.com/oblaka/image/upload/v1493825557/volume_med_hjtg98.png";
+const volumeHigh = "http://res.cloudinary.com/oblaka/image/upload/v1493825557/volume_high_wksfra.png";
+
+const metronome = "http://res.cloudinary.com/oblaka/image/upload/v1493825557/metronome_kvgg0m.png";
 
 export default Controls;

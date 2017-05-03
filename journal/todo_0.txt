@@ -1,7 +1,6 @@
 ####################
 ### NOW
 
-bass on bottom
 add volume and tempo images
 
 ####################
