@@ -19,6 +19,7 @@ class Canvas extends React.Component {
   }
 
   onMouseOver(e) {
+    console.log(this.convertToGridCoords(e));
     this.props.hover(this.convertToGridCoords(e));
   }
 

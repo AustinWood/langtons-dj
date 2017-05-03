@@ -1,9 +1,6 @@
 import merge from 'lodash/merge';
 
-import {
-  UPDATE_GRID, SAVE_NEXT_GRID, RESET,
-  HOVER
-} from '../actions/actions';
+import { UPDATE_GRID, SAVE_NEXT_GRID, RESET, HOVER } from '../actions/actions';
 
 const _cellSize = 35;
 const _gridSize = 20;
@@ -50,9 +47,14 @@ const CellsReducer = (state = _cells, action) => {
       return newState;
 
     case HOVER:
-      const x = action.pos.x || null;
-      const y = action.pos.y || null;
+      let x = null;
+      let y = null;
+      if (x >= 0 && y >= 0) {
+        x = action.pos.x;
+        y = action.pos.y;
+      }
       newState.hoverPos = { x: x, y: y };
+      console.log(x);
       return newState;
 
     default:

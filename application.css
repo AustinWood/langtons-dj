@@ -14,6 +14,13 @@
   justify-content: center;
 }
 
+#canvas-container {
+  /*border: 1px solid gray;*/
+  /*border-radius: 12px;*/
+  /*padding: 12px;*/
+  /*background-color: #0A0B1A;*/
+}
+
 /********************/
 /*      SIDEBAR     */
 /********************/
@@ -22,6 +29,8 @@
   /*background-color: red;*/
   width: 250px;
   margin-right: 40px;
+  border: 1px solid gray;
+  border-radius: 12px;
 
   display: flex;
   flex-direction: column;
