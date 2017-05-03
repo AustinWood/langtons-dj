@@ -113,6 +113,7 @@ export default class Sequencer extends React.Component {
       if (ants.hasOwnProperty(key)) {
         const ant = ants[key];
         const note = this.state.chord[ant.number];
+        const stepCount = this.props.stepCount;
         const rhythmMap = { 0:0, 1:16, 2:8, 4:4, 8:2, 16:1 };
         const rhythmMod = rhythmMap[ant.rhythm];
         if (ant.rhythm === 0) {
@@ -132,7 +133,7 @@ export default class Sequencer extends React.Component {
             default:
               break;
           }
-        } else if (this.props.stepCount % rhythmMod === 0) {
+        } else if ((stepCount - 1) % rhythmMod === 0) {
           switch (ant.number) {
             case 0:
               this.state.bass.triggerAttack(note);

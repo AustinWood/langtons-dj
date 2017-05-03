@@ -3,7 +3,7 @@ import Cell from './cell';
 
 const mapStateToProps = (state, ownProps) => {
   const cellState = state.cells.currentCells[ownProps.y][ownProps.x].state;
-  const color = (cellState === null ? '#282c34' : state.rules[cellState].color);
+  const color = (cellState === null || state.controls.stepCount === 0 ? '#282c34' : state.rules[cellState].color);
   return ({
     color: color,
     cellSize: state.cells.cellSize

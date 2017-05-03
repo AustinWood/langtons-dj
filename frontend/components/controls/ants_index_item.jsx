@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 
 const antImg = 'http://res.cloudinary.com/oblaka/image/upload/v1493737068/ant_edjrtt.png';
 const antImgFilled = 'http://res.cloudinary.com/oblaka/image/upload/v1493737068/ant_filled_sviqwb.png';
@@ -18,7 +18,7 @@ class AntsIndexItem extends React.Component {
 
   rhythmImg() {
     const rhythmMap = {
-      0: "http://res.cloudinary.com/oblaka/image/upload/v1493220171/silent_uhpgxg.png",
+      0: "http://res.cloudinary.com/oblaka/image/upload/v1493841811/rest_iwb4nz.png",
       1: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note1_pmgjuw.png",
       2: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note2_fycqcw.png",
       4: "http://res.cloudinary.com/oblaka/image/upload/v1493219023/note4_hpnkli.png",

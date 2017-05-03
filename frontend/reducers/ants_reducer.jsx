@@ -35,6 +35,7 @@ const AntsReducer = (state = _ants, action) => {
       return newState;
 
     case TOGGLE_ANT:
+      console.log(action);
       const pos = action.pos;
       const id = `x${pos.x}y${pos.y}`;
       if (state[id]) {
@@ -45,12 +46,13 @@ const AntsReducer = (state = _ants, action) => {
       if (antCount === 4) {
         return state;
       }
+      const initialRhythmMap = { 0:1, 1:2, 2:4, 3:8 };
       const newAnt = {
         id: id,
         initialState: { pos: pos, dir: 'r' },
         currentState: { pos: pos, dir: 'r' },
         nextState: { pos: pos, dir: 'r' },
-        rhythm: 4,
+        rhythm: initialRhythmMap[antCount],
         number: antCount
       };
       newState[id] = newAnt;

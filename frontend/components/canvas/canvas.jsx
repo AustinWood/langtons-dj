@@ -12,6 +12,18 @@ class Canvas extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.setupGrid = this.setupGrid.bind(this);
+  }
+
+  componentDidMount() {
+    setTimeout(this.setupGrid, 5);
+  }
+
+  setupGrid() {
+    this.props.toggleAnt({x: 4, y: 12});
+    this.props.toggleAnt({x: 7, y: 4});
+    this.props.toggleAnt({x: 13, y: 10});
+    this.props.toggleAnt({x: 15, y: 12});
   }
 
   handleClick(e) {

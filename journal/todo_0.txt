@@ -1,19 +1,20 @@
 ####################
 ### NOW
 
-style dropdown
-replace mouth with rest
+ants on canvas on startup
 
 ####################
 ### NEXT
 
 footer bio + info
-ants on canvas on startup
 add welcome message on load
 
 ####################
 ### LATER
 
+bug: remove ant and re-add moves but doesn't play sound
+make ants draggable
+highlight ant note on ant canvas hover/drag
 choose global font
 add link to Reddit in info popup
 add all tonal structures from Reddit
