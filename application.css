@@ -51,7 +51,7 @@
 
 #logo img {
   height: 100px;
-  margin-top: 8px;
+  margin-top: 18px;
 }
 
 #logo h1 {
@@ -105,12 +105,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0px 12px 0px 8px;
 }
 
 .slider-img-container {
   /*background-color: red;*/
   height: 40px;
   width: 100px;
+  margin-right: 8px;
+  padding-bottom: 9px;
 
   display: flex;
   flex-direction: column;
@@ -118,7 +121,7 @@
 }
 
 .slider-container img {
-  height: 40px;
+  height: 50px;
 }
 
 /********************/

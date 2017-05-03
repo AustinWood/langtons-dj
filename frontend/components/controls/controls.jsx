@@ -124,8 +124,6 @@ class Controls extends React.Component {
             src={this.props.isPlaying ? pause : play} />
         </div>
 
-
-
         <div className="slider-container">
           <div className="slider-img-container"><img src={this.volumeImg()} /></div>
           <Slider min={-40} max={0} defaultValue={this.props.volume} onChange={this.changeVolume} />
