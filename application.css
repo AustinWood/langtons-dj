@@ -154,6 +154,7 @@
 
 #ants-index-container {
   margin-top: 12px;
+  padding-right: 16px;
   height: 200px;
 
   display: flex;
