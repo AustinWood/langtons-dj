@@ -1,20 +1,20 @@
 ####################
 ### NOW
 
-footer bio + info
-add link to Reddit
+host on github pages
 add welcome message on load
 
 ####################
 ### NEXT
 
-choose global font
+bug: remove ant and re-add moves but doesn't play sound
 make ants draggable
 highlight ant note on ant canvas hover/drag
 
 ####################
 ### LATER
 
-bug: remove ant and re-add moves but doesn't play sound
+footer bio + info
+add link to Reddit
+choose global font
 add all tonal structures from Reddit
-add default ant rhythms and tempos for default note arrangements
