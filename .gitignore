@@ -76,6 +76,12 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
+
+## Webpack:
+
+/app/assets/javascripts/bundle.js.map
+/bundle.js.map
+
 ### Node ###
 
 # Logs
