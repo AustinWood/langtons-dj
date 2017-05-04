@@ -34663,7 +34663,7 @@ var AntsReducer = function AntsReducer() {
       if (antCount === 4) {
         return state;
       }
-      var initialRhythmMap = { 0: 1, 1: 2, 2: 4, 3: 8 };
+      var initialRhythmMap = { 0: 2, 1: 4, 2: 8, 3: 16 };
       var newAnt = {
         id: id,
         initialState: { pos: pos, dir: 'r' },
@@ -34852,7 +34852,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _music = {
   chord: [],
-  tempo: 120,
+  tempo: 60,
   volume: -8,
   notes: _notes.notes[0].notes
 };

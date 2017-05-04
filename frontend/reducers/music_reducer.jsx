@@ -8,7 +8,7 @@ import { notes } from '../components/sequencer/notes';
 
 const _music = {
   chord: [],
-  tempo: 120,
+  tempo: 60,
   volume: -8,
   notes: notes[0].notes
 };

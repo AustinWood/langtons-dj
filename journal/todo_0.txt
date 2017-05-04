@@ -1,8 +1,6 @@
 ####################
 ### NOW
 
-add DOT shortcut to github pages
-
 footer bio + info
 add link to Reddit
 
@@ -17,3 +15,4 @@ highlight ant note on ant canvas hover/drag
 ### LATER
 
 add all tonal structures from Reddit
+click speaker to toggle mute

@@ -46,7 +46,7 @@ const AntsReducer = (state = _ants, action) => {
       if (antCount === 4) {
         return state;
       }
-      const initialRhythmMap = { 0:1, 1:2, 2:4, 3:8 };
+      const initialRhythmMap = { 0:2, 1:4, 2:8, 3:16 };
       const newAnt = {
         id: id,
         initialState: { pos: pos, dir: 'r' },
