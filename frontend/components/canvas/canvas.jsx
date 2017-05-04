@@ -90,7 +90,7 @@ class Canvas extends React.Component {
     return (
       <div id="canvas-container">
 
-
+        
 
         <Stage
           ref='stage'

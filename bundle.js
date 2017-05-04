@@ -33280,15 +33280,6 @@ var Canvas = function (_React$Component) {
         'div',
         { id: 'canvas-container' },
         _react2.default.createElement(
-          'div',
-          { id: 'overlap' },
-          _react2.default.createElement(
-            'p',
-            null,
-            'Hello'
-          )
-        ),
-        _react2.default.createElement(
           _reactKonva.Stage,
           {
             ref: 'stage',
