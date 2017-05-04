@@ -36,12 +36,27 @@
   padding: 16px;
 }
 
-#overlap h1, p {
+#overlap h1, h2, h3 {
   color: white;
+  margin: 8px 0px;
 }
 
 #overlap h1 {
   font-size: 28px;
+  text-align: center;
+}
+
+#overlap h2, h3 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+#overlap h2 {
+  text-align: left;
+}
+
+#overlap h3 {
+  text-align: right;
 }
 
 /********************/
