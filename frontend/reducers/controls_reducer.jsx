@@ -2,12 +2,13 @@ import merge from 'lodash/merge';
 
 import {
   UPDATE_GRID, RESET,
-  TOGGLE_PLAY
+  TOGGLE_PLAY, CLOSE_OVERLAY
 } from '../actions/actions';
 
 const _controls = Object.freeze({
   stepCount: 0,
-  isPlaying: false
+  isPlaying: false,
+  overlayHidden: false
 });
 
 const ControlsReducer = (state = _controls, action) => {
@@ -25,6 +26,11 @@ const ControlsReducer = (state = _controls, action) => {
 
     case TOGGLE_PLAY:
       newState.isPlaying = !newState.isPlaying;
+      newState.overlayHidden = true;
+      return newState;
+
+    case CLOSE_OVERLAY:
+      newState.overlayHidden = true;
       return newState;
 
     default:

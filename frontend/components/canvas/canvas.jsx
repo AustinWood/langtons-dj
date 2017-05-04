@@ -86,17 +86,16 @@ class Canvas extends React.Component {
     return null;
   }
 
-  // <div id="overlap">
-  //   <h1>Welcome to Langton's DJ!</h1>
-  //   <h2>Click the play button on the left to start generating audio-visual masterpieces, or scroll down to learn more about this project.</h2>
-  //   <h2>Enjoy the beauty of mathematics!</h2>
-  //   <h3>Close</h3>
-  // </div>
-
-
   render() {
     return (
       <div id="canvas-container">
+
+        <div id="overlay" className={this.props.overlayHidden ? "hidden" : "not-hidden"}>
+          <h1>Welcome to Langton's DJ!</h1>
+          <h2>Click the play button on the left to start generating audio-visual masterpieces, or scroll down to learn more about this project.</h2>
+          <h2>Enjoy the beauty of mathematics!</h2>
+          <h3 onClick={this.props.closeOverlay}>Close</h3>
+        </div>
 
         <Stage
           ref='stage'

@@ -1,5 +1,7 @@
 # Langton's DJ
 
+Live: https://austinwood.github.io/langtons-dj/
+
 ## Background
 
 [Langton's ant][wikipedia] is a cellular automaton (similar to Conway's Game of Life), in which an ant on a two-dimensional grid follows a set of simple rules describing when to turn left/right based on the color of the square upon which the ant is standing. The traditional set of rules dictate:

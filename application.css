@@ -1,3 +1,7 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 #app {
   /*background-color: black;*/
   margin-top: 24px;
@@ -21,42 +25,61 @@
   background-color: #0A0B1A;
 }
 
-#overlap {
-  height: 150px;
-  width: 350px;
-  background-color: green;
-  display: block;
+#overlay {
+  height: 190px;
+  width: 420px;
+  background-color: #0A0B1A;
   float: right;
   z-index: 3;
   position: relative;
-  /* factor in padding!! */
-  right: 175px;
-  top: 275px;
+  right: 124px;
+  top: 245px;
   border-radius: 12px;
-  padding: 16px;
+  border: 1px solid white;
+  padding: 16px 16px 4px 16px;
 }
 
-#overlap h1, h2, h3 {
-  color: white;
+#overlay h1, h2, h3 {
   margin: 8px 0px;
 }
 
-#overlap h1 {
+.not-hidden {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none
+}
+
+#overlay h1 {
+  color: white;
   font-size: 28px;
+  font-family: 'Candal', sans-serif;
   text-align: center;
 }
 
-#overlap h2, h3 {
+#overlay h2, h3 {
   font-size: 16px;
-  font-weight: normal;
 }
 
-#overlap h2 {
+#overlay h2 {
+  color: white;
+  font-weight: 300;
   text-align: left;
 }
 
-#overlap h3 {
+#overlay h3 {
+  color: gray;
+  font-weight: 200;
   text-align: right;
+  position: relative;
+}
+
+#overlay h3:hover {
+  color: #197be0;
+  cursor: pointer;
 }
 
 /********************/
@@ -94,7 +117,8 @@
 
 #logo h1 {
   color: white;
-  font-size: 36px;
+  font-family: 'Candal', sans-serif;
+  font-size: 30px;
   margin: 8px 0px;
 }
 
@@ -328,7 +352,7 @@
 .Dropdown-menu .Dropdown-group > .Dropdown-title {
   padding: 8px 10px;
   color: white;
-  font-weight: bold;
+  font-weight: 400;
   text-transform: capitalize;
 }
 

@@ -47,3 +47,8 @@ export const CHANGE_RHYTHM = "CHANGE_RHYTHM";
 export const changeRhythm = (antId) => {
   return ({ type: CHANGE_RHYTHM, antId });
 };
+
+export const CLOSE_OVERLAY = "CLOSE_OVERLAY";
+export const closeOverlay = () => {
+  return ({ type: CLOSE_OVERLAY });
+};

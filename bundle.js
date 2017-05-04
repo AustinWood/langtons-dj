@@ -1573,6 +1573,11 @@ var changeRhythm = exports.changeRhythm = function changeRhythm(antId) {
   return { type: CHANGE_RHYTHM, antId: antId };
 };
 
+var CLOSE_OVERLAY = exports.CLOSE_OVERLAY = "CLOSE_OVERLAY";
+var closeOverlay = exports.closeOverlay = function closeOverlay() {
+  return { type: CLOSE_OVERLAY };
+};
+
 /***/ }),
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -33273,21 +33278,36 @@ var Canvas = function (_React$Component) {
       }
       return null;
     }
-
-    // <div id="overlap">
-    //   <h1>Welcome to Langton's DJ!</h1>
-    //   <h2>Click the play button on the left to start generating audio-visual masterpieces, or scroll down to learn more about this project.</h2>
-    //   <h2>Enjoy the beauty of mathematics!</h2>
-    //   <h3>Close</h3>
-    // </div>
-
-
   }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
         { id: 'canvas-container' },
+        _react2.default.createElement(
+          'div',
+          { id: 'overlay', className: this.props.overlayHidden ? "hidden" : "not-hidden" },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'Welcome to Langton\'s DJ!'
+          ),
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Click the play button on the left to start generating audio-visual masterpieces, or scroll down to learn more about this project.'
+          ),
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Enjoy the beauty of mathematics!'
+          ),
+          _react2.default.createElement(
+            'h3',
+            { onClick: this.props.closeOverlay },
+            'Close'
+          )
+        ),
         _react2.default.createElement(
           _reactKonva.Stage,
           {
@@ -33341,7 +33361,8 @@ var mapStateToProps = function mapStateToProps(state) {
     cells: state.cells.currentCells,
     ants: state.ants,
     hoverPos: state.cells.hoverPos,
-    cellSize: state.cells.cellSize
+    cellSize: state.cells.cellSize,
+    overlayHidden: state.controls.overlayHidden
   };
 };
 
@@ -33352,6 +33373,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     hover: function hover(pos) {
       return dispatch((0, _actions.hover)(pos));
+    },
+    closeOverlay: function closeOverlay() {
+      return dispatch((0, _actions.closeOverlay)());
     }
   };
 };
@@ -34769,7 +34793,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _controls = Object.freeze({
   stepCount: 0,
-  isPlaying: false
+  isPlaying: false,
+  overlayHidden: false
 });
 
 var ControlsReducer = function ControlsReducer() {
@@ -34790,6 +34815,11 @@ var ControlsReducer = function ControlsReducer() {
 
     case _actions.TOGGLE_PLAY:
       newState.isPlaying = !newState.isPlaying;
+      newState.overlayHidden = true;
+      return newState;
+
+    case _actions.CLOSE_OVERLAY:
+      newState.overlayHidden = true;
       return newState;
 
     default:

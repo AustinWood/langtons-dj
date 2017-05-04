@@ -1,6 +1,7 @@
 ####################
 ### AFTER MVP
 
+resize grid for smaller screens
 add default ant rhythms and tempos for default note arrangements
 selected dropdown option only highlight on load
 show BPM on drag

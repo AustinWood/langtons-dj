@@ -1,7 +1,10 @@
 ####################
 ### NOW
 
-add welcome message on load
+add DOT shortcut to github pages
+
+footer bio + info
+add link to Reddit
 
 ####################
 ### NEXT
@@ -13,7 +16,4 @@ highlight ant note on ant canvas hover/drag
 ####################
 ### LATER
 
-footer bio + info
-add link to Reddit
-choose global font
 add all tonal structures from Reddit
