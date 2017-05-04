@@ -89,6 +89,15 @@ class Canvas extends React.Component {
   render() {
     return (
       <div id="canvas-container">
+
+        <div id="overlap">
+          <h1>Welcome to Langton's DJ!</h1>
+          <p>Click the play button on the left to start
+          generating audio-visual masterpieces.
+          Scroll down for more information about this project.
+          Enjoy!</p>
+        </div>
+
         <Stage
           ref='stage'
           width={700}

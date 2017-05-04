@@ -21,6 +21,29 @@
   background-color: #0A0B1A;
 }
 
+#overlap {
+  height: 150px;
+  width: 350px;
+  background-color: green;
+  display: block;
+  float: right;
+  z-index: 3;
+  position: relative;
+  /* factor in padding!! */
+  right: 175px;
+  top: 275px;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+#overlap h1, p {
+  color: white;
+}
+
+#overlap h1 {
+  font-size: 28px;
+}
+
 /********************/
 /*      SIDEBAR     */
 /********************/

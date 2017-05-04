@@ -1,7 +1,6 @@
 ####################
 ### NOW
 
-host on github pages
 add welcome message on load
 
 ####################
