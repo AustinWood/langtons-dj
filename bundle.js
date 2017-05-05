@@ -33060,7 +33060,7 @@ var About = function (_React$Component) {
         _react2.default.createElement(
           "p",
           null,
-          "Each beat ants rotate either left or right depending on which color they are currently located, then move forward one step while changing the color of the cell they just left."
+          "Each beat ants rotate either left or right depending on which color they are currently located, then move forward one step while changing the color of the cell they've left behind."
         ),
         _react2.default.createElement(
           "p",
@@ -33293,7 +33293,7 @@ var About = function (_React$Component) {
         _react2.default.createElement(
           "p",
           null,
-          "This project was built using React and the Tone.js audio framework. For a deeper look at the technical side of this project, ",
+          "This project was built using React/Redux and the Tone.js audio framework. For a deeper look at the technical side of this project, ",
           _react2.default.createElement(
             "a",
             { href: "https://github.com/AustinWood/langtons-dj" },

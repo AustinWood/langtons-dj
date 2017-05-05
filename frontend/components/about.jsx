@@ -9,7 +9,7 @@ class About extends React.Component {
     return (
       <div id="about">
         <p>Langton's ant is an example of a cellular automaton. Typically thought of as a <i>visualization</i> of mathematical-based evolution, my goal with Langton's DJ is to give us an additional dimension — a dimension of <i>musicality</i> — from which to observe and appreciate the complex emergent behavior which results from a simple set of rules and initial conditions.</p>
-        <p>Each beat ants rotate either left or right depending on which color they are currently located, then move forward one step while changing the color of the cell they just left.</p>
+        <p>Each beat ants rotate either left or right depending on which color they are currently located, then move forward one step while changing the color of the cell they've left behind.</p>
         <p>While all ants follow the same set of rules for movement, in Langton's DJ, each ant is responsible for one voicing in the deterministically emergent four-point harmony: soprano, alto, tenor and bass. Similar to the rules for movement, each ant has a set of rules that determines which note it should play based on which color it is situated.</p>
         <p>For example, the rules for the Tetrachords configuration are as follows:</p>
         <table>
@@ -63,7 +63,7 @@ class About extends React.Component {
           </tr>
         </table>
         <p>I am very grateful to the music theory subreddit community for helping me come up with the different arrangement of notes. If you're interested in joining the discussion, or just want to read what a lot of smart music theorists think about cellular automata, I invite you to check out my thread: <a href="https://www.reddit.com/r/musictheory/comments/63uhqi/collections_of_notes_that_will_sound_good/?sort=new">Collections of notes that will sound good together for random music generator?</a></p>
-        <p>This project was built using React and the Tone.js audio framework. For a deeper look at the technical side of this project, <a href="https://github.com/AustinWood/langtons-dj">check out the README and full source code on GitHub.</a></p>
+        <p>This project was built using React/Redux and the Tone.js audio framework. For a deeper look at the technical side of this project, <a href="https://github.com/AustinWood/langtons-dj">check out the README and full source code on GitHub.</a></p>
       </div>
     );
   }
