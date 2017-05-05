@@ -281,7 +281,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 30px 0px 15px 0px;
+  padding: 24px 0px;
 }
 
 #footer-links img {
@@ -295,7 +295,7 @@ body {
 }
 
 #about {
-
+  /*background-color: green;*/
 }
 
 #about p, h1, th {
@@ -307,8 +307,22 @@ body {
   font-weight: 200;
 }
 
+#about p {
+  margin: 0 0 18px 0;
+}
+
+table {
+  margin: 14px 0 22px 0;
+}
+
 #about th {
-  padding: 3px 14px;
+  padding: 3px 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+th div {
+  margin: auto;
 }
 
 .row-header {
@@ -316,8 +330,30 @@ body {
   text-align: left;
 }
 
-.circle {
-  
+.table-circle {
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+}
+
+#blue-circle {
+  background-color: #197be0;
+}
+
+#green-circle {
+  background-color: #7ed43a;
+}
+
+#pink-circle {
+  background-color: #fc2a68;
+}
+
+#purple-circle {
+  background-color: #8c54e5;
+}
+
+#yellow-circle {
+  background-color: #f9cd35;
 }
 
 

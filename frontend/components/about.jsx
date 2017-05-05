@@ -15,11 +15,11 @@ class About extends React.Component {
         <table>
           <tr>
             <th className="row-header">Color</th>
-            <th>Blue</th>
-            <th>Green</th>
-            <th>Pink</th>
-            <th>Purple</th>
-            <th>Yellow</th>
+            <th><div className="table-circle" id="blue-circle"></div></th>
+            <th><div className="table-circle" id="green-circle"></div></th>
+            <th><div className="table-circle" id="pink-circle"></div></th>
+            <th><div className="table-circle" id="purple-circle"></div></th>
+            <th><div className="table-circle" id="yellow-circle"></div></th>
           </tr>
           <tr>
             <th className="row-header">Direction</th>
