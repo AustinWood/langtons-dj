@@ -296,6 +296,7 @@ body {
 
 #about {
   /*background-color: green;*/
+  margin-bottom: 40px;
 }
 
 #about p, h1, th {
@@ -309,6 +310,15 @@ body {
 
 #about p {
   margin: 0 0 18px 0;
+}
+
+#about a {
+  color: #56b2ba;
+  text-decoration: none;
+}
+
+#about a:hover {
+  color: #0b78e3;
 }
 
 table {
