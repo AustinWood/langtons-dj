@@ -7,6 +7,7 @@ add link to Reddit
 ####################
 ### NEXT
 
+bug: text outside of overlay in Safari, make dynamically sized
 bug: remove ant and re-add moves but doesn't play sound
 make ants draggable
 highlight ant note on ant canvas hover/drag

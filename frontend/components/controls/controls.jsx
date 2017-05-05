@@ -8,10 +8,12 @@ class Controls extends React.Component {
     super(props);
     this.state = {
       stepCount: null,
-      value: 10
+      value: 10,
+      logo: "http://res.cloudinary.com/oblaka/image/upload/v1493995716/logo1_xqbuak.png"
     };
     this.changeTempo = this.changeTempo.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
+    this.changeLogo = this.changeLogo.bind(this);
   }
 
   componentDidUpdate() {
@@ -104,13 +106,21 @@ class Controls extends React.Component {
     return volumeHigh;
   }
 
+  changeLogo() {
+    if (this.state.logo === logo1) {
+      this.state.logo = logo2;
+    } else {
+      this.state.logo = logo1;
+    }
+    this.props.changeTempo(this.props.tempo - 1);
+  }
+
   render() {
     return (
       <div id="nav">
 
-        <div id="logo">
-          <img src={logo} />
-          <h1>Langton's DJ</h1>
+        <div id="logo" onClick={this.changeLogo}>
+          <img src={this.state.logo} />
         </div>
 
         <div id="play-controls">
@@ -146,7 +156,8 @@ class Controls extends React.Component {
   }
 }
 
-const logo = "http://res.cloudinary.com/oblaka/image/upload/v1493737068/ant_filled_sviqwb.png";
+const logo1 = "http://res.cloudinary.com/oblaka/image/upload/v1493995716/logo1_xqbuak.png";
+const logo2 = "http://res.cloudinary.com/oblaka/image/upload/v1493995717/logo2_uelym6.png";
 
 const info = "http://res.cloudinary.com/oblaka/image/upload/v1493833160/info_ccma7q.png";
 const stop = "http://res.cloudinary.com/oblaka/image/upload/v1490970171/stop_hg6fyp.png";
