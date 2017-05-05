@@ -2,7 +2,6 @@
 ### NOW
 
 footer bio + info
-add link to Reddit
 
 ####################
 ### NEXT

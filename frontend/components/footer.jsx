@@ -1,4 +1,5 @@
 import React from 'react';
+import About from './about';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -8,9 +9,12 @@ class Footer extends React.Component {
   render() {
     return (
       <div id="footer">
-        <a href={githubUrl}><img src={github} /></a>
-        <a href={homeUrl}><img src={home} /></a>
-        <a href={linkedinUrl}><img src={linkedin} /></a>
+        <div id="footer-links">
+          <a href={githubUrl}><img src={github} /></a>
+          <a href={homeUrl}><img src={home} /></a>
+          <a href={linkedinUrl}><img src={linkedin} /></a>
+        </div>
+        <About />
       </div>
     );
   }

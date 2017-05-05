@@ -3,7 +3,7 @@ const _slowBox = [false, false, false, true, true];
 const _rules = Object.freeze({
   0: {
     color: '#197be0', // blue
-    rotateRight: false
+    rotateRight: true
   },
   1: {
     color: "#7ed43a", // green
@@ -11,7 +11,7 @@ const _rules = Object.freeze({
   },
   2: {
     color: "#fc2a68", // pink
-    rotateRight: false
+    rotateRight: true
   },
   3: {
     color: "#8c54e5", // purple

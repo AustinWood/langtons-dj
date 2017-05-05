@@ -3,12 +3,13 @@ body {
 }
 
 #app {
-  /*background-color: black;*/
+  /*background-color: pink;*/
   margin-top: 24px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 #main {
@@ -267,20 +268,58 @@ body {
 #footer {
   /*background-color: orange;*/
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  padding: 30px 300px;
+  /*align-items: center;*/
+  /*padding: 30px 300px;*/
+  width: 1000px;
 }
 
-#footer img {
+#footer-links {
+  /*background-color: red;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0px 15px 0px;
+}
+
+#footer-links img {
   height: 60px;
   width: 60px;
+  margin: 0 30px;
 }
 
-#footer img:hover {
+#footer-links img:hover {
   cursor: pointer;
 }
+
+#about {
+
+}
+
+#about p, h1, th {
+  color: white;
+}
+
+#about p, th {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+#about th {
+  padding: 3px 14px;
+}
+
+.row-header {
+  font-weight: 300;
+  text-align: left;
+}
+
+.circle {
+  
+}
+
 
 /********************/
 /*     DROPDOWN     */
