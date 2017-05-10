@@ -9,7 +9,7 @@ class Controls extends React.Component {
     this.state = {
       stepCount: null,
       value: 10,
-      logo: "http://res.cloudinary.com/oblaka/image/upload/v1494433325/langtons-dj-icon_yxoube.png"
+      logo: "http://res.cloudinary.com/oblaka/image/upload/v1494433705/langtons-logo2_iyzjd1.jpg"
     };
     this.changeTempo = this.changeTempo.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
