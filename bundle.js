@@ -33065,7 +33065,7 @@ var About = function (_React$Component) {
         _react2.default.createElement(
           "p",
           null,
-          "While all ants follow the same set of rules for movement, in Langton's DJ, each ant is responsible for one voicing in the deterministically emergent four-point harmony: soprano, alto, tenor and bass. Similar to the rules for movement, each ant has a set of rules that determines which note it should play based on which color it is situated."
+          "While all ants follow the same set of rules for movement, in Langton's DJ, each ant is responsible for one voicing in the deterministically emergent four-point harmony: soprano, alto, tenor and bass. Similar to the rules for movement, each ant has a set of rules that dictates which note it should play based on which color it is situated."
         ),
         _react2.default.createElement(
           "p",
@@ -34080,12 +34080,10 @@ var Controls = function (_React$Component) {
 
     _this.state = {
       stepCount: null,
-      value: 10,
-      logo: "http://res.cloudinary.com/oblaka/image/upload/v1493995716/logo1_xqbuak.png"
+      value: 10
     };
     _this.changeTempo = _this.changeTempo.bind(_this);
     _this.changeVolume = _this.changeVolume.bind(_this);
-    _this.changeLogo = _this.changeLogo.bind(_this);
     return _this;
   }
 
@@ -34185,16 +34183,6 @@ var Controls = function (_React$Component) {
       return volumeHigh;
     }
   }, {
-    key: 'changeLogo',
-    value: function changeLogo() {
-      if (this.state.logo === logo1) {
-        this.state.logo = logo2;
-      } else {
-        this.state.logo = logo1;
-      }
-      this.props.changeTempo(this.props.tempo - 1);
-    }
-  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -34202,8 +34190,8 @@ var Controls = function (_React$Component) {
         { id: 'nav' },
         _react2.default.createElement(
           'div',
-          { id: 'logo', onClick: this.changeLogo },
-          _react2.default.createElement('img', { src: this.state.logo })
+          { id: 'logo' },
+          _react2.default.createElement('img', { src: 'http://res.cloudinary.com/oblaka/image/upload/v1494433705/langtons-logo2_iyzjd1.jpg' })
         ),
         _react2.default.createElement(
           'div',
