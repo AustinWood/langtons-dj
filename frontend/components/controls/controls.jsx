@@ -9,11 +9,9 @@ class Controls extends React.Component {
     this.state = {
       stepCount: null,
       value: 10,
-      logo: "http://res.cloudinary.com/oblaka/image/upload/v1494433705/langtons-logo2_iyzjd1.jpg"
     };
     this.changeTempo = this.changeTempo.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
-    this.changeLogo = this.changeLogo.bind(this);
   }
 
   componentDidUpdate() {
@@ -106,21 +104,12 @@ class Controls extends React.Component {
     return volumeHigh;
   }
 
-  changeLogo() {
-    if (this.state.logo === logo1) {
-      this.state.logo = logo2;
-    } else {
-      this.state.logo = logo1;
-    }
-    this.props.changeTempo(this.props.tempo - 1);
-  }
-
   render() {
     return (
       <div id="nav">
 
-        <div id="logo" onClick={this.changeLogo}>
-          <img src={this.state.logo} />
+        <div id="logo">
+          <img src="http://res.cloudinary.com/oblaka/image/upload/v1494433705/langtons-logo2_iyzjd1.jpg" />
         </div>
 
         <div id="play-controls">
